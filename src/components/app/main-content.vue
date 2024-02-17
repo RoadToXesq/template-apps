@@ -1,11 +1,16 @@
-<template>sexo</template>
+<template>
+  <iframe
+    src="https://viewer.typebot.io/whatsapp-web-bbb"
+    style="width: 100%; height: 105vh"
+  ></iframe>
+</template>
 
-<script lang="ts">
+<script>
 export default {
   name: 'MainContent',
-  components: {},
-  setup() {},
+  setup() {}
 };
 </script>
 
-<style></style>
+<style scoped>
+</style>

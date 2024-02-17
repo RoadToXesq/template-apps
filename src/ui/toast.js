@@ -2,22 +2,24 @@ import { useToast } from 'vue-toast-notification';
 
 import 'vue-toast-notification/dist/theme-sugar.css';
 
+const options = {
+  position: 'top-right',
+};
 const $toast = useToast();
-const options = { position: 'top-right' } as any;
 
-const success = (msg: string) => {
+const success = (msg) => {
   $toast.success(msg, options);
 };
 
-const error = (msg: string) => {
+const error = (msg) => {
   $toast.error(msg, options);
 };
 
-const info = (msg: string) => {
+const info = (msg) => {
   $toast.info(msg, options);
 };
 
-const warning = (msg: string) => {
+const warning = (msg) => {
   $toast.warning(msg, options);
 };
 
@@ -30,5 +32,5 @@ export default {
   warning,
   info,
   error,
-  clear,
+  clear
 };

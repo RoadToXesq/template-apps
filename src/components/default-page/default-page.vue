@@ -463,7 +463,7 @@
             class="col-xl-4 offset-xl-7 col-lg-5 offset-lg-6 col-md-8 offset-md-2 col-sm-10 offset-sm-1"
           >
             <div class="testimonial-active">
-              <!-- <div class="single-testimonial text-center">
+              <div class="single-testimonial text-center">
                 <div class="testimonial-image">
                   <img
                     src="./assets/images2/user_masculino.png"
@@ -487,9 +487,9 @@
                   <h5 class="testimonial-name mt-15">Lucas</h5>
                   <span class="sub-title">Cliente</span>
                 </div>
-              </div> -->
+              </div>
               <!-- single-testimonial -->
-              <!-- <div class="single-testimonial text-center">
+              <div class="single-testimonial text-center">
                 <div class="testimonial-image">
                   <img
                     src="./assets/images2/user_masculino.png"
@@ -515,7 +515,7 @@
                   <h5 class="testimonial-name mt-15">Israel</h5>
                   <span class="sub-title">Cliente</span>
                 </div>
-              </div> -->
+              </div>
               <!-- single-testimonial -->
               <div class="single-testimonial text-center">
                 <div class="testimonial-image">
@@ -827,9 +827,12 @@
   <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
 </template>
 
-<script lang="ts">
+<script>
 import { ref } from 'vue';
 import toast from '../../ui/toast.js';
+import escritorioImage from './assets/images2/escritorio.jpg';
+import notebookImage from './assets/images2/notebook.jpg';
+import capa1Image from './assets/images2/capa1.png';
 
 export default {
   name: 'DefaultPage',
@@ -839,7 +842,7 @@ export default {
       email: '',
       subject: '',
       phone: '',
-      message: '',
+      message: ''
     });
 
     const messageForm = ref(setDefaultMessageFormData());
@@ -862,9 +865,9 @@ export default {
       messageForm,
       escritorioImage,
       notebookImage,
-      capa1Image,
+      capa1Image
     };
-  },
+  }
 };
 </script>
 

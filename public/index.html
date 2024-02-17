@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link id="favicon" rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title>Vida Mais Fácil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="alternate" type="application/rss+xml" title="Feed para Renda Dinheiro &raquo;" href="" />
+  <link rel="alternate" type="application/rss+xml" title="Feed de comentários para Renda Dinheiro &raquo;" href="" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.css" />
+  <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+    integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous">
+  </script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+  <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet" />
+  <link rel="preload"
+    href="https://scripts.converteai.net/5dc1fff9-cf0f-4b3e-9298-99723fa5fd3f/players/64db1ab85d41570009428c40/player.js"
+    as="script" />
+  <link rel="preload" href="https://cdn.converteai.net/lib/js/smartplayer/v1/smartplayer.min.js" as="script" />
+  <link rel="preload"
+    href="https://images.converteai.net/5dc1fff9-cf0f-4b3e-9298-99723fa5fd3f/players/64db1ab85d41570009428c40/thumbnail.jpg"
+    as="image" />
+  <link rel="preload"
+    href="https://cdn.converteai.net/5dc1fff9-cf0f-4b3e-9298-99723fa5fd3f/64cd09ee000f4f0009537ada/main.m3u8"
+    as="fetch" />
+  <link rel="dns-prefetch" href="https://cdn.converteai.net" />
+  <link rel="dns-prefetch" href="https://scripts.converteai.net" />
+  <link rel="dns-prefetch" href="https://images.converteai.net" />
+  <link rel="dns-prefetch" href="https://api.vturb.com.br" />
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but Vida Mais Fácil doesn't work properly without JavaScript enabled.
+      Please enable it to continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+  </script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
+</body>
+<script src="./bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+<script>
+  let error = false;
+  let validate = false;
+
+  function validateNome() {
+    if (!$("#nome").val()) {
+      $("#nome").addClass("border border-danger");
+      return false;
+    }
+
+    $("#nome").removeClass("border border-danger");
+    return true;
+  }
+
+  function validateCpf() {
+    cpf = $("#cpf").val().replace(/\D/g, "");
+
+    if (!cpf || cpf.length < 11) {
+      $("#cpf").addClass("border border-danger");
+      return false;
+    }
+
+    $("#cpf").removeClass("border border-danger");
+    return true;
+  }
+
+  function showDeal() {
+    validate = true;
+
+    validateCpf();
+    validateNome();
+
+    if (!validateCpf() || !validateNome()) return;
+
+    $("#loadingOverlay").fadeIn();
+
+    setTimeout(function () {
+      $("#loadingOverlay").fadeOut();
+      $("#mainScreen").addClass("d-none");
+      $("#second-screen").removeClass("d-none");
+      $("html, body").scrollTop(0);
+    }, 1500);
+  }
+
+  function redirectToCheckout() {
+    $("#loadingOverlay").fadeIn();
+
+    window.location.href = "https://pay.vidamaisfacil.net/NDr8gmOXvPZBmjd";
+  }
+
+  function applyMask(input) {
+    var value = input.val().replace(/\D/g, "");
+    var maskedValue = "";
+
+    if (value.length <= 11) {
+      maskedValue = value.replace(
+        /(\d{3})(\d{0,3})(\d{0,3})(\d{0,2})/,
+        function (match, p1, p2, p3, p4) {
+          return (
+            p1 +
+            (p2 ? "." + p2 : "") +
+            (p3 ? "." + p3 : "") +
+            (p4 ? "-" + p4 : "")
+          );
+        }
+      );
+    } else {
+      maskedValue = value.replace(
+        /(\d{2})(\d{0,3})(\d{0,3})(\d{0,4})(\d{0,2})/,
+        function (match, p1, p2, p3, p4, p5) {
+          return (
+            p1 +
+            (p2 ? "." + p2 : "") +
+            (p3 ? "." + p3 : "") +
+            (p4 ? "/" + p4 : "") +
+            (p5 ? "-" + p5 : "")
+          );
+        }
+      );
+    }
+
+    input.val(maskedValue);
+  }
+
+  $(document).ready(function () {
+    $("#nome").on("input", function () {
+      if (validate) validateNome();
+
+      var nome = $(this).val();
+
+      $("#nomeOutput").text("Olá, " + nome);
+    });
+
+    $("#cpf").on("input", function () {
+      if (validate) validateCpf();
+
+      applyMask($(this));
+      var cpf = $(this).val();
+
+      $("#cpfOutput").text("CPF: " + cpf);
+    });
+  });
+</script>
+
+</html>

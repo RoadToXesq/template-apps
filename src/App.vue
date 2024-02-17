@@ -1,34 +1,21 @@
 <template>
-  <Loader />
-  <div v-if="showContent">
-    <MainContent />
-  </div>
-  <div v-else-if="showCheckout">
-    <Checkout />
-  </div>
-  <div v-else>
-    <DefaultPage />
-  </div>
+  <MainContent v-if="showContent" />
+  <DefaultPage v-else />
 </template>
 
-<script lang="ts">
-import { Checkout } from './components/checkout';
+<script>
 import { DefaultPage } from './components/default-page';
 import { MainContent } from './components/app';
 import { onBeforeMount, ref } from 'vue';
-import Loader from './global/Loader.vue';
 
 export default {
   name: 'App',
   components: {
-    Loader,
-    Checkout,
     DefaultPage,
-    MainContent,
+    MainContent
   },
   setup() {
     const showContent = ref(false);
-    const showCheckout = ref(false);
 
     const checkShowContent = () => {
       const mobileUserAgent = /(Mobi|Android)/i;
@@ -41,40 +28,18 @@ export default {
       );
     };
 
-    onBeforeMount(async () => {
+    onBeforeMount(() => {
       showContent.value = checkShowContent();
-      const favicon = document.getElementById('favicon') as HTMLAnchorElement;
 
       if (!showContent.value) {
-        favicon.href = '/favicon.ico';
-        document.title = 'Acordo Certo';
-      }
-
-      if (showContent.value) {
-        document.title = 'Espaço Seguro';
-        favicon.href = '/faviconCerto.ico';
-      }
-
-      if (showCheckout.value) {
-        const cssContent = await import(
-          './components/checkout/assets/css/theme-checkout.css'
-        );
-        const style = document.createElement('style');
-        style.textContent = cssContent;
-        document.head.appendChild(style);
+        const favicon = document.getElementById('favicon');
+        favicon.href = 'https://www.google.com/favicon.ico';
       }
     });
 
     return {
-      showContent,
-      showCheckout,
+      showContent
     };
-  },
+  }
 };
 </script>
-
-<style>
-.v-toast__text {
-  color: white;
-}
-</style>

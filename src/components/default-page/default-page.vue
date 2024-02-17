@@ -142,7 +142,7 @@
       <!-- container -->
       <div
         class="banner-image bg_cover"
-        :style="`background-image: url(${capa1Image})`"
+        style="background-image: url('./assets/images2/capa1.png')"
       ></div>
     </div>
     <!-- header banner -->
@@ -456,14 +456,14 @@
     <div class="container">
       <div
         class="testimonial-bg bg_cover pt-80 pb-80"
-        :style="`background-image: url(${notebookImage})`"
+        style="background-image: url('./assets/images2/notebook.jpg')"
       >
         <div class="row">
           <div
             class="col-xl-4 offset-xl-7 col-lg-5 offset-lg-6 col-md-8 offset-md-2 col-sm-10 offset-sm-1"
           >
             <div class="testimonial-active">
-              <!-- <div class="single-testimonial text-center">
+              <div class="single-testimonial text-center">
                 <div class="testimonial-image">
                   <img
                     src="./assets/images2/user_masculino.png"
@@ -487,9 +487,9 @@
                   <h5 class="testimonial-name mt-15">Lucas</h5>
                   <span class="sub-title">Cliente</span>
                 </div>
-              </div> -->
+              </div>
               <!-- single-testimonial -->
-              <!-- <div class="single-testimonial text-center">
+              <div class="single-testimonial text-center">
                 <div class="testimonial-image">
                   <img
                     src="./assets/images2/user_masculino.png"
@@ -515,7 +515,7 @@
                   <h5 class="testimonial-name mt-15">Israel</h5>
                   <span class="sub-title">Cliente</span>
                 </div>
-              </div> -->
+              </div>
               <!-- single-testimonial -->
               <div class="single-testimonial text-center">
                 <div class="testimonial-image">
@@ -588,7 +588,7 @@
                       name="name"
                       placeholder="Seu Nome"
                       data-error="Informe um nome."
-                      required="required"
+                      required="true"
                     />
                     <div class="help-block with-errors"></div>
                   </div>
@@ -602,7 +602,7 @@
                       name="email"
                       placeholder="Seu Email"
                       data-error="Informe um e-mail válido."
-                      required="required"
+                      required="true"
                     />
                     <div class="help-block with-errors"></div>
                   </div>
@@ -616,7 +616,7 @@
                       name="subject"
                       placeholder="Assunto"
                       data-error="Informe um assunto."
-                      required="required"
+                      required="true"
                     />
                     <div class="help-block with-errors"></div>
                   </div>
@@ -630,7 +630,7 @@
                       name="phone"
                       placeholder="Telefone"
                       data-error="Informe um telefone."
-                      required="required"
+                      required="true"
                     />
                     <div class="help-block with-errors"></div>
                   </div>
@@ -643,7 +643,7 @@
                       v-model="messageForm.message"
                       name="message"
                       data-error="Escreva uma mensagem."
-                      required="required"
+                      required="true"
                     ></textarea>
                     <div class="help-block with-errors"></div>
                   </div>
@@ -689,7 +689,7 @@
     </div>
     <div
       class="map-bg bg_cover d-none d-lg-block"
-      :style="`background-image: url(${escritorioImage})`"
+      style="background-image: url('./assets/images2/escritorio.jpg')"
     ></div>
   </section>
 
@@ -829,7 +829,10 @@
 
 <script lang="ts">
 import { ref } from 'vue';
-import toast from '../../ui/toast.js';
+import toast from '../../ui/toast';
+// import escritorioImage from './assets/images2/escritorio.jpg';
+// import notebookImage from './assets/images2/notebook.jpg';
+// import capa1Image from './assets/images2/capa1.png';
 
 export default {
   name: 'DefaultPage',
@@ -860,9 +863,9 @@ export default {
       onRedirectToDefaultCheckout,
       onSendMessage,
       messageForm,
-      escritorioImage,
-      notebookImage,
-      capa1Image,
+      // escritorioImage,
+      // notebookImage,
+      // capa1Image,
     };
   },
 };

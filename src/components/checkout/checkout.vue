@@ -600,14 +600,14 @@
   </main>
 </template>
 
-<script>
+<script lang="ts">
 import Pix from './pix.vue';
 import { onMounted, ref } from 'vue';
 
 export default {
   name: 'Checkout',
   components: {
-    Pix
+    Pix,
   },
   setup() {
     const showPix = ref(false);
@@ -632,7 +632,7 @@ export default {
       );
 
       var paymentForm = document.querySelector('#payment-form');
-      paymentForm.classList.add('was-validated');
+      paymentForm?.classList.add('was-validated');
 
       if (!hasError) {
         var checkoutPreloader = $('.checkout-preloader');
@@ -661,7 +661,7 @@ export default {
       var checkoutPreloader = $('.checkout-preloader');
       var formatter = new Intl.NumberFormat('pt-BR', {
         style: 'currency',
-        currency: 'BRL'
+        currency: 'BRL',
       });
 
       // Função de correção de e-mails
@@ -705,7 +705,7 @@ export default {
       // Disable Button on Submit
       var buyingTxt = `<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Carregando...`;
 
-      window.preTransaction = async function preTransaction() {
+      (window as any).preTransaction = async function preTransaction() {
         // Quando der Submit :
         $('#buyButton')
           .attr('disabled', true)
@@ -770,7 +770,7 @@ export default {
             } else {
               $('html').animate(
                 {
-                  scrollTop: next.offset().top - 160
+                  scrollTop: next?.offset()?.top - 160,
                 },
                 200
               );
@@ -795,7 +795,9 @@ export default {
         tel.value = valor; // Insere o(s) valor(es) no campo
       };
 
-      var inputNome = document.querySelector('#nome');
+      var inputNome = document.querySelector('#nome') as unknown as {
+        value: string;
+      };
       var inputEmail = document.querySelector('#email');
       var inputDoc = document.querySelector('#key');
       var inputPhone = document.querySelector('#phone');
@@ -808,7 +810,7 @@ export default {
       $('#key').mask(get_mask, {
         onKeyPress: function (input_value, event, element, options) {
           element.mask(get_mask, options);
-        }
+        },
       });
 
       function nomeValidate() {
@@ -997,9 +999,9 @@ export default {
 
     return {
       buy,
-      showPix
+      showPix,
     };
-  }
+  },
 };
 </script>
 

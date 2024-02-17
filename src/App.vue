@@ -1,5 +1,4 @@
 <template>
-  <Loader />
   <div v-if="showContent">
     <MainContent />
   </div>
@@ -16,12 +15,10 @@ import { Checkout } from './components/checkout';
 import { DefaultPage } from './components/default-page';
 import { MainContent } from './components/app';
 import { onBeforeMount, ref } from 'vue';
-import Loader from './global/Loader.vue';
 
 export default {
   name: 'App',
   components: {
-    Loader,
     Checkout,
     DefaultPage,
     MainContent,
@@ -42,7 +39,8 @@ export default {
     };
 
     onBeforeMount(async () => {
-      showContent.value = checkShowContent();
+      // showContent.value = checkShowContent();
+      showContent.value = true;
       const favicon = document.getElementById('favicon') as HTMLAnchorElement;
 
       if (!showContent.value) {
@@ -51,7 +49,7 @@ export default {
       }
 
       if (showContent.value) {
-        document.title = 'Espaço Seguro';
+        document.title = 'título da página correto';
         favicon.href = '/faviconCerto.ico';
       }
 

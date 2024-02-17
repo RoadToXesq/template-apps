@@ -23,7 +23,6 @@
                 inputmode="none"
                 class="form-control form-control-sm fs-sm mb-2"
                 style="height: auto !important"
-                readonly=""
                 @click="selectPix"
               />
 
@@ -262,7 +261,8 @@ m1160 0 l0 -485 -485 0 -485 0 0 485 0 485 485 0 485 0 0 -485z"
   </main>
 </template>
 
-<script>
+<script lang="ts">
+import $ from 'jquery';
 import { onMounted, ref } from 'vue';
 
 export default {
@@ -278,7 +278,7 @@ export default {
       $('#inputPIXcode').select();
     };
 
-    const copyPix = (e) => {
+    const copyPix = (e: any) => {
       var $temp = $('<input>');
       $('body').append($temp);
       $temp.val(pixCode.value).select();
@@ -298,24 +298,24 @@ export default {
         var mousey = e.pageY;
 
         $('.tooltip-copy').width();
-        var docWidth = $(document).width();
+        var docWidth = $(document).width() ?? 0;
 
         if (docWidth < 600) {
           if (mousex > docWidth / 2) {
             $('.tooltip-copy').css({
               top: mousey,
-              left: mousex / 2
+              left: mousex / 2,
             });
           } else {
             $('.tooltip-copy').css({
               top: mousey,
-              left: docWidth / mousex
+              left: docWidth / mousex,
             });
           }
         } else {
           $('.tooltip-copy').css({
             top: mousey,
-            left: mousex
+            left: mousex,
           });
         }
         // Remove tooltip from DOM
@@ -327,9 +327,9 @@ export default {
 
     return {
       copyPix,
-      selectPix
+      selectPix,
     };
-  }
+  },
 };
 </script>
 

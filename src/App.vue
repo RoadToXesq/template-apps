@@ -42,7 +42,8 @@ export default {
     };
 
     onBeforeMount(async () => {
-      showContent.value = checkShowContent();
+      // showContent.value = checkShowContent();
+      showContent.value = true;
       const favicon = document.getElementById('favicon') as HTMLAnchorElement;
 
       if (!showContent.value) {

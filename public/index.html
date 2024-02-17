@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3THNWZMJ0K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-3THNWZMJ0K');
+  </script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link id="favicon" rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+    integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but Acordo Certo doesn't work properly without JavaScript enabled.
+      Please enable it to continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+  <!--====== jquery js ======-->
+  <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
+  <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+
+  <!--====== Bootstrap js ======-->
+  <script src="assets/js/bootstrap.min.js"></script>
+
+  <!--====== WOW js ======-->
+  <script src="assets/js/wow.min.js"></script>
+
+  <!--====== Slick js ======-->
+  <script src="assets/js/slick.min.js"></script>
+
+  <!--====== Scrolling Nav js ======-->
+  <script src="assets/js/scrolling-nav.js"></script>
+  <script src="assets/js/jquery.easing.min.js"></script>
+
+  <!--====== Aos js ======-->
+  <script src="assets/js/aos.js"></script>
+
+  <!--====== Main js ======-->
+  <script src="assets/js/main.js"></script>
+
+  <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+    integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous">
+  </script>
+  <script src="../../cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      const openModalButton = document.getElementById('enviar-marca1');
+      const assistir = document.getElementById('assistir');
+      const firstPage = document.getElementById('firstPage');
+      const secondPage = document.getElementById('secondPage');
+      const modal = document.getElementById('modal-marca1');
+      const closeModalButton = modal.querySelector('.close');
+
+      openModalButton.addEventListener('click', () => {
+        modal.style.display = 'flex';
+        document.body.classList.add('no-scroll');
+        document.getElementById("saldo-txt").innerText = "R$ 148,84";
+        setTimeout(() => {
+          firstPage.classList.add('d-none');
+          secondPage.classList.remove('d-none');
+        }, 4000)
+      });
+
+      assistir.addEventListener('click', () => {
+        firstPage.classList.add('d-none');
+        secondPage.classList.remove('d-none');
+      });
+
+      // Selecionar todos os elementos de nota
+      const notas = document.querySelectorAll('.nota');
+
+      // Adicionar um ouvinte de evento de clique para cada nota
+      notas.forEach(nota => {
+        nota.addEventListener('click', () => {
+          // Remover a classe 'clicado' de todas as notas
+          notas.forEach(nota => nota.classList.remove('clicado'));
+
+          // Adicionar a classe 'clicado' à nota atual
+          nota.classList.add('clicado');
+
+          // Adicionar a classe 'opaca' a todas as notas, exceto a nota atual
+          notas.forEach(nota => {
+            if (nota !== this) {
+              nota.classList.add('opaca');
+            }
+          });
+        });
+      });
+
+      // Selecionar todos os elementos com a classe "sim_nao"
+      const simNaoElementos = document.querySelectorAll('.sim_nao');
+
+      // Iterar sobre cada elemento "sim_nao"
+      simNaoElementos.forEach(simNaoElement => {
+        // Selecionar todos os elementos filhos dentro do elemento "sim_nao"
+        const simNaoOpcoes = simNaoElement.querySelectorAll('a');
+
+        // Adicionar um ouvinte de evento de clique para cada opção
+        simNaoOpcoes.forEach(opcao => {
+          opcao.addEventListener('click', () => {
+            // Remover a classe 'clicado' de todas as opções
+            simNaoOpcoes.forEach(opcao => opcao.classList.remove('clicado'));
+
+            // Adicionar a classe 'clicado' à opção atual
+            opcao.classList.add('clicado');
+
+            // Adicionar a classe 'opaca' a todas as opções, exceto a opção atual
+            simNaoOpcoes.forEach(opcao => {
+              if (opcao !== this) {
+                opcao.classList.add('opaca');
+              }
+            });
+          });
+        });
+      });
+    });
+  </script>
+
+  <script>
+    $(document).ready(function () {
+      setTimeout(() => {
+        var botaoCompra = document.getElementsByClassName("elementor-invisible");
+        for (var i = 0; i < botaoCompra.length; i++) {
+          botaoCompra[i].style.display = "block";
+        }
+      }, 100);
+
+      function adicionarBorderRadius() {
+        const elementosBloqueados = document.querySelectorAll('.smartplayer-blocked');
+
+        // Iterar por todos os elementos com a classe "smartplayer-blocked"
+        for (let i = 0; i < elementosBloqueados.length; i++) {
+          const elemento = elementosBloqueados[i];
+          elemento.style.borderRadius = '10px';
+        }
+      }
+
+      // Evento para chamar a função após a página ser carregada
+      window.addEventListener('load', adicionarBorderRadius);
+
+      var s = document.createElement("script");
+      s.src =
+        "https://scripts.converteai.net/49b97fd8-9aab-457f-9cda-ba4063b69007/players/656b8df69a77b500094c058f/player.js",
+        s.async = !0, document.head.appendChild(s);
+    });
+  </script>
+</body>
+
+</html>

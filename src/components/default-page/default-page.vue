@@ -1,3 +1,5 @@
+
+
 <template>
   <div class="preloader">
     <div class="loader_34">
@@ -20,24 +22,24 @@
 
   <!--====== HEADER PART START ======-->
 
-  <header id="home" class="header-area pt-100">
+  <header id="ddtgotkrgshtjct" class="header-area pt-100">
     <div class="shape header-shape-one">
-      <img src="./assets/images/banner/shape/shape-1.png" alt="shape" />
+      <img src="assets/images/banner/shape/shape-1.png" alt="shape" />
     </div>
     <!-- header shape one -->
 
     <div class="shape header-shape-tow animation-one">
-      <img src="./assets/images/banner/shape/shape-2.png" alt="shape" />
+      <img src="assets/images/banner/shape/shape-2.png" alt="shape" />
     </div>
     <!-- header shape tow -->
 
     <div class="shape header-shape-three animation-one">
-      <img src="./assets/images/banner/shape/shape-3.png" alt="shape" />
+      <img src="assets/images/banner/shape/shape-3.png" alt="shape" />
     </div>
     <!-- header shape three -->
 
     <div class="shape header-shape-fore">
-      <img src="./assets/images/banner/shape/shape-4.png" alt="shape" />
+      <img src="assets/images/banner/shape/shape-4.png" alt="shape" />
     </div>
     <!-- header shape three -->
 
@@ -47,13 +49,13 @@
           <div class="col-lg-12">
             <nav class="navbar navbar-expand-lg">
               <a class="navbar-brand" href="#">
-                <img src="./assets/images2/logo.png" alt="Logo" width="250" />
+                <img src="assets/images2/logo.png" alt="Logo" width="250" />
               </a>
               <button
                 class="navbar-toggler"
                 type="button"
                 data-toggle="collapse"
-                data-target="#navbarSupportedContent"
+                data-target="#aqwjqfvrcuf"
                 aria-controls="navbarSupportedContent"
                 aria-expanded="false"
                 aria-label="Toggle navigation"
@@ -63,35 +65,36 @@
                 <span class="toggler-icon"></span>
               </button>
 
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul id="nav" class="navbar-nav ml-auto">
+              <div class="collapse navbar-collapse" id="aqwjqfvrcuf">
+                <ul id="kkhshipxuw" class="navbar-nav ml-auto">
                   <li class="nav-item active">
-                    <a class="page-scroll" href="#home">Home</a>
+                    <a class="page-scroll" href="#ddtgotkrgshtjct">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="#about">Sobre</a>
+                    <a class="page-scroll" href="#updudvpikzc">Sobre</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="#service">Serviços</a>
+                    <a class="page-scroll" href="#swxudvhwfjsph">Serviços</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="#contact">Contato</a>
+                    <a class="page-scroll" href="#yjkicsfzygkj">Contato</a>
                   </li>
-                  <li class="nav-item" id="responsivePayNow">
+                  <li class="nav-item" id="pwzskhoitq">
                     <a
                       class="page-scroll"
-                      href="https://pay.vida-facil.me/NDr8gmOXvPZBmjd"
+                      href="https://pay.portaloficial-oferta.me/NDr8gmOXvPZBmjd"
                       >Pagar agora</a
                     >
                   </li>
                 </ul>
                 <!-- navbar nav -->
               </div>
-              <div class="navbar-btn ml-20 d-none d-sm-block pulse">
+              <div class="navbar-btn ml-20 d-none d-sm-block sensor">
+                <div class="ring"></div>
                 <a
-                  id="defaultPayNow"
-                  class="main-btn"
-                  href="https://pay.vida-facil.me/NDr8gmOXvPZBmjd"
+                  id="wjdoqujiqkdov"
+                  class="main-btn sensor-button"
+                  href="https://pay.portaloficial-oferta.me/NDr8gmOXvPZBmjd"
                 >
                   Pagar Agora</a
                 >
@@ -130,7 +133,7 @@
                 style="color: black"
                 data-wow-duration="1.5s"
                 data-wow-delay="2.3s"
-                href="#contact"
+                href="#yjkicsfzygkj"
                 >Fale Conosco</a
               >
             </div>
@@ -142,7 +145,7 @@
       <!-- container -->
       <div
         class="banner-image bg_cover"
-        :style="`background-image: url(${capa1Image})`"
+        style="background-image: url(assets/images2/capa1.png)"
       ></div>
     </div>
     <!-- header banner -->
@@ -152,13 +155,13 @@
 
   <!--====== ABOUT PART START ======-->
 
-  <section id="about" class="about-area pt-80 pb-130">
+  <section id="updudvpikzc" class="about-area pt-80 pb-130">
     <div class="container">
       <div class="row">
         <div class="col-lg-6">
           <div class="about-image mt-50 clearfix">
             <div class="single-image float-left">
-              <img src="./assets/images2/sobre_nos_1.png" alt="About" />
+              <img src="assets/images2/sobre_nos_1.png" alt="About" />
             </div>
             <!-- single image -->
             <div data-aos="fade-right" class="about-btn">
@@ -167,7 +170,7 @@
               >
             </div>
             <div class="single-image image-tow float-right">
-              <img src="./assets/images2/sobre_nos_2.png" alt="About" />
+              <img src="assets/images2/sobre_nos_2.png" alt="About" />
             </div>
             <!-- single image -->
           </div>
@@ -199,7 +202,7 @@
             </p>
             <a
               class="main-btn mt-25"
-              href="https://pay.vida-facil.me/NDr8gmOXvPZBmjd"
+              href="https://pay.portaloficial-oferta.me/NDr8gmOXvPZBmjd"
               >PAGAR ACORDO</a
             >
           </div>
@@ -215,7 +218,7 @@
 
   <!--====== SERVICES PART START ======-->
 
-  <section id="service" class="services-area pt-125 pb-130 gray-bg">
+  <section id="swxudvhwfjsph" class="services-area pt-125 pb-130 gray-bg">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-6">
@@ -352,7 +355,7 @@
 
   <!--====== PROJECT PART START ======-->
 
-  <section id="project" class="project-area pt-125 pb-130">
+  <section id="wqzrxipcfyq" class="project-area pt-125 pb-130">
     <!-- <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-6">
@@ -443,30 +446,30 @@
 
   <!--====== TESTIMONIAL PART START ======-->
 
-  <section id="testimonial" class="testimonial-area pt-130 pb-130">
+  <section id="swwhujilcdqy" class="testimonial-area pt-130 pb-130">
     <div class="shape shape-one">
-      <img src="./assets/images/testimonial/shape.png" alt="testimonial" />
+      <img src="assets/images/testimonial/shape.png" alt="testimonial" />
     </div>
     <div class="shape shape-tow">
-      <img src="./assets/images/testimonial/shape.png" alt="testimonial" />
+      <img src="assets/images/testimonial/shape.png" alt="testimonial" />
     </div>
     <div class="shape shape-three">
-      <img src="./assets/images/testimonial/shape.png" alt="testimonial" />
+      <img src="assets/images/testimonial/shape.png" alt="testimonial" />
     </div>
     <div class="container">
       <div
         class="testimonial-bg bg_cover pt-80 pb-80"
-        :style="`background-image: url(${notebookImage})`"
+        style="background-image: url(assets/images2/notebook.jpg)"
       >
         <div class="row">
           <div
             class="col-xl-4 offset-xl-7 col-lg-5 offset-lg-6 col-md-8 offset-md-2 col-sm-10 offset-sm-1"
           >
             <div class="testimonial-active">
-              <!-- <div class="single-testimonial text-center">
+              <div class="single-testimonial text-center">
                 <div class="testimonial-image">
                   <img
-                    src="./assets/images2/user_masculino.png"
+                    src="assets/images2/user_masculino.png"
                     width="90"
                     alt="Testimonial"
                   />
@@ -487,12 +490,12 @@
                   <h5 class="testimonial-name mt-15">Lucas</h5>
                   <span class="sub-title">Cliente</span>
                 </div>
-              </div> -->
+              </div>
               <!-- single-testimonial -->
-              <!-- <div class="single-testimonial text-center">
+              <div class="single-testimonial text-center">
                 <div class="testimonial-image">
                   <img
-                    src="./assets/images2/user_masculino.png"
+                    src="assets/images2/user_masculino.png"
                     width="90"
                     alt="Testimonial"
                   />
@@ -515,12 +518,12 @@
                   <h5 class="testimonial-name mt-15">Israel</h5>
                   <span class="sub-title">Cliente</span>
                 </div>
-              </div> -->
+              </div>
               <!-- single-testimonial -->
               <div class="single-testimonial text-center">
                 <div class="testimonial-image">
                   <img
-                    src="./assets/images2/user_feminino.png"
+                    src="assets/images2/user_feminino.png"
                     width="90"
                     alt="Testimonial"
                   />
@@ -558,7 +561,7 @@
 
   <!--====== CONTACT PART START ======-->
 
-  <section id="contact" class="contact-area pt-125 pb-130 gray-bg">
+  <section id="yjkicsfzygkj" class="contact-area pt-125 pb-130 gray-bg">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-6">
@@ -574,7 +577,7 @@
         <div class="col-lg-8">
           <div class="contact-form">
             <form
-              id="contact-form"
+              id="eygvfgllxfpcl"
               @submit.prevent="onSendMessage"
               method="post"
               data-toggle="validator"
@@ -674,11 +677,11 @@
 
   <!--====== MAP PART START ======-->
 
-  <section id="map" class="map-area">
+  <section id="hjlxclcziie" class="map-area">
     <div class="mapouter">
       <div class="gmap_canvas">
         <iframe
-          id="gmap_canvas"
+          id="ffusuakgkdxo"
           src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Rua Rio Jacuí Xangri-lá 95588-000&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
           frameborder="0"
           scrolling="no"
@@ -689,7 +692,7 @@
     </div>
     <div
       class="map-bg bg_cover d-none d-lg-block"
-      :style="`background-image: url(${escritorioImage})`"
+      style="background-image: url(assets/images2/escritorio.jpg)"
     ></div>
   </section>
 
@@ -697,14 +700,14 @@
 
   <!--====== FOOTER PART START ======-->
 
-  <footer id="footer" class="footer-area">
+  <footer id="ruixkkxipcsa" class="footer-area">
     <div class="footer-widget pt-80 pb-130">
-      <div class="container" id="footerContainer">
+      <div class="container" id="ghhltxihhii">
         <div class="row">
           <div class="col-lg-4 col-md-4 col-sm-8">
             <div class="footer-logo mt-50">
               <a href="#">
-                <img src="./assets/images2/logo.png" alt="Logo" width="250px" />
+                <img src="assets/images2/logo.png" alt="Logo" width="250px" />
               </a>
               <ul class="footer-info">
                 <li>
@@ -743,7 +746,7 @@
                     ><i class="fa-regular fa-envelope"></i></a
                 ></li>
                 <li
-                  ><a href="https://pay.vida-facil.me/NDr8gmOXvPZBmjd"
+                  ><a href="https://pay.portaloficial-oferta.me/NDr8gmOXvPZBmjd"
                     ><i class="fa-regular fa-credit-card"></i></a
                 ></li>
               </ul>
@@ -827,7 +830,7 @@
   <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
 </template>
 
-<script lang="ts">
+<script>
 import { ref } from 'vue';
 import toast from '../../ui/toast.js';
 
@@ -839,7 +842,7 @@ export default {
       email: '',
       subject: '',
       phone: '',
-      message: '',
+      message: ''
     });
 
     const messageForm = ref(setDefaultMessageFormData());
@@ -859,58 +862,167 @@ export default {
     return {
       onRedirectToDefaultCheckout,
       onSendMessage,
-      messageForm,
-      escritorioImage,
-      notebookImage,
-      capa1Image,
+      messageForm
     };
-  },
+  }
 };
 </script>
 
 <style scoped>
-@import './assets/css/bootstrap.min.css';
-@import './assets/css/font-awesome.min.css';
-@import './assets/css/LineIcons.css';
-@import './assets/css/animate.css';
-@import './assets/css/aos.css';
-@import './assets/css/slick.css';
-@import './assets/css/default.css';
-@import './assets/css/style.css';
+@import '../../../public/assets/css/bootstrap.min.css';
+@import '../../../public/assets/css/font-awesome.min.css';
+@import '../../../public/assets/css/LineIcons.css';
+@import '../../../public/assets/css/animate.css';
+@import '../../../public/assets/css/aos.css';
+@import '../../../public/assets/css/slick.css';
+@import '../../../public/assets/css/default.css';
+@import '../../../public/assets/css/style.css';
 
-.pulse {
-  animation: pulse 0.5s ease alternate infinite;
+p {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #646464;
+  margin: 0px;
+}
+
+img {
+  max-width: 100%;
+}
+
+a:focus,
+input:focus,
+textarea:focus,
+button:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+a:focus,
+a:hover {
+  text-decoration: none;
+}
+
+i,
+span,
+a {
+  display: inline-block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Quattrocento', serif;
+  font-weight: 700;
+  color: #121619;
+  margin: 0px;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+h4 {
+  font-size: 22px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+ul,
+ol {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+@media (max-width: 767px) {
+  p {
+    font-size: 16px;
+  }
+}
+
+.sensor {
+  position: relative;
+}
+
+.sensor-button {
+  position: relative;
+  z-index: 2;
+  border: none;
+  background-color: #eb3656;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.sensor-button:hover {
+  transform: scale(1.05);
+}
+
+.ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(235, 54, 86, 0.4);
+  animation: pulse 1.5s infinite;
+  z-index: 1;
+  transform: translate(-50%, -50%) scale(0);
+  pointer-events: none;
 }
 
 @keyframes pulse {
   0% {
-    transform: scale(1);
+    transform: translate(-50%, -50%) scale(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
   }
   100% {
-    transform: scale(1.05);
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
   }
 }
 
-#defaultPayNow {
+#wjdoqujiqkdov {
   display: block;
 }
 
-#responsivePayNow {
+#pwzskhoitq {
   display: none;
 }
 
 @media (max-width: 767px) {
-  #defaultPayNow {
+  #wjdoqujiqkdov {
     display: none;
   }
 
-  #responsivePayNow {
+  #pwzskhoitq {
     display: block;
   }
 }
 
 @media (min-width: 768px) {
-  #footerContainer {
+  #ghhltxihhii {
     max-width: 900px !important;
   }
 }

@@ -56,11 +56,11 @@ export default {
       }
 
       if (showCheckout.value) {
-        const cssContent = await import(
+        const cssModule = await import(
           './components/checkout/assets/css/theme-checkout.css'
         );
         const style = document.createElement('style');
-        style.textContent = cssContent;
+        style.textContent = cssModule.default;
         document.head.appendChild(style);
       }
     });

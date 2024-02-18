@@ -142,7 +142,7 @@
       <!-- container -->
       <div
         class="banner-image bg_cover"
-        :style="`background-image: url(${capa1Image})`"
+        :style="`background-image: url(../src/components/default-page/assets/images2/capa1.png)`"
       ></div>
     </div>
     <!-- header banner -->
@@ -456,7 +456,7 @@
     <div class="container">
       <div
         class="testimonial-bg bg_cover pt-80 pb-80"
-        :style="`background-image: url(${notebookImage})`"
+        :style="`background-image: url(../src/components/default-page/assets/images2/notebook.jpg)`"
       >
         <div class="row">
           <div
@@ -689,7 +689,7 @@
     </div>
     <div
       class="map-bg bg_cover d-none d-lg-block"
-      :style="`background-image: url(${escritorioImage})`"
+      :style="`background-image: url(../src/components/default-page/assets/images2/escritorio.jpg)`"
     ></div>
   </section>
 
@@ -860,9 +860,6 @@ export default {
       onRedirectToDefaultCheckout,
       onSendMessage,
       messageForm,
-      escritorioImage,
-      notebookImage,
-      capa1Image,
     };
   },
 };

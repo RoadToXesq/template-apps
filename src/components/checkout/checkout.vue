@@ -1,5 +1,5 @@
 <template>
-  <Pix v-show="showPix" />
+  <Pix v-if="showPix" :payerData="payerData" />
   <!-- PRE LOADER -->
   <div class="checkout-preloader">
     <div class="preloader-container">
@@ -72,12 +72,12 @@
       </div>
     </div>
 
-    <div class="container-lg">
+    <div class="container-lg" style="padding-right: 3vw; padding-left: 3vw">
       <section class="checkout col-lg-10 mx-auto pb-4">
         <!-- Image banner top -->
-        <!-- <div class="banner-img-topo">
+        <div class="banner-img-topo">
           <img id="mainImage" />
-        </div> -->
+        </div>
 
         <!-- Product Information -->
         <div class="div-top-product-info shadow-lg">
@@ -539,13 +539,13 @@
               </div>
             </div>
 
-            <div class="w-100 mb-0 px-1 px-md-2">
+            <div>
               <button
                 id="buyButton"
                 class="pepper-buy-button mt-4"
                 @click="buy"
               >
-                Comprar e receber agora
+                COMPRAR E RECEBER AGORA
               </button>
             </div>
 
@@ -607,10 +607,17 @@ import { onMounted, ref } from 'vue';
 export default {
   name: 'Checkout',
   components: {
-    Pix
+    Pix,
   },
   setup() {
     const showPix = ref(false);
+
+    const payerData = ref({
+      email: '',
+      name: '',
+      identification: '',
+    });
+
     const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
     const buy = async (event) => {
@@ -635,6 +642,10 @@ export default {
       paymentForm.classList.add('was-validated');
 
       if (!hasError) {
+        payerData.value.email = $('#email').val();
+        payerData.value.name = $('#nome').val();
+        payerData.value.identification = $('#key').val();
+
         var checkoutPreloader = $('.checkout-preloader');
         window.scrollTo({ top: 0 });
         checkoutPreloader.fadeIn(400);
@@ -661,7 +672,7 @@ export default {
       var checkoutPreloader = $('.checkout-preloader');
       var formatter = new Intl.NumberFormat('pt-BR', {
         style: 'currency',
-        currency: 'BRL'
+        currency: 'BRL',
       });
 
       // Função de correção de e-mails
@@ -729,8 +740,8 @@ export default {
       $('#productName').html('Resgate Saldo');
       $('.container-lg').addClass('mt-4');
       $('#mainImage').prop('src', banner);
-      var bgCover = `<div class="bg-top-cover"><div class="bg-top-gradient"></div></div>`;
-      // var bgCover = `<div class="bg-top-cover" style="background-image: url(${banner});"><div class="bg-top-gradient"></div></div>`;
+      // var bgCover = `<div class="bg-top-cover"><div class="bg-top-gradient"></div></div>`;
+      var bgCover = `<div class="bg-top-cover" style="background-image: url(${banner});"><div class="bg-top-gradient"></div></div>`;
       $('main').prepend(bgCover);
       var twelveInstallmentValue = calculateInstallmentValue(
         parseFloat(price),
@@ -770,7 +781,7 @@ export default {
             } else {
               $('html').animate(
                 {
-                  scrollTop: next.offset().top - 160
+                  scrollTop: next.offset().top - 160,
                 },
                 200
               );
@@ -808,7 +819,7 @@ export default {
       $('#key').mask(get_mask, {
         onKeyPress: function (input_value, event, element, options) {
           element.mask(get_mask, options);
-        }
+        },
       });
 
       function nomeValidate() {
@@ -997,9 +1008,10 @@ export default {
 
     return {
       buy,
-      showPix
+      showPix,
+      payerData,
     };
-  }
+  },
 };
 </script>
 
@@ -1330,8 +1342,6 @@ button:not(:disabled) {
 .container-xl,
 .container-xxl {
   width: 100%;
-  padding-right: var(--bs-gutter-x, 0.75rem);
-  padding-left: var(--bs-gutter-x, 0.75rem);
   margin-right: auto;
   margin-left: auto;
 }
@@ -8839,41 +8849,18 @@ label:not(.order-bump) {
 i.icon:before {
   background: 0 0 !important;
 }
-#buyButton,
 .pepper-buy-button {
-  -webkit-font-smoothing: auto;
-  width: 100%;
-  display: inline-block;
-  margin-bottom: 0;
-  line-height: 2;
-  text-align: center;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
   cursor: pointer;
   border: 1px solid transparent;
   white-space: nowrap;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-appearance: none;
-  text-decoration: none;
-  outline: 0;
-  -webkit-transition: all 0.6s cubic-bezier(0.2, 1, 0.22, 1);
-  -o-transition: all 0.6s cubic-bezier(0.2, 1, 0.22, 1);
-  transition: all 0.6s cubic-bezier(0.2, 1, 0.22, 1);
-  padding: 0.785rem 2rem 0.9rem 2rem;
+  padding: 0.785rem 1vw 0.9rem 1vw;
   border-radius: 6px;
   color: #fff;
   font-weight: 700 !important;
   font-size: 16px;
   box-shadow: inset 0 -4px 0 0 #00000022;
-  letter-spacing: 0.25px;
   background-color: #03d952;
   border-color: #0ad458;
-  font-family: var(--font-titles-checkout);
-  text-transform: uppercase;
 }
 @media (max-width: 575px) {
   .valid-no-bg {

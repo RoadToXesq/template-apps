@@ -1,0 +1,20 @@
+{
+  "extends": "@tsconfig/node18/tsconfig.json",
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "lib": ["ESNext", "DOM"],
+    "types": ["vue", "node"],
+    "strict": true,
+    "alwaysStrict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "verbatimModuleSyntax": true,
+    "baseUrl": ".",
+    "module": "ESNext",
+    "paths": {
+      "@/*": ["./src/*"],
+      "pinia": ["node_modules/pinia/dist/pinia"]
+    }
+  }
+}

@@ -243,13 +243,15 @@ export default {
 
       const utm = getSrcParams();
       const result = await consultCpf();
-      const currentUrl = window.location.toString();
+      // const currentUrl = window.location.toString();
 
       nome.value = result.nome;
       let redirectUrl = `${utm}&cpf=${result.cpf}&nome=${result.nome}&sexo=${result.sexo}&nascimento=${result.nascimento}&mae=${result.mae}`;
       if (result.error) redirectUrl += '&error=true';
 
-      window.location.href = `/resgate-brasil/${redirectUrl}`;
+      window.location.href = `/${
+        import.meta.env.VITE_ASSET_URL
+      }/${redirectUrl}`;
       // window.location.href = `${currentUrl}${redirectUrl}`;
       login.value = true;
       setShowLoader(false);

@@ -30,7 +30,7 @@ const env = (mode: string) => {
 export default ({ mode }) => (
   env(mode),
   defineConfig({
-    base: process.env.ASSET_URL,
+    base: process.env.VITE_ASSET_URL,
     server: {
       port: 8080,
     },

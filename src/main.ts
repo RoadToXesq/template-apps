@@ -6,5 +6,8 @@ import disableDevtool from 'disable-devtool';
 import App from './App.vue';
 import { vMaska } from 'maska';
 
-disableDevtool();
+if (process.env.NODE_ENV === 'production') {
+  disableDevtool();
+}
+
 createApp(App).directive('maska', vMaska).mount('#app');

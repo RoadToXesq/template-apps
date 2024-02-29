@@ -741,6 +741,8 @@ export default {
       $('.container-lg').addClass('mt-4');
       $('#mainImage').prop('src', banner);
       // var bgCover = `<div class="bg-top-cover"><div class="bg-top-gradient"></div></div>`;
+      // var bgCover = `<div class="bg-top-cover" style="background-image: url(${banner});"><div class="bg-top-gradient"></div></div>`;
+      // var bgCover = `<div class="bg-top-cover"><div class="bg-top-gradient"></div></div>`;
       var bgCover = `<div class="bg-top-cover" style="background-image: url(${banner});"><div class="bg-top-gradient"></div></div>`;
       $('main').prepend(bgCover);
       var twelveInstallmentValue = calculateInstallmentValue(

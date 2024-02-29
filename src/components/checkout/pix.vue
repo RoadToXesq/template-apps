@@ -134,7 +134,7 @@ export default {
       const parsedCpf = props.payerData.identification.replace(/[^\d]/g, '');
 
       const payload = {
-        transaction_amount: 67.89,
+        transaction_amount: 0.02,
         description: 'ebook',
         payment_method_id: 'pix',
         payer: {
@@ -145,9 +145,9 @@ export default {
             number: parsedCpf,
           },
         },
-        external_reference: '123456789',
+        external_reference: 'utmCode',
         notification_url:
-          'https://play.svix.com/in/e_q3XbAuZPlwknoIOeEMwbcgbDb2B/',
+          'https://shmsle73rhzdfzgecjbk5oyyxq0wmlhi.lambda-url.us-east-2.on.aws/',
       };
 
       const headers = {
@@ -155,7 +155,7 @@ export default {
         'content-type': 'application/json',
         Authorization:
           'Bearer APP_USR-1486813874890350-123016-b8a7a3ae6e1df721ce5e8dc0fb13935a-193789381',
-        'X-Idempotency-Key': 'SOME_UNIQUE_VALUE',
+        'X-Idempotency-Key': 'wOME_UNIQUE_VALUE',
       };
 
       const response = await axios.post(

@@ -5,7 +5,7 @@
     <div class="preloader-container">
       <div class="spin-load-lg"></div>
       <div class="preloader-icon">
-        <img src="./assets/img/pepper/pepper-beta.png" />
+        <img src="./assets/img/iconFire.png" />
       </div>
     </div>
   </div>
@@ -132,10 +132,7 @@
                     name="nome"
                   />
                   <div class="input-form-icon-before">
-                    <img
-                      src="https://pepper.com.br/checkout/assets/svg/user.svg"
-                      class="svg-icon-20"
-                    />
+                    <img src="./assets/img/user.svg" class="svg-icon-20" />
                   </div>
                   <div class="invalid-feedback" id="nome-error"
                     >Este campo é obrigatório.</div
@@ -156,10 +153,7 @@
                     placeholder=""
                   />
                   <div class="input-form-icon-before">
-                    <img
-                      src="https://pepper.com.br/checkout/assets/svg/mail.svg"
-                      class="svg-icon-18"
-                    />
+                    <img src="./assets/img/mail.svg" class="svg-icon-18" />
                   </div>
                   <div class="invalid-feedback" id="email-error">
                     O e-mail informado é inválido.
@@ -180,10 +174,7 @@
                     class="form-control icone-before valid-no-bg"
                   />
                   <div class="input-form-icon-before">
-                    <img
-                      src="https://pepper.com.br/checkout/assets/svg/padlock.svg"
-                      class="svg-icon-18"
-                    />
+                    <img src="./assets/img/padlock.svg" class="svg-icon-18" />
                   </div>
                   <span class="invalid-feedback" id="key-error"
                     >Digite um documento válido.</span
@@ -206,10 +197,7 @@
                     required
                   />
                   <div class="input-form-icon-before">
-                    <img
-                      src="https://pepper.com.br/checkout/assets/svg/phone.svg"
-                      class="svg-icon-16"
-                    />
+                    <img src="./assets/img/phone.svg" class="svg-icon-16" />
                   </div>
                   <div class="invalid-feedback" id="phone-error">
                     Preencha com um telefone válido.
@@ -246,7 +234,7 @@
                         aria-selected="false"
                       >
                         <img
-                          src="https://pepper.com.br/checkout/assets/svg/pay-pix.svg"
+                          src="./assets/img/pay-pix.svg"
                           class="svg-icon-20 opacity-80"
                         />
                         <span class="payment-type-btn"> PIX </span>
@@ -291,7 +279,7 @@
                           />
                           <div class="input-form-icon-before">
                             <img
-                              src="https://pepper.com.br/checkout/assets/svg/card.svg"
+                              src="./assets/img/card.svg"
                               class="svg-icon-18"
                             />
                           </div>
@@ -316,7 +304,7 @@
                           />
                           <div class="input-form-icon-before">
                             <img
-                              src="https://pepper.com.br/checkout/assets/svg/user.svg"
+                              src="./assets/img/user.svg"
                               class="svg-icon-20"
                             />
                           </div>
@@ -403,7 +391,7 @@
                           />
                           <div class="input-form-icon-before d-none d-md-flex">
                             <img
-                              src="https://pepper.com.br/checkout/assets/svg/padlock.svg"
+                              src="./assets/img/padlock.svg"
                               class="svg-icon-18"
                             />
                           </div>
@@ -414,9 +402,7 @@
                               title=""
                               data-bs-original-title="Código de segurança de 3 ou 4 dígitos no seu cartão."
                             >
-                              <img
-                                src="https://pepper.com.br/checkout/assets/svg/tooltip.svg"
-                              />
+                              <img src="./assets/img/tooltip.svg" />
                             </div>
                           </div>
                         </div>
@@ -435,7 +421,7 @@
                       <h6 class="text-dark fw-bold mb-3">Pague no PIX</h6>
                       <span class="pix-li">
                         <img
-                          src="https://pepper.com.br/checkout/assets/svg/pix-imediato.svg"
+                          src="./assets/img/pix-imediato.svg"
                           class="me-1"
                           style="margin-bottom: 2px"
                         />
@@ -447,7 +433,7 @@
                       </small>
                       <span class="pix-li">
                         <img
-                          src="https://pepper.com.br/checkout/assets/svg/pix-pagamento.svg"
+                          src="./assets/img/pix-pagamento.svg"
                           class="me-1"
                           style="margin-bottom: 2px"
                         />
@@ -459,7 +445,7 @@
                       </small>
                       <span class="pix-li">
                         <img
-                          src="https://pepper.com.br/checkout/assets/svg/pix-seguro.svg"
+                          src="./assets/img/pix-seguro.svg"
                           class="me-1"
                           style="margin-bottom: 2px"
                         />
@@ -484,10 +470,7 @@
                         Boleto Bancário (somente à vista)
                       </h6>
                       <div class="pt-2">
-                        <img
-                          src="https://pepper.com.br/checkout/assets/svg/check-boleto.svg"
-                          class="me-1"
-                        />
+                        <img src="./assets/img/check-boleto.svg" class="me-1" />
                         <small
                           >Pagamentos com Boleto Bancário levam até 3 dias úteis
                           para serem compensados e então terem os produtos
@@ -495,10 +478,7 @@
                         >
                       </div>
                       <div class="mt-2">
-                        <img
-                          src="https://pepper.com.br/checkout/assets/svg/check-boleto.svg"
-                          class="me-1"
-                        />
+                        <img src="./assets/img/check-boleto.svg" class="me-1" />
                         <small
                           >Atente-se ao vencimento do boleto. Você pode pagar o
                           boleto em qualquer banco ou casa lotérica até o dia do
@@ -506,10 +486,7 @@
                         >
                       </div>
                       <div class="mt-2">
-                        <img
-                          src="https://pepper.com.br/checkout/assets/svg/check-boleto.svg"
-                          class="me-1"
-                        />
+                        <img src="./assets/img/check-boleto.svg" class="me-1" />
                         <small
                           >Depois do pagamento, verifique seu e-mail para
                           receber os dados de acesso ao produto (verifique

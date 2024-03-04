@@ -453,7 +453,7 @@
     <div class="container">
       <div
         class="testimonial-bg bg_cover pt-80 pb-80"
-        :style="`background-image: url(../src/components/default-page/assets/images2/notebook.jpg)`"
+        :style="notebookImageStyle"
       >
         <div class="row">
           <div
@@ -686,8 +686,9 @@
     </div>
     <div
       class="map-bg bg_cover d-none d-lg-block"
-      :style="`background-image: url(../src/components/default-page/assets/images2/escritorio.jpg)`"
-    ></div>
+      :style="escritorioImageStyle"
+    >
+    </div>
   </section>
 
   <!--====== MAP PART ENDS ======-->
@@ -828,6 +829,8 @@
 import { ref, computed } from 'vue';
 import toast from '../../ui/toast.js';
 import capa1 from '@/components/default-page/assets/images2/capa1.png';
+import notebook from '@/components/default-page/assets/images2/notebook.jpg';
+import escritorio from '@/components/default-page/assets/images2/escritorio.jpg';
 
 export default {
   name: 'DefaultPage',
@@ -858,11 +861,21 @@ export default {
       return `background-image: url(${capa1})`;
     });
 
+    const notebookImageStyle = computed(() => {
+      return `background-image: url(${notebook})`;
+    });
+
+    const escritorioImageStyle = computed(() => {
+      return `background-image: url(${escritorio})`;
+    });
+
     return {
       onRedirectToDefaultCheckout,
       onSendMessage,
       messageForm,
       capa1ImageStyle,
+      notebookImageStyle,
+      escritorioImageStyle,
     };
   },
 };

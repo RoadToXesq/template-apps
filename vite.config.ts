@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import { fileURLToPath, URL } from 'node:url';
 import vue from '@vitejs/plugin-vue';
 
-const base = '/';
+const base = '/template-apps/';
 
 export default defineConfig({
   base,

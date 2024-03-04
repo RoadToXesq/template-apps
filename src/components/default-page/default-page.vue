@@ -142,7 +142,7 @@
       <!-- container -->
       <div
         class="banner-image bg_cover"
-        :style="`background-image: url(../src/components/default-page/assets/images2/capa1.png)`"
+        :style="`background-image: url(./src/components/default-page/assets/images2/capa1.png)`"
       ></div>
     </div>
     <!-- header banner -->

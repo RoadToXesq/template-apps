@@ -140,10 +140,7 @@
         <!-- row -->
       </div>
       <!-- container -->
-      <div
-        class="banner-image bg_cover"
-        :style="`background-image: url(./src/components/default-page/assets/images2/capa1.png)`"
-      ></div>
+      <div class="banner-image bg_cover" :style="capa1ImageStyle"></div>
     </div>
     <!-- header banner -->
   </header>
@@ -828,8 +825,9 @@
 </template>
 
 <script lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import toast from '../../ui/toast.js';
+import capa1 from '@/components/default-page/assets/images2/capa1.png';
 
 export default {
   name: 'DefaultPage',
@@ -856,10 +854,15 @@ export default {
       messageForm.value = setDefaultMessageFormData();
     };
 
+    const capa1ImageStyle = computed(() => {
+      return `background-image: url(${capa1})`;
+    });
+
     return {
       onRedirectToDefaultCheckout,
       onSendMessage,
       messageForm,
+      capa1ImageStyle,
     };
   },
 };

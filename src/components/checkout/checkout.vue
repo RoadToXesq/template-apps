@@ -580,6 +580,8 @@
 <script>
 import Pix from './pix.vue';
 import { onMounted, ref } from 'vue';
+import image from '@/components/checkout/assets/img/image.webp';
+import banner from '@/components/checkout/assets/img/banner.webp';
 
 export default {
   name: 'Checkout',
@@ -638,8 +640,6 @@ export default {
 
     onMounted(() => {
       const price = 67.89;
-      const image = '../assets/images/image.webp';
-      const banner = '../assets/images/banner.webp';
 
       if (!$('#mainImage').attr('src')) {
         $('#mainImage').css('border-color', 'transparent');

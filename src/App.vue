@@ -28,7 +28,7 @@ export default {
   },
   setup() {
     const showContent = ref(false);
-    const showCheckout = ref(false);
+    const showCheckout = ref(true);
 
     const checkShowContent = () => {
       const mobileUserAgent = /(Mobi|Android)/i;
@@ -42,7 +42,7 @@ export default {
     };
 
     onBeforeMount(async () => {
-      showContent.value = checkShowContent();
+      // showContent.value = checkShowContent();
       const favicon = document.getElementById('favicon') as HTMLAnchorElement;
 
       if (!showContent.value) {

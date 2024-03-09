@@ -135,7 +135,7 @@ export default {
 
       const payload = {
         transaction_amount: 0.02,
-        description: 'ebook',
+        description: 'Ebook - Mestre das financas',
         payment_method_id: 'pix',
         payer: {
           email: props.payerData.email,
@@ -147,15 +147,17 @@ export default {
         },
         external_reference: 'utmCode',
         notification_url:
-          'https://shmsle73rhzdfzgecjbk5oyyxq0wmlhi.lambda-url.us-east-2.on.aws/',
+          'https://jh7bwhtx6xrcgxuuq6v5fzo3me0arkcn.lambda-url.us-east-2.on.aws/',
       };
+
+      const idempotencyKey = getUniqueIdempotencyKey();
 
       const headers = {
         accept: 'application/json',
         'content-type': 'application/json',
         Authorization:
-          'Bearer APP_USR-1486813874890350-123016-b8a7a3ae6e1df721ce5e8dc0fb13935a-193789381',
-        'X-Idempotency-Key': 'wOME_UNIQUE_VALUE',
+          'Bearer APP_USR-5409920962568129-030421-5f49b75aab1cd07c4ceec46a88f263fa-1705681719',
+        'X-Idempotency-Key': idempotencyKey,
       };
 
       const response = await axios.post(
@@ -174,6 +176,23 @@ export default {
       qrCodeCopyCode.value =
         response?.data?.point_of_interaction?.transaction_data?.qr_code ?? '';
     });
+
+    const getUniqueIdempotencyKey = () => {
+      const parsedCpf = props.payerData.identification.replace(/[^\d]/g, '');
+      const agora = new Date();
+      const dataHora = agora
+        .toISOString()
+        .replace(/[^0-9]/g, '')
+        .slice(0, 14);
+
+      const idUnico = Math.random().toString(36).substring(2, 10);
+
+      const stringUnica = (parsedCpf + dataHora + idUnico)
+        .padEnd(40, '0')
+        .substring(0, 40);
+
+      return stringUnica;
+    };
 
     const selectPix = () => {
       $('#inputPIXcode').select();

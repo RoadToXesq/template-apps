@@ -638,7 +638,24 @@ export default {
       }
     };
 
+    const generateUniqueString = () => {
+      let timePart = Date.now().toString(36).slice(-8);
+
+      let randomPart = '';
+      for (let i = 0; i < 7; i++) {
+        let randomChar = Math.floor(Math.random() * 36).toString(36);
+        randomPart += randomChar;
+      }
+
+      return timePart + randomPart;
+    };
+
     onMounted(() => {
+      fbq('track', 'InitiateCheckout', {
+        content_ids: [generateUniqueString()],
+        eventref: '',
+      });
+
       const price = 67.89;
 
       if (!$('#mainImage').attr('src')) {

@@ -1,0 +1,1582 @@
+<template>
+  <div id="__nuxt" data-v-app="">
+    <div
+      class="overflow-hidden min-h-screen"
+      data-page-name="page-carrier-trackingCode"
+    >
+      <div class="me-template">
+        <header
+          class="h-header border-b-neutral-light z-100 fixed left-0 top-0 w-screen border-b bg-white"
+        >
+          <div
+            class="mx-auto flex justify-content-center h-full w-full items-center px-11"
+          >
+            <a
+              style="pointer-events: none"
+              href="/app/"
+              class="absolute"
+              disabled="false"
+              ><img
+                src="./files/mr-logo.svg?url"
+                alt="Melhor Rastreio"
+                class="h-[32px]"
+            /></a>
+            <!-- <div class="d-none d-sm-flex ml-auto flex gap-12 px-7 lg:px-0">
+              <div>
+                <a
+                  href="/app/login"
+                  class="me-button me-button--compact me-button--alt me-button--primary disabled-link"
+                  rel=""
+                >
+                  <span class="me-button__content">
+                    <span class="me-button__text">Entrar</span>
+                  </span>
+                </a>
+                <a
+                  href="/app/register"
+                  class="me-button me-button--compact me-button--primary solid ml-5 disabled-link"
+                  rel=""
+                >
+                  <span class="me-button__content">
+                    <span class="me-button__text uppercase">Cadastrar</span>
+                  </span>
+                </a>
+              </div>
+            </div> -->
+          </div>
+        </header>
+        <div class="pt-header relative mx-auto max-w-screen-2xl">
+          <main role="main" class="relative mx-3 lg:mx-11 lg:py-11">
+            <div>
+              <form
+                :style="bgTrackingFormStyle"
+                novalidate=""
+                class="flex flex-col pb-7 pr-3 pl-3 lg:-mx-9 lg:-mt-11 lg:px-11 lg:rounded-b-[4px] relative pt-7 w-auto -mx-3 z-1"
+              >
+                <div class="flex justify-center w-full">
+                  <div class="relative w-full">
+                    <span class="relative z-0 w-full mr-tracking-field">
+                      <div>
+                        <div class="relative w-full">
+                          <div class="field">
+                            <div class="field__wrapper">
+                              <input
+                                disabled
+                                class="field__input border-neutral-light"
+                                id="tracking"
+                                name="tracking"
+                                v-model="trackingCode"
+                                type="text"
+                                inputmode="text"
+                                placeholder="Por favor, digite um código de rastreio."
+                                tabindex="0"
+                              /><label class="field__label" for="tracking"
+                                >Código de rastreamento
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </span>
+                    <button
+                      class="absolute right-0 top-1/2 -translate-y-1/2 mr-5 -mt-px"
+                      type="button"
+                      ><img
+                        class="max-h-10"
+                        src="./files/correios.svg"
+                        width="62"
+                        height="12.606666666666666"
+                    /></button>
+                    <section> </section>
+                  </div>
+                  <!-- <button
+                    class="me-button me-button--primary search-button ml-3 focus:ring-2 focus:ring-offset-2 responsive-button disabled-link"
+                    aria-label="Rastrear"
+                  >
+                    <span class="me-button__content">
+                      <span class="me-button__icon" role="img">
+                        <svg
+                          viewBox="0 0 512 512"
+                          fill="currentColor"
+                          width="1em"
+                          height="1em"
+                          class="text-xl"
+                        >
+                          <path
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="32"
+                            d="M256 48c-79.5 0-144 61.39-144 137c0 87 96 224.87 131.25 272.49a15.77 15.77 0 0 0 25.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137Z"
+                          ></path>
+                          <circle
+                            cx="256"
+                            cy="192"
+                            r="48"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="32"
+                          ></circle>
+                        </svg>
+                      </span>
+                      <span class="me-button__text uppercase"
+                        ><span class="sm:ml-2"> Rastrear </span></span
+                      >
+                    </span>
+                  </button> -->
+                </div>
+              </form>
+              <div class="flex mt-6">
+                <div class="w-full">
+                  <div class="flex flex-col w-full">
+                    <div class="flex justify-between mb-3">
+                      <h2
+                        class="inline-flex items-center font-bold text-lg max-w-[calc(100%_-_100px)]"
+                      >
+                        <span class="truncate max-w-full">NL944245666BR</span>
+                      </h2>
+                    </div>
+                    <div class="border border-neutral-light rounded p-3">
+                      <div
+                        class="relative text-[color:var(--color)] mt-4 text-xs flex items-center mb-7"
+                        style="--color: rgb(var(--color-primary))"
+                      >
+                        <div class="w-full">
+                          <div class="flex justify-between items-center">
+                            <div
+                              class="w-3 h-3 rounded-full flex-shrink-0 relative bg-[color:var(--color)] bg-[color:var(--color)] opacity-40"
+                            >
+                            </div>
+                            <div
+                              class="w-full border-b-2 border-[color:var(--color)] opacity-40"
+                            ></div>
+                            <div
+                              class="w-3 h-3 rounded-full flex-shrink-0 relative bg-[color:var(--color)] bg-[color:var(--color)] opacity-40"
+                            >
+                            </div>
+                            <div
+                              class="w-full border-b-2 border-[color:var(--color)] opacity-40"
+                            ></div>
+                            <div
+                              class="w-3 h-3 rounded-full flex-shrink-0 relative bg-[color:var(--color)] bg-[color:var(--color)] opacity-40"
+                            >
+                            </div>
+                            <div
+                              class="w-full border-b-2 border-[color:var(--color)] opacity-40"
+                            ></div>
+                            <div
+                              class="w-3 h-3 rounded-full flex-shrink-0 relative bg-[color:var(--color)]"
+                            >
+                            </div>
+                            <div class="pl-3">Transporte em andamento</div>
+                            <!-- <div class="pl-3"
+                              >Entregue <span>06/11/2023</span></div
+                            > -->
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="d-flex flex-column flex-md-row align-items-center justify-content-between"
+                      >
+                        <div class="ml-0 mb-2">
+                          <span class="block text-sm"
+                            >Última atualização em <wbr />{{
+                              getLastUpdateDate()
+                            }}
+                            às {{ getLastUpdateTime() }}</span
+                          >
+                        </div>
+                        <div class="d-flex">
+                          <div
+                            class="w-[80px] p-2 flex justify-center items-center"
+                          >
+                            <img
+                              class="max-w-full min-h-[28px] max-w-18"
+                              src="./files/correios.svg"
+                              alt="Correios"
+                            />
+                          </div>
+                          <div class="flex flex-col justify-center ml-7">
+                            <span class="block">Código de Rastreio</span>
+                            <span class="block font-bold text-base"
+                              >NL944245666BR</span
+                            >
+                          </div>
+                        </div>
+
+                        <!-- <div>
+                          <div
+                            class="flex p-2 rounded w-full mx-auto items-center justify-center"
+                          >
+                            <div class="flex flex-grow-0 text-xs">
+                              <div
+                                class="w-[80px] p-2 flex justify-center items-center"
+                                ><img
+                                  class="max-w-full min-h-[28px] max-w-18"
+                                  src="./files/correios.svg"
+                                  alt="Correios"
+                              /></div>
+                              <div class="flex flex-col justify-center ml-7"
+                                ><span class="block">Código de Rastreio</span
+                                ><span class="block font-bold text-base"
+                                  >NL944245666BR</span
+                                ></div
+                              >
+                            </div>
+                            <div class="share-button">
+                              <div
+                                data-v-5784ed69=""
+                                class="inline-block"
+                                style="
+                                  border: 0px solid transparent;
+                                  margin: 0px;
+                                  --c81fc0a4: 10000;
+                                "
+                              >
+                                <div data-v-5784ed69="">
+                                  <button
+                                    data-v-5784ed69-s=""
+                                    class="text-primary ml-3 w-7 h-7"
+                                    id="share-NL944548665BR"
+                                    aria-label="Compartilhar rastreio"
+                                  >
+                                    <svg
+                                      data-v-5784ed69-s=""
+                                      viewBox="0 0 512 512"
+                                      fill="currentColor"
+                                      width="1em"
+                                      height="1em"
+                                      class="w-full h-full"
+                                    >
+                                      <circle
+                                        cx="128"
+                                        cy="256"
+                                        r="48"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="32"
+                                      ></circle>
+                                      <circle
+                                        cx="384"
+                                        cy="112"
+                                        r="48"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="32"
+                                      ></circle>
+                                      <circle
+                                        cx="384"
+                                        cy="400"
+                                        r="48"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="32"
+                                      ></circle>
+                                      <path
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="32"
+                                        d="m169.83 279.53l172.34 96.94m0-240.94l-172.34 96.94"
+                                      ></path>
+                                    </svg>
+                                  </button>
+                                </div>
+                                <div
+                                  data-v-5784ed69=""
+                                  class="popper"
+                                  style="display: none"
+                                >
+                                  <div
+                                    data-v-5784ed69-s=""
+                                    class="shadow rounded p-4 bg-white text-base text-neutral-dark"
+                                  >
+                                    <ul
+                                      data-v-5784ed69-s=""
+                                      class="flex items-center justify-between"
+                                    >
+                                      <li data-v-5784ed69-s="">
+                                        <button
+                                          data-v-5784ed69-s=""
+                                          class="hover:bg-neutral-bright rounded p-3"
+                                          type="button"
+                                          aria-label="Compartilhar no Facebook"
+                                        >
+                                          <svg
+                                            data-v-5784ed69-s=""
+                                            viewBox="0 0 512 512"
+                                            fill="currentColor"
+                                            width="1em"
+                                            height="1em"
+                                            class="w-7 h-7 text-[#1877f2]"
+                                          >
+                                            <path
+                                              fill="currentColor"
+                                              fill-rule="evenodd"
+                                              d="M480 257.35c0-123.7-100.3-224-224-224s-224 100.3-224 224c0 111.8 81.9 204.47 189 221.29V322.12h-56.89v-64.77H221V208c0-56.13 33.45-87.16 84.61-87.16c24.51 0 50.15 4.38 50.15 4.38v55.13H327.5c-27.81 0-36.51 17.26-36.51 35v42h62.12l-9.92 64.77H291v156.54c107.1-16.81 189-109.48 189-221.31Z"
+                                            ></path>
+                                          </svg>
+                                        </button>
+                                      </li>
+                                      <li data-v-5784ed69-s="">
+                                        <button
+                                          data-v-5784ed69-s=""
+                                          class="hover:bg-neutral-bright rounded p-3"
+                                          type="button"
+                                          aria-label="Compartilhar no Twitter"
+                                        >
+                                          <svg
+                                            data-v-5784ed69-s=""
+                                            viewBox="0 0 512 512"
+                                            fill="currentColor"
+                                            width="1em"
+                                            height="1em"
+                                            class="w-7 h-7 text-[#1da1f2]"
+                                          >
+                                            <path
+                                              fill="currentColor"
+                                              d="M496 109.5a201.8 201.8 0 0 1-56.55 15.3a97.51 97.51 0 0 0 43.33-53.6a197.74 197.74 0 0 1-62.56 23.5A99.14 99.14 0 0 0 348.31 64c-54.42 0-98.46 43.4-98.46 96.9a93.21 93.21 0 0 0 2.54 22.1a280.7 280.7 0 0 1-203-101.3A95.69 95.69 0 0 0 36 130.4c0 33.6 17.53 63.3 44 80.7A97.5 97.5 0 0 1 35.22 199v1.2c0 47 34 86.1 79 95a100.76 100.76 0 0 1-25.94 3.4a94.38 94.38 0 0 1-18.51-1.8c12.51 38.5 48.92 66.5 92.05 67.3A199.59 199.59 0 0 1 39.5 405.6a203 203 0 0 1-23.5-1.4A278.68 278.68 0 0 0 166.74 448c181.36 0 280.44-147.7 280.44-275.8c0-4.2-.11-8.4-.31-12.5A198.48 198.48 0 0 0 496 109.5Z"
+                                            ></path>
+                                          </svg>
+                                        </button>
+                                      </li>
+                                      <li data-v-5784ed69-s="">
+                                        <button
+                                          data-v-5784ed69-s=""
+                                          class="hover:bg-neutral-bright rounded p-3"
+                                          type="button"
+                                          aria-label="Compartilhar no Whatsapp"
+                                        >
+                                          <svg
+                                            data-v-5784ed69-s=""
+                                            viewBox="0 0 512 512"
+                                            fill="currentColor"
+                                            width="1em"
+                                            height="1em"
+                                            class="w-7 h-7 text-[#128c7e]"
+                                          >
+                                            <path
+                                              fill="currentColor"
+                                              fill-rule="evenodd"
+                                              d="M414.73 97.1A222.14 222.14 0 0 0 256.94 32C134 32 33.92 131.58 33.87 254a220.61 220.61 0 0 0 29.78 111L32 480l118.25-30.87a223.63 223.63 0 0 0 106.6 27h.09c122.93 0 223-99.59 223.06-222A220.18 220.18 0 0 0 414.73 97.1ZM256.94 438.66h-.08a185.75 185.75 0 0 1-94.36-25.72l-6.77-4l-70.17 18.32l18.73-68.09l-4.41-7A183.46 183.46 0 0 1 71.53 254c0-101.73 83.21-184.5 185.48-184.5a185 185 0 0 1 185.33 184.64c-.04 101.74-83.21 184.52-185.4 184.52Zm101.69-138.19c-5.57-2.78-33-16.2-38.08-18.05s-8.83-2.78-12.54 2.78s-14.4 18-17.65 21.75s-6.5 4.16-12.07 1.38s-23.54-8.63-44.83-27.53c-16.57-14.71-27.75-32.87-31-38.42s-.35-8.56 2.44-11.32c2.51-2.49 5.57-6.48 8.36-9.72s3.72-5.56 5.57-9.26s.93-6.94-.46-9.71s-12.54-30.08-17.18-41.19c-4.53-10.82-9.12-9.35-12.54-9.52c-3.25-.16-7-.2-10.69-.2a20.53 20.53 0 0 0-14.86 6.94c-5.11 5.56-19.51 19-19.51 46.28s20 53.68 22.76 57.38s39.3 59.73 95.21 83.76a323.11 323.11 0 0 0 31.78 11.68c13.35 4.22 25.5 3.63 35.1 2.2c10.71-1.59 33-13.42 37.63-26.38s4.64-24.06 3.25-26.37s-5.11-3.71-10.69-6.48Z"
+                                            ></path>
+                                          </svg>
+                                        </button>
+                                      </li>
+                                    </ul>
+                                    <div data-v-5784ed69-s="">
+                                      <div
+                                        data-v-5784ed69-s=""
+                                        class="border-neutral-light inline-flex h-12 w-auto items-center rounded border-[1px] bg-white pl-5 share-copy"
+                                        alt="false"
+                                        minimal="false"
+                                      >
+                                        <span
+                                          class="text-neutral-dark max-w-full truncate"
+                                          >https://app.melhorrastreio.com.br/app/correios/NL944548665BR</span
+                                        >
+                                        <button
+                                          type="button"
+                                          class="me-button me-button--minimal me-button--icon-only me-button--primary"
+                                        >
+                                          <span class="me-button__content">
+                                            <span
+                                              class="me-button__icon"
+                                              role="img"
+                                            >
+                                              <svg
+                                                viewBox="0 0 512 512"
+                                                width="1em"
+                                                height="1em"
+                                              >
+                                                <rect
+                                                  width="336"
+                                                  height="336"
+                                                  x="128"
+                                                  y="128"
+                                                  fill="none"
+                                                  stroke="currentColor"
+                                                  stroke-linejoin="round"
+                                                  stroke-width="32"
+                                                  rx="57"
+                                                  ry="57"
+                                                ></rect>
+                                                <path
+                                                  fill="none"
+                                                  stroke="currentColor"
+                                                  stroke-linecap="round"
+                                                  stroke-linejoin="round"
+                                                  stroke-width="32"
+                                                  d="m383.5 128l.5-24a56.16 56.16 0 0 0-56-56H112a64.19 64.19 0 0 0-64 64v216a56.16 56.16 0 0 0 56 56h24"
+                                                ></path>
+                                              </svg>
+                                            </span>
+                                          </span>
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div> -->
+                      </div>
+                    </div>
+                    <!-- <button type="button" class="me-button me-button--primary button m-auto mt-5">
+                                <span class="me-button__content">
+                                   <span class="me-button__icon" role="img">
+                                      <svg viewBox="0 0 512 512" fill="currentColor" width="1em" height="1em">
+                                         <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M427.68 351.43C402 320 383.87 304 383.87 217.35C383.87 138 343.35 109.73 310 96c-4.43-1.82-8.6-6-9.95-10.55C294.2 65.54 277.8 48 256 48s-38.21 17.55-44 37.47c-1.35 4.6-5.52 8.71-9.95 10.53c-33.39 13.75-73.87 41.92-73.87 121.35C128.13 304 110 320 84.32 351.43C73.68 364.45 83 384 101.61 384h308.88c18.51 0 27.77-19.61 17.19-32.57ZM320 384v16a64 64 0 0 1-128 0v-16"></path>
+                                      </svg>
+                                   </span>
+                                   <span class="me-button__text uppercase"> Acompanhar rastreio </span>
+                                </span>
+                             </button> -->
+                  </div>
+                  <ul class="relative mt-6 z-0">
+                    <li class="flex">
+                      <!-- <div class="flex">
+                        <div
+                          class="w-14 text-right mr-3 text-neutral-clear text-xs"
+                          ><span class="block font-bold">6 nov</span
+                          ><span class="block">13:11</span></div
+                        >
+                        <div class="flex flex-col relative w-7">
+                          <svg
+                            width="26"
+                            height="26"
+                            viewBox="0 0 26 26"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="mt-2 bg-white absolute top-0 z-10"
+                          >
+                            <g id="delivered_svg__ICON____smiley-happy">
+                              <g id="delivered_svg__ICON____smiley-happy_2">
+                                <mask
+                                  id="delivered_svg__path-1-outside-1_908_8669"
+                                  maskUnits="userSpaceOnUse"
+                                  x="0"
+                                  y="0"
+                                  width="26"
+                                  height="26"
+                                  fill="black"
+                                >
+                                  <rect
+                                    fill="white"
+                                    width="26"
+                                    height="26"
+                                  ></rect>
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M10.121 10.235C10.121 10.4896 10.0198 10.7338 9.83975 10.9138C9.6597 11.0939 9.41549 11.1951 9.16086 11.1951C8.90622 11.1951 8.66202 11.0939 8.48196 10.9138C8.30191 10.7338 8.20076 10.4896 8.20076 10.235C8.20076 9.98032 8.30191 9.73612 8.48196 9.55606C8.66202 9.37601 8.90622 9.27486 9.16086 9.27486C9.41549 9.27486 9.6597 9.37601 9.83975 9.55606C10.0198 9.73612 10.121 9.98032 10.121 10.235ZM17.8017 10.235C17.8017 10.4896 17.7006 10.7338 17.5205 10.9138C17.3405 11.0939 17.0963 11.1951 16.8416 11.1951C16.587 11.1951 16.3428 11.0939 16.1628 10.9138C15.9827 10.7338 15.8815 10.4896 15.8815 10.235C15.8815 9.98032 15.9827 9.73612 16.1628 9.55606C16.3428 9.37601 16.587 9.27486 16.8416 9.27486C17.0963 9.27486 17.3405 9.37601 17.5205 9.55606C17.7006 9.73612 17.8017 9.98032 17.8017 10.235ZM19.3799 22.1132C19.853 22.1132 20.043 22.7272 19.6499 22.9893C17.6806 24.3042 15.3652 25.0049 12.9973 25.0025C11.4219 25.004 9.86169 24.6943 8.4063 24.0912C6.95092 23.4881 5.62898 22.6035 4.51638 21.4881C3.39951 20.3753 2.51383 19.0525 1.91034 17.596C1.30685 16.1394 0.997466 14.5779 1.00002 13.0012C1.00002 9.6889 2.33815 6.69059 4.51538 4.51437C5.62804 3.39911 6.94999 2.51456 8.40536 1.91148C9.86073 1.30839 11.4209 0.998641 12.9963 1C15.2564 0.999533 17.4708 1.6373 19.3844 2.83989C21.2981 4.04248 22.8332 5.761 23.8132 7.79765C24.7932 9.8343 25.1781 12.1063 24.9237 14.3521C24.6693 16.5979 23.7859 18.7262 22.3752 20.492C22.3362 20.5415 22.2878 20.5829 22.2329 20.6137C22.1779 20.6445 22.1173 20.6642 22.0548 20.6716C21.9922 20.6791 21.9287 20.6741 21.868 20.657C21.8074 20.6399 21.7507 20.611 21.7011 20.572C21.6516 20.533 21.6103 20.4846 21.5795 20.4297C21.5487 20.3747 21.529 20.3142 21.5215 20.2516C21.5141 20.189 21.5191 20.1255 21.5362 20.0649C21.5533 20.0042 21.5821 19.9475 21.6211 19.898C22.2557 19.106 22.778 18.2303 23.1733 17.2957C23.7504 15.9345 24.0424 14.4894 24.0424 13.0012C24.0424 11.5121 23.7504 10.0679 23.1733 8.7058C22.618 7.39355 21.815 6.20066 20.8081 5.19244C19.7995 4.18544 18.6063 3.38236 17.2937 2.82719C15.9346 2.25164 14.4732 1.95638 12.9973 1.9591C11.5481 1.95855 10.113 2.24385 8.7743 2.79868C7.43555 3.3535 6.21939 4.16695 5.19545 5.19244C4.16644 6.21532 3.35063 7.43221 2.79527 8.77263C2.23991 10.113 1.95604 11.5503 1.96011 13.0012C1.96011 15.9515 3.10923 18.7238 5.19545 20.809C6.2191 21.8346 7.43507 22.6482 8.77368 23.203C10.1123 23.7578 11.5472 24.0431 12.9963 24.0424C14.4864 24.0424 15.9316 23.7503 17.2927 23.1743C17.9328 22.9043 18.5398 22.5762 19.1129 22.1942C19.192 22.1415 19.2849 22.1133 19.3799 22.1132Z"
+                                  ></path>
+                                  <path
+                                    d="M7.94058 14.5016C7.82647 14.464 7.7024 14.4706 7.59296 14.5202C7.53275 14.5474 7.47881 14.5867 7.43452 14.6357C7.39023 14.6847 7.35656 14.7423 7.33562 14.805C7.31467 14.8676 7.30691 14.9339 7.31282 14.9997C7.31872 15.0655 7.33817 15.1294 7.36994 15.1873C7.92817 16.1914 8.74436 17.0283 9.73421 17.6115C10.7241 18.1947 11.8517 18.503 13.0005 18.5046C14.1494 18.503 15.277 18.1947 16.2668 17.6115C17.2567 17.0283 18.0729 16.1914 18.6311 15.1873C18.6616 15.1321 18.6809 15.0715 18.6879 15.0089C18.695 14.9463 18.6896 14.8829 18.6721 14.8223C18.6547 14.7618 18.6255 14.7052 18.5862 14.656C18.5469 14.6067 18.4982 14.5657 18.4431 14.5352C18.3879 14.5047 18.3273 14.4854 18.2647 14.4784C18.2021 14.4714 18.1387 14.4767 18.0781 14.4942C18.0176 14.5116 17.961 14.5409 17.9118 14.5802C17.8625 14.6195 17.8215 14.6681 17.791 14.7232C17.316 15.5775 16.6216 16.2895 15.7794 16.7856C14.9373 17.2817 13.9779 17.5441 13.0005 17.5455C12.0229 17.5443 11.0634 17.282 10.221 16.7858C9.37871 16.2897 8.68411 15.5776 8.20902 14.7232C8.1505 14.6183 8.05469 14.5392 7.94058 14.5016Z"
+                                  ></path>
+                                </mask>
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M10.121 10.235C10.121 10.4896 10.0198 10.7338 9.83975 10.9138C9.6597 11.0939 9.41549 11.1951 9.16086 11.1951C8.90622 11.1951 8.66202 11.0939 8.48196 10.9138C8.30191 10.7338 8.20076 10.4896 8.20076 10.235C8.20076 9.98032 8.30191 9.73612 8.48196 9.55606C8.66202 9.37601 8.90622 9.27486 9.16086 9.27486C9.41549 9.27486 9.6597 9.37601 9.83975 9.55606C10.0198 9.73612 10.121 9.98032 10.121 10.235ZM17.8017 10.235C17.8017 10.4896 17.7006 10.7338 17.5205 10.9138C17.3405 11.0939 17.0963 11.1951 16.8416 11.1951C16.587 11.1951 16.3428 11.0939 16.1628 10.9138C15.9827 10.7338 15.8815 10.4896 15.8815 10.235C15.8815 9.98032 15.9827 9.73612 16.1628 9.55606C16.3428 9.37601 16.587 9.27486 16.8416 9.27486C17.0963 9.27486 17.3405 9.37601 17.5205 9.55606C17.7006 9.73612 17.8017 9.98032 17.8017 10.235ZM19.3799 22.1132C19.853 22.1132 20.043 22.7272 19.6499 22.9893C17.6806 24.3042 15.3652 25.0049 12.9973 25.0025C11.4219 25.004 9.86169 24.6943 8.4063 24.0912C6.95092 23.4881 5.62898 22.6035 4.51638 21.4881C3.39951 20.3753 2.51383 19.0525 1.91034 17.596C1.30685 16.1394 0.997466 14.5779 1.00002 13.0012C1.00002 9.6889 2.33815 6.69059 4.51538 4.51437C5.62804 3.39911 6.94999 2.51456 8.40536 1.91148C9.86073 1.30839 11.4209 0.998641 12.9963 1C15.2564 0.999533 17.4708 1.6373 19.3844 2.83989C21.2981 4.04248 22.8332 5.761 23.8132 7.79765C24.7932 9.8343 25.1781 12.1063 24.9237 14.3521C24.6693 16.5979 23.7859 18.7262 22.3752 20.492C22.3362 20.5415 22.2878 20.5829 22.2329 20.6137C22.1779 20.6445 22.1173 20.6642 22.0548 20.6716C21.9922 20.6791 21.9287 20.6741 21.868 20.657C21.8074 20.6399 21.7507 20.611 21.7011 20.572C21.6516 20.533 21.6103 20.4846 21.5795 20.4297C21.5487 20.3747 21.529 20.3142 21.5215 20.2516C21.5141 20.189 21.5191 20.1255 21.5362 20.0649C21.5533 20.0042 21.5821 19.9475 21.6211 19.898C22.2557 19.106 22.778 18.2303 23.1733 17.2957C23.7504 15.9345 24.0424 14.4894 24.0424 13.0012C24.0424 11.5121 23.7504 10.0679 23.1733 8.7058C22.618 7.39355 21.815 6.20066 20.8081 5.19244C19.7995 4.18544 18.6063 3.38236 17.2937 2.82719C15.9346 2.25164 14.4732 1.95638 12.9973 1.9591C11.5481 1.95855 10.113 2.24385 8.7743 2.79868C7.43555 3.3535 6.21939 4.16695 5.19545 5.19244C4.16644 6.21532 3.35063 7.43221 2.79527 8.77263C2.23991 10.113 1.95604 11.5503 1.96011 13.0012C1.96011 15.9515 3.10923 18.7238 5.19545 20.809C6.2191 21.8346 7.43507 22.6482 8.77368 23.203C10.1123 23.7578 11.5472 24.0431 12.9963 24.0424C14.4864 24.0424 15.9316 23.7503 17.2927 23.1743C17.9328 22.9043 18.5398 22.5762 19.1129 22.1942C19.192 22.1415 19.2849 22.1133 19.3799 22.1132Z"
+                                  fill="#27B75D"
+                                ></path>
+                                <path
+                                  d="M7.94058 14.5016C7.82647 14.464 7.7024 14.4706 7.59296 14.5202C7.53275 14.5474 7.47881 14.5867 7.43452 14.6357C7.39023 14.6847 7.35656 14.7423 7.33562 14.805C7.31467 14.8676 7.30691 14.9339 7.31282 14.9997C7.31872 15.0655 7.33817 15.1294 7.36994 15.1873C7.92817 16.1914 8.74436 17.0283 9.73421 17.6115C10.7241 18.1947 11.8517 18.503 13.0005 18.5046C14.1494 18.503 15.277 18.1947 16.2668 17.6115C17.2567 17.0283 18.0729 16.1914 18.6311 15.1873C18.6616 15.1321 18.6809 15.0715 18.6879 15.0089C18.695 14.9463 18.6896 14.8829 18.6721 14.8223C18.6547 14.7618 18.6255 14.7052 18.5862 14.656C18.5469 14.6067 18.4982 14.5657 18.4431 14.5352C18.3879 14.5047 18.3273 14.4854 18.2647 14.4784C18.2021 14.4714 18.1387 14.4767 18.0781 14.4942C18.0176 14.5116 17.961 14.5409 17.9118 14.5802C17.8625 14.6195 17.8215 14.6681 17.791 14.7232C17.316 15.5775 16.6216 16.2895 15.7794 16.7856C14.9373 17.2817 13.9779 17.5441 13.0005 17.5455C12.0229 17.5443 11.0634 17.282 10.221 16.7858C9.37871 16.2897 8.68411 15.5776 8.20902 14.7232C8.1505 14.6183 8.05469 14.5392 7.94058 14.5016Z"
+                                  fill="#27B75D"
+                                ></path>
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M10.121 10.235C10.121 10.4896 10.0198 10.7338 9.83975 10.9138C9.6597 11.0939 9.41549 11.1951 9.16086 11.1951C8.90622 11.1951 8.66202 11.0939 8.48196 10.9138C8.30191 10.7338 8.20076 10.4896 8.20076 10.235C8.20076 9.98032 8.30191 9.73612 8.48196 9.55606C8.66202 9.37601 8.90622 9.27486 9.16086 9.27486C9.41549 9.27486 9.6597 9.37601 9.83975 9.55606C10.0198 9.73612 10.121 9.98032 10.121 10.235ZM17.8017 10.235C17.8017 10.4896 17.7006 10.7338 17.5205 10.9138C17.3405 11.0939 17.0963 11.1951 16.8416 11.1951C16.587 11.1951 16.3428 11.0939 16.1628 10.9138C15.9827 10.7338 15.8815 10.4896 15.8815 10.235C15.8815 9.98032 15.9827 9.73612 16.1628 9.55606C16.3428 9.37601 16.587 9.27486 16.8416 9.27486C17.0963 9.27486 17.3405 9.37601 17.5205 9.55606C17.7006 9.73612 17.8017 9.98032 17.8017 10.235ZM19.3799 22.1132C19.853 22.1132 20.043 22.7272 19.6499 22.9893C17.6806 24.3042 15.3652 25.0049 12.9973 25.0025C11.4219 25.004 9.86169 24.6943 8.4063 24.0912C6.95092 23.4881 5.62898 22.6035 4.51638 21.4881C3.39951 20.3753 2.51383 19.0525 1.91034 17.596C1.30685 16.1394 0.997466 14.5779 1.00002 13.0012C1.00002 9.6889 2.33815 6.69059 4.51538 4.51437C5.62804 3.39911 6.94999 2.51456 8.40536 1.91148C9.86073 1.30839 11.4209 0.998641 12.9963 1C15.2564 0.999533 17.4708 1.6373 19.3844 2.83989C21.2981 4.04248 22.8332 5.761 23.8132 7.79765C24.7932 9.8343 25.1781 12.1063 24.9237 14.3521C24.6693 16.5979 23.7859 18.7262 22.3752 20.492C22.3362 20.5415 22.2878 20.5829 22.2329 20.6137C22.1779 20.6445 22.1173 20.6642 22.0548 20.6716C21.9922 20.6791 21.9287 20.6741 21.868 20.657C21.8074 20.6399 21.7507 20.611 21.7011 20.572C21.6516 20.533 21.6103 20.4846 21.5795 20.4297C21.5487 20.3747 21.529 20.3142 21.5215 20.2516C21.5141 20.189 21.5191 20.1255 21.5362 20.0649C21.5533 20.0042 21.5821 19.9475 21.6211 19.898C22.2557 19.106 22.778 18.2303 23.1733 17.2957C23.7504 15.9345 24.0424 14.4894 24.0424 13.0012C24.0424 11.5121 23.7504 10.0679 23.1733 8.7058C22.618 7.39355 21.815 6.20066 20.8081 5.19244C19.7995 4.18544 18.6063 3.38236 17.2937 2.82719C15.9346 2.25164 14.4732 1.95638 12.9973 1.9591C11.5481 1.95855 10.113 2.24385 8.7743 2.79868C7.43555 3.3535 6.21939 4.16695 5.19545 5.19244C4.16644 6.21532 3.35063 7.43221 2.79527 8.77263C2.23991 10.113 1.95604 11.5503 1.96011 13.0012C1.96011 15.9515 3.10923 18.7238 5.19545 20.809C6.2191 21.8346 7.43507 22.6482 8.77368 23.203C10.1123 23.7578 11.5472 24.0431 12.9963 24.0424C14.4864 24.0424 15.9316 23.7503 17.2927 23.1743C17.9328 22.9043 18.5398 22.5762 19.1129 22.1942C19.192 22.1415 19.2849 22.1133 19.3799 22.1132Z"
+                                  stroke="#27B75D"
+                                  stroke-width="0.4"
+                                  mask="url(#delivered_svg__path-1-outside-1_908_8669)"
+                                ></path>
+                                <path
+                                  d="M7.94058 14.5016C7.82647 14.464 7.7024 14.4706 7.59296 14.5202C7.53275 14.5474 7.47881 14.5867 7.43452 14.6357C7.39023 14.6847 7.35656 14.7423 7.33562 14.805C7.31467 14.8676 7.30691 14.9339 7.31282 14.9997C7.31872 15.0655 7.33817 15.1294 7.36994 15.1873C7.92817 16.1914 8.74436 17.0283 9.73421 17.6115C10.7241 18.1947 11.8517 18.503 13.0005 18.5046C14.1494 18.503 15.277 18.1947 16.2668 17.6115C17.2567 17.0283 18.0729 16.1914 18.6311 15.1873C18.6616 15.1321 18.6809 15.0715 18.6879 15.0089C18.695 14.9463 18.6896 14.8829 18.6721 14.8223C18.6547 14.7618 18.6255 14.7052 18.5862 14.656C18.5469 14.6067 18.4982 14.5657 18.4431 14.5352C18.3879 14.5047 18.3273 14.4854 18.2647 14.4784C18.2021 14.4714 18.1387 14.4767 18.0781 14.4942C18.0176 14.5116 17.961 14.5409 17.9118 14.5802C17.8625 14.6195 17.8215 14.6681 17.791 14.7232C17.316 15.5775 16.6216 16.2895 15.7794 16.7856C14.9373 17.2817 13.9779 17.5441 13.0005 17.5455C12.0229 17.5443 11.0634 17.282 10.221 16.7858C9.37871 16.2897 8.68411 15.5776 8.20902 14.7232C8.1505 14.6183 8.05469 14.5392 7.94058 14.5016Z"
+                                  stroke="#27B75D"
+                                  stroke-width="0.4"
+                                  mask="url(#delivered_svg__path-1-outside-1_908_8669)"
+                                ></path>
+                              </g>
+                            </g>
+                          </svg>
+                          <div
+                            class="h-full border-r-2 border-dashed border-neutral-light self-center absolute"
+                          ></div>
+                        </div>
+                      </div> -->
+                      <!-- <div class="ml-3 mb-6">
+                        <h3 class="font-bold text-neutral-dark"
+                          >Seu pacote foi entregue</h3
+                        >
+                        <p class="text-neutral-medium text-xs"
+                          >Eba! Seu pacote foi entregue com sucesso</p
+                        >
+                        <div class="flex mt-3">
+                          <span
+                            class="flex justify-center items-center mr-[6px] text-primary"
+                          >
+                            <svg
+                              viewBox="0 0 512 512"
+                              fill="currentColor"
+                              width="1em"
+                              height="1em"
+                            >
+                              <path
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="32"
+                                d="M256 48c-79.5 0-144 61.39-144 137c0 87 96 224.87 131.25 272.49a15.77 15.77 0 0 0 25.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137Z"
+                              ></path>
+                              <circle
+                                cx="256"
+                                cy="192"
+                                r="48"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="32"
+                              ></circle>
+                            </svg>
+                          </span>
+                          <div
+                            class="flex flex-col text-neutral-medium text-xs"
+                          >
+                            <p>Unidade de Distribuição - BRASILIA/DF</p>
+                          </div>
+                        </div>
+                      </div> -->
+                    </li>
+                    <li class="flex">
+                      <!-- <div class="flex">
+                        <div
+                          class="w-14 text-right mr-3 text-neutral-clear text-xs"
+                          ><span class="block font-bold">6 nov</span
+                          ><span class="block">13:09</span></div
+                        >
+                        <div class="flex flex-col relative w-7">
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="mt-2 bg-white absolute top-0 z-10"
+                          >
+                            <g id="info_svg__ICON____box-add">
+                              <g
+                                id="info_svg__Frame"
+                                clip-path="url(#info_svg__clip0_908_8667)"
+                              >
+                                <g id="info_svg__caixatxt">
+                                  <path
+                                    id="info_svg__Caminho_26"
+                                    d="M10.7481 21.0367V11.2335L19.7293 7.48181V13.2279H19.7341C20.0201 13.2288 20.3053 13.2532 20.5873 13.3011V6.62563L10.3317 2.39993L0 6.62563V17.8975L10.3197 22.1232L15.8438 19.8499C15.7177 19.5985 15.6148 19.336 15.5366 19.0657L10.7481 21.0367ZM10.3323 3.31071L18.9871 6.87762L15.1526 8.48078L6.43303 4.90547L10.3323 3.31071ZM9.89074 21.0367L0.857974 17.3396V7.507L9.89016 11.2335V21.0367H9.89074ZM10.3155 10.4991L1.57496 6.89442L5.31947 5.36266L14.0517 8.94217L10.3155 10.4991Z"
+                                    fill="#258FD7"
+                                  ></path>
+                                  <path
+                                    id="info_svg__Caminho_27"
+                                    d="M20.1396 13.9947C18.0316 13.974 16.3047 15.6636 16.2793 17.7716C16.3047 19.8795 18.0316 21.5691 20.1396 21.5485C22.2476 21.5691 23.9745 19.8795 23.9999 17.7716C23.9742 15.6638 22.2475 13.9743 20.1396 13.9947ZM20.1396 20.7091C18.5003 20.7234 17.1584 19.4084 17.1397 17.7692C17.1584 16.1299 18.5003 14.8149 20.1396 14.8292C21.7789 14.8149 23.1207 16.1299 23.1395 17.7692C23.1207 19.4084 21.7789 20.7234 20.1396 20.7091Z"
+                                    fill="#258FD7"
+                                  ></path>
+                                  <path
+                                    id="info_svg__Caminho_28"
+                                    d="M21.8548 17.405H20.5144V16.0934C20.5121 15.8885 20.3443 15.7242 20.1394 15.7262C19.9343 15.7239 19.7662 15.8883 19.7638 16.0934V16.0934V17.405H18.4234C18.2184 17.4026 18.0502 17.567 18.0479 17.7721V17.7722C18.0501 17.9773 18.2183 18.1416 18.4234 18.1394H18.4234H19.7638V19.4509C19.7661 19.6561 19.9343 19.8204 20.1393 19.8181H20.1394C20.3443 19.8202 20.5121 19.6558 20.5144 19.4509V18.1394H21.8548C22.0597 18.1414 22.2275 17.9771 22.2297 17.7722C22.2274 17.5673 22.0597 17.4029 21.8548 17.405Z"
+                                    fill="#258FD7"
+                                  ></path>
+                                </g>
+                              </g>
+                            </g>
+                            <defs>
+                              <clipPath id="info_svg__clip0_908_8667">
+                                <rect
+                                  width="24"
+                                  height="19.7233"
+                                  fill="white"
+                                  transform="translate(0 2.39993)"
+                                ></rect>
+                              </clipPath>
+                            </defs>
+                          </svg>
+                          <div
+                            class="h-full border-r-2 border-dashed border-neutral-light self-center absolute"
+                          ></div>
+                        </div>
+                      </div> -->
+                      <!-- <div class="ml-3 mb-6">
+                        <h3 class="font-bold text-neutral-dark"
+                          >Objeto será entregue em instantes</h3
+                        >
+                        <p class="text-neutral-medium text-xs"
+                          >Você está lendo a mensagem original fornecida pela
+                          transportadora. Em caso de dúvidas, entre em contato
+                          com o responsável pelo envio.</p
+                        >
+                        <div class="flex mt-3">
+                          <span
+                            class="flex justify-center items-center mr-[6px] text-primary"
+                          >
+                            <svg
+                              viewBox="0 0 512 512"
+                              fill="currentColor"
+                              width="1em"
+                              height="1em"
+                            >
+                              <path
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="32"
+                                d="M256 48c-79.5 0-144 61.39-144 137c0 87 96 224.87 131.25 272.49a15.77 15.77 0 0 0 25.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137Z"
+                              ></path>
+                              <circle
+                                cx="256"
+                                cy="192"
+                                r="48"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="32"
+                              ></circle>
+                            </svg>
+                          </span>
+                          <div
+                            class="flex flex-col text-neutral-medium text-xs"
+                          >
+                            <p>Unidade de Distribuição - BRASILIA/DF</p>
+                          </div>
+                        </div>
+                        <div
+                          class="lg:max-w-[528px] px-4 py-4 mt-3 border-[1px] rounded-[20px] gap-1 border-neutral-light"
+                        >
+                          <div class="flex flex-row">
+                            <svg
+                              viewBox="0 0 512 512"
+                              fill="currentColor"
+                              width="1em"
+                              height="1em"
+                              class="text-info w-[24px] h-[24px]"
+                            >
+                              <path
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-miterlimit="10"
+                                stroke-width="32"
+                                d="M248 64C146.39 64 64 146.39 64 248s82.39 184 184 184s184-82.39 184-184S349.61 64 248 64Z"
+                              ></path>
+                              <path
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="32"
+                                d="M220 220h32v116"
+                              ></path>
+                              <path
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-miterlimit="10"
+                                stroke-width="32"
+                                d="M208 340h88"
+                              ></path>
+                              <path
+                                fill="currentColor"
+                                d="M248 130a26 26 0 1 0 26 26a26 26 0 0 0-26-26Z"
+                              ></path>
+                            </svg>
+                            <h2 class="text-small ml-1 mt-1 font-bold">
+                              Informações adicionais
+                            </h2>
+                          </div>
+                          <div class="leading-normal">
+                            <p
+                              class="my-0 inline whitespace-no-wrap text-minute text-neutral-medium ml-1"
+                              >Acompanhe sua entrega em tempo real..
+                            </p>
+                          </div>
+                        </div>
+                      </div> -->
+                    </li>
+                    <li class="flex">
+                      <!-- <div class="flex">
+                        <div
+                          class="w-14 text-right mr-3 text-neutral-clear text-xs"
+                          ><span class="block font-bold">6 nov</span
+                          ><span class="block">09:57</span></div
+                        >
+                        <div class="flex flex-col relative w-7">
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="mt-2 bg-white absolute top-0 z-10"
+                          >
+                            <g id="onroute_svg__ICON____carrying">
+                              <path
+                                id="onroute_svg__Vector"
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M23.039 16.053L23.04 15.902C23.0406 15.8171 23.0245 15.733 22.9925 15.6544C22.9604 15.5758 22.9132 15.5043 22.8534 15.4441C22.7936 15.3838 22.7225 15.336 22.6442 15.3034C22.5659 15.2708 22.4818 15.254 22.397 15.254C22.3074 15.2537 22.2188 15.2719 22.1366 15.3073C22.0543 15.3427 21.9803 15.3947 21.919 15.46L19.056 18.534C18.993 18.6018 18.9313 18.6708 18.871 18.741C18.587 19.071 18.318 19.381 17.605 19.381H12.362C12.2347 19.381 12.1126 19.3304 12.0226 19.2404C11.9326 19.1504 11.882 19.0283 11.882 18.901C11.882 18.7737 11.9326 18.6516 12.0226 18.5616C12.1126 18.4716 12.2347 18.421 12.362 18.421H16.402C16.625 18.421 16.842 18.331 16.987 18.161C17.1019 18.0263 17.1651 17.855 17.1651 17.678C17.1651 17.5009 17.1019 17.3297 16.987 17.195C16.914 17.1116 16.8238 17.0452 16.7227 17.0001C16.6215 16.955 16.5117 16.9325 16.401 16.934H13.661C13.195 16.934 12.303 16.714 11.269 16.459C10.392 16.243 9.39799 15.998 9.02299 15.998C8.53099 15.998 7.37599 16.362 6.58499 16.653V21.521C7.66799 21.81 8.90599 22.056 10.528 22.056H17.118C17.6076 22.0548 18.0902 21.9403 18.5281 21.7213C18.9661 21.5024 19.3473 21.185 19.642 20.794L22.909 16.437C22.992 16.326 23.0375 16.1915 23.039 16.053ZM11.654 10.969H14.367V7.514H11.654V10.969ZM7.56199 7.505V15.318C8.09499 15.164 8.64499 15.038 9.02199 15.038C9.51499 15.038 10.478 15.275 11.499 15.527C12.349 15.737 13.312 15.974 13.662 15.974H16.422C16.6949 15.9737 16.9638 16.039 17.2062 16.1644C17.4485 16.2898 17.6572 16.4716 17.8145 16.6945C17.9719 16.9175 18.0733 17.175 18.1103 17.4453C18.1472 17.7157 18.1187 17.991 18.027 18.248C18.06 18.212 18.098 18.168 18.145 18.113C18.205 18.044 18.273 17.966 18.353 17.879L18.459 17.766V7.505H15.327V11.209C15.327 11.3999 15.2511 11.5831 15.1161 11.7181C14.9811 11.8531 14.7979 11.929 14.607 11.929H11.414C11.223 11.929 11.0399 11.8531 10.9049 11.7181C10.7698 11.5831 10.694 11.3999 10.694 11.209V7.505H7.56199ZM9.17399 2.16V6.545H16.847V2.16H14.91V3.873C14.91 4.06396 14.8341 4.24709 14.6991 4.38212C14.5641 4.51714 14.3809 4.593 14.19 4.593H11.833C11.642 4.593 11.4589 4.51714 11.3239 4.38212C11.1888 4.24709 11.113 4.06396 11.113 3.873V2.16H9.17399ZM12.072 3.633H13.949V2.16H12.072V3.633ZM22.405 14.294C22.8311 14.2979 23.2383 14.4707 23.5373 14.7744C23.8362 15.078 24.0026 15.4878 24 15.914L23.999 16.06C23.996 16.402 23.882 16.74 23.677 17.013L20.41 21.37C20.0255 21.88 19.5281 22.2941 18.9568 22.5797C18.3854 22.8652 17.7557 23.0146 17.117 23.016H10.528C9.18618 23.0165 7.84989 22.8444 6.55199 22.504C6.50728 22.6521 6.41602 22.782 6.29173 22.8742C6.16745 22.9664 6.01676 23.0161 5.86199 23.016H2.095C1.96769 23.016 1.8456 22.9654 1.75559 22.8754C1.66557 22.7854 1.615 22.6633 1.615 22.536C1.615 22.4087 1.66557 22.2866 1.75559 22.1966C1.8456 22.1065 1.96769 22.056 2.095 22.056H5.61799L5.62399 21.886V15.998H0.959999V20.922C0.959999 21.0493 0.909427 21.1714 0.81941 21.2614C0.729393 21.3514 0.607303 21.402 0.479999 21.402C0.352696 21.402 0.230606 21.3514 0.140589 21.2614C0.0505712 21.1714 0 21.0493 0 20.922L0 15.758C0 15.6634 0.0186233 15.5698 0.0548067 15.4825C0.09099 15.3951 0.144025 15.3157 0.210883 15.2489C0.277741 15.182 0.357113 15.129 0.444467 15.0928C0.531822 15.0566 0.625447 15.038 0.719999 15.038H5.86299C6.03298 15.0382 6.19741 15.0986 6.32718 15.2084C6.45694 15.3182 6.54366 15.4704 6.57199 15.638L6.60199 15.627V7.265C6.60199 7.07404 6.67785 6.89091 6.81287 6.75588C6.9479 6.62085 7.13103 6.545 7.32199 6.545H8.21399V1.92C8.21399 1.72905 8.28985 1.54591 8.42487 1.41089C8.5599 1.27586 8.74303 1.2 8.93399 1.2H17.135C17.506 1.2 17.807 1.5 17.807 1.872V6.545H18.699C18.8899 6.545 19.0731 6.62085 19.2081 6.75588C19.3431 6.89091 19.419 7.07404 19.419 7.265V16.735L21.216 14.805C21.523 14.477 21.956 14.289 22.406 14.295L22.405 14.294ZM0.467999 22.087C0.592121 22.087 0.711158 22.1363 0.798925 22.2241C0.886692 22.3118 0.935999 22.4309 0.935999 22.555C0.935999 22.6791 0.886692 22.7981 0.798925 22.8859C0.711158 22.9737 0.592121 23.023 0.467999 23.023C0.343878 23.023 0.224841 22.9737 0.137074 22.8859C0.0493069 22.7981 0 22.6791 0 22.555C0 22.4309 0.0493069 22.3118 0.137074 22.2241C0.224841 22.1363 0.343878 22.087 0.467999 22.087Z"
+                                fill="#258FD7"
+                              ></path>
+                            </g>
+                          </svg>
+                          <div
+                            class="h-full border-r-2 border-dashed border-neutral-light self-center absolute"
+                          ></div>
+                        </div>
+                      </div>
+                      <div class="ml-3 mb-6">
+                        <h3 class="font-bold text-neutral-dark"
+                          >Seu pacote saiu para entrega</h3
+                        >
+                        <p class="text-neutral-medium text-xs"
+                          >Seu pacote acabou de sair da unidade e em breve será
+                          entregue ao destinatário</p
+                        >
+                        <div class="flex mt-3">
+                          <span
+                            class="flex justify-center items-center mr-[6px] text-primary"
+                          >
+                            <svg
+                              viewBox="0 0 512 512"
+                              fill="currentColor"
+                              width="1em"
+                              height="1em"
+                            >
+                              <path
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="32"
+                                d="M256 48c-79.5 0-144 61.39-144 137c0 87 96 224.87 131.25 272.49a15.77 15.77 0 0 0 25.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137Z"
+                              ></path>
+                              <circle
+                                cx="256"
+                                cy="192"
+                                r="48"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="32"
+                              ></circle>
+                            </svg>
+                          </span>
+                          <div
+                            class="flex flex-col text-neutral-medium text-xs"
+                          >
+                            <p>TRECHO STRC, 2 - BRASILIA/DF</p>
+                          </div>
+                        </div>
+                        <div
+                          class="lg:max-w-[528px] px-4 py-4 mt-3 border-[1px] rounded-[20px] gap-1 border-neutral-light"
+                        >
+                          <div class="flex flex-row">
+                            <svg
+                              viewBox="0 0 512 512"
+                              fill="currentColor"
+                              width="1em"
+                              height="1em"
+                              class="text-info w-[24px] h-[24px]"
+                            >
+                              <path
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-miterlimit="10"
+                                stroke-width="32"
+                                d="M248 64C146.39 64 64 146.39 64 248s82.39 184 184 184s184-82.39 184-184S349.61 64 248 64Z"
+                              ></path>
+                              <path
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="32"
+                                d="M220 220h32v116"
+                              ></path>
+                              <path
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-miterlimit="10"
+                                stroke-width="32"
+                                d="M208 340h88"
+                              ></path>
+                              <path
+                                fill="currentColor"
+                                d="M248 130a26 26 0 1 0 26 26a26 26 0 0 0-26-26Z"
+                              ></path>
+                            </svg>
+                            <h2 class="text-small ml-1 mt-1 font-bold">
+                              Informações adicionais
+                            </h2>
+                          </div>
+                          <div class="leading-normal">
+                            <p
+                              class="my-0 inline whitespace-no-wrap text-minute text-neutral-medium"
+                            >
+                              Objeto aguardando retirada no endereço indicado:
+                              TRECHO STRC 2 - ZONA INDUSTRIAL
+                              (GUARA)/BRASILIA-DF.
+                            </p>
+                            <p
+                              class="my-0 inline whitespace-no-wrap text-minute text-neutral-medium ml-1"
+                              >Aguarde o envio do link por SMS para acompanhar a
+                              entrega em tempo real..
+                            </p>
+                          </div>
+                        </div>
+                      </div> -->
+                    </li>
+                    <li class="flex">
+                      <div class="flex">
+                        <div
+                          class="w-14 text-right mr-3 text-neutral-clear text-xs"
+                          ><span class="block font-bold">3 nov</span
+                          ><span class="block">01:11</span></div
+                        >
+                        <div class="flex flex-col relative w-7">
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="mt-2 bg-white absolute top-0 z-10"
+                          >
+                            <g id="movement_svg__ICON____truck">
+                              <path
+                                id="movement_svg__Vector"
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M13.3479 16.0106C13.5935 16.0106 13.7915 16.2117 13.7915 16.4583C13.7921 16.5763 13.7458 16.6897 13.6628 16.7736C13.5798 16.8575 13.4669 16.9051 13.3489 16.9059H11.5473C11.4293 16.9051 11.3164 16.8575 11.2335 16.7736C11.1505 16.6897 11.1042 16.5763 11.1047 16.4583C11.1047 16.2117 11.3038 16.0106 11.5473 16.0106H13.3489H13.3479ZM13.5126 4.36833C13.7652 4.36833 13.9704 4.56941 13.9704 4.81596C13.9688 4.93593 13.9197 5.05039 13.8339 5.13428C13.7481 5.21817 13.6326 5.26466 13.5126 5.26358H2.96464C2.84483 5.26439 2.72956 5.21778 2.644 5.13392C2.55843 5.05006 2.50951 4.93576 2.50792 4.81596C2.50792 4.56941 2.71304 4.36833 2.96464 4.36833H13.5136H13.5126ZM18.6275 17.6223C18.7248 17.6171 18.8221 17.6318 18.9135 17.6655C19.0049 17.6992 19.0885 17.7511 19.1592 17.8181C19.2299 17.8852 19.2862 17.9659 19.3246 18.0554C19.3631 18.1449 19.383 18.2413 19.383 18.3387C19.383 18.4361 19.3631 18.5325 19.3246 18.622C19.2862 18.7115 19.2299 18.7922 19.1592 18.8593C19.0885 18.9263 19.0049 18.9782 18.9135 19.0119C18.8221 19.0456 18.7248 19.0603 18.6275 19.0551C18.4441 19.0453 18.2714 18.9656 18.145 18.8323C18.0186 18.6991 17.9481 18.5224 17.9481 18.3387C17.9481 18.155 18.0186 17.9783 18.145 17.845C18.2714 17.7118 18.4441 17.632 18.6275 17.6223ZM5.37353 17.6223C5.47081 17.6171 5.56812 17.6318 5.65953 17.6655C5.75095 17.6992 5.83455 17.7511 5.90524 17.8181C5.97592 17.8852 6.03222 17.9659 6.07069 18.0554C6.10916 18.1449 6.129 18.2413 6.129 18.3387C6.129 18.4361 6.10916 18.5325 6.07069 18.622C6.03222 18.7115 5.97592 18.7922 5.90524 18.8593C5.83455 18.9263 5.75095 18.9782 5.65953 19.0119C5.56812 19.0456 5.47081 19.0603 5.37353 19.0551C5.1901 19.0453 5.01741 18.9656 4.89102 18.8323C4.76463 18.6991 4.69418 18.5224 4.69418 18.3387C4.69418 18.155 4.76463 17.9783 4.89102 17.845C5.01741 17.7118 5.1901 17.632 5.37353 17.6223ZM23.029 13.0632H22.1095V13.5735C22.1095 13.7856 22.2812 13.9594 22.4944 13.9594H23.03V13.0632H23.029ZM21.483 17.8496H23.037V14.9234H22.1095C21.8538 14.9234 21.6086 14.8218 21.4278 14.6411C21.2471 14.4603 21.1455 14.2151 21.1455 13.9594V12.8227C21.1455 12.4226 21.4688 12.0992 21.868 12.0992H23.034C23.0212 11.9168 22.9398 11.7461 22.8061 11.6214C22.6724 11.4967 22.4964 11.4273 22.3136 11.4273H16.2802V12.3912C16.2802 12.5191 16.2295 12.6417 16.1391 12.732C16.0487 12.8224 15.9261 12.8732 15.7982 12.8732C15.6704 12.8732 15.5478 12.8224 15.4574 12.732C15.367 12.6417 15.3163 12.5191 15.3163 12.3912V10.4623H15.3011V3.36395H0.962951V17.8496H2.51802C2.63366 17.1824 2.98059 16.5771 3.49795 16.1402C4.01532 15.7032 4.67005 15.4623 5.34726 15.4599C6.70327 15.4599 7.88548 16.4239 8.15931 17.7526L8.17649 17.8496H15.3011L15.3163 17.8648V14.7223C15.3163 14.5945 15.367 14.4719 15.4574 14.3815C15.5478 14.2911 15.6704 14.2403 15.7982 14.2403C15.9261 14.2403 16.0487 14.2911 16.1391 14.3815C16.2295 14.4719 16.2802 14.5945 16.2802 14.7223V16.72C16.5437 16.3329 16.8975 16.0158 17.3111 15.7962C17.7246 15.5767 18.1855 15.4613 18.6538 15.4599C20.0098 15.4599 21.192 16.4239 21.4658 17.7526L21.483 17.8496ZM20.521 18.7166C20.5728 18.4626 20.5728 18.2007 20.521 17.9466C20.4314 17.5173 20.197 17.1317 19.8571 16.8545C19.5172 16.5773 19.0924 16.4253 18.6538 16.4239C18.3709 16.4251 18.0919 16.4891 17.8367 16.6111C17.5815 16.733 17.3566 16.9101 17.178 17.1294C16.9994 17.3488 16.8717 17.605 16.804 17.8796C16.7363 18.1542 16.7303 18.4404 16.7865 18.7176C16.9673 19.5997 17.7524 20.2403 18.6538 20.2403C19.5541 20.2403 20.3402 19.5997 20.521 18.7166ZM7.21455 18.7166C7.26627 18.4625 7.26627 18.2007 7.21455 17.9466C7.12493 17.5173 6.89054 17.1317 6.55062 16.8545C6.2107 16.5773 5.78587 16.4253 5.34726 16.4239C5.06442 16.4251 4.78538 16.4891 4.5302 16.6111C4.27502 16.733 4.05006 16.9101 3.87149 17.1294C3.69293 17.3488 3.5652 17.605 3.4975 17.8796C3.4298 18.1542 3.42381 18.4404 3.47996 18.7176C3.66184 19.5997 4.44594 20.2403 5.34726 20.2403C6.24756 20.2403 7.03368 19.5997 7.21455 18.7166ZM20.3766 8.17264H16.2651V10.4623H20.9485L20.3766 8.17264ZM16.3257 5.68494V7.20767H20.6201V6.40942C20.6202 6.31433 20.6016 6.22014 20.5653 6.13225C20.529 6.04436 20.4757 5.96448 20.4085 5.8972C20.3413 5.82991 20.2615 5.77653 20.1737 5.74011C20.0859 5.70368 19.9917 5.68494 19.8966 5.68494H16.3257ZM22.5551 10.4623C23.3533 10.4623 24 11.11 24 11.9093V18.0911C24 18.4903 23.6767 18.8146 23.2775 18.8146H21.483C21.4769 18.8459 21.4729 18.8783 21.4658 18.9106C21.331 19.5573 20.9781 20.1381 20.4662 20.5557C19.9542 20.9732 19.3144 21.2022 18.6538 21.2043C17.9931 21.2022 17.3533 20.9732 16.8414 20.5557C16.3294 20.1381 15.9765 19.5573 15.8417 18.9106L15.8245 18.8146H8.17447C8.17043 18.8459 8.16437 18.8783 8.1583 18.9106C8.02349 19.5573 7.67057 20.1381 7.15865 20.5557C6.64672 20.9732 6.00687 21.2022 5.34624 21.2043C4.68562 21.2022 4.04577 20.9732 3.53384 20.5557C3.02191 20.1381 2.669 19.5573 2.53419 18.9106L2.51701 18.8146H0.722466C0.627458 18.8145 0.533406 18.7956 0.445681 18.7592C0.357955 18.7227 0.278274 18.6693 0.211187 18.602C0.1441 18.5347 0.0909206 18.4549 0.0546852 18.3671C0.0184497 18.2792 -0.000132079 18.1851 7.06664e-07 18.0901V3.12347C7.06664e-07 2.72334 0.323342 2.39999 0.722466 2.39999H15.5426C15.9417 2.39999 16.2651 2.72334 16.2651 3.12347V4.71997H20.1371C20.9353 4.71997 21.583 5.36867 21.583 6.16793V7.44917C21.5831 7.55419 21.5603 7.65798 21.5162 7.75327C21.472 7.84856 21.4076 7.93306 21.3274 8.00087L21.9427 10.4623H22.5551Z"
+                                fill="#258FD7"
+                              ></path>
+                            </g>
+                          </svg>
+                          <div
+                            class="h-full border-r-2 border-dashed border-neutral-light self-center absolute"
+                          ></div>
+                        </div>
+                      </div>
+                      <div class="ml-3 mb-6">
+                        <h3 class="font-bold text-neutral-dark"
+                          >Seu pacote está em movimentação</h3
+                        >
+                        <p class="text-neutral-medium text-xs"
+                          >O pacote está transitando entre a agência e o centro
+                          de distribuição de destino</p
+                        >
+                        <div class="flex mt-3">
+                          <span
+                            class="flex justify-center items-center mr-[6px] text-primary"
+                          >
+                            <svg
+                              viewBox="0 0 512 512"
+                              fill="currentColor"
+                              width="1em"
+                              height="1em"
+                            >
+                              <path
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="32"
+                                d="M256 48c-79.5 0-144 61.39-144 137c0 87 96 224.87 131.25 272.49a15.77 15.77 0 0 0 25.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137Z"
+                              ></path>
+                              <circle
+                                cx="256"
+                                cy="192"
+                                r="48"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="32"
+                              ></circle>
+                            </svg>
+                          </span>
+                          <div
+                            class="flex flex-col text-neutral-medium text-xs"
+                          >
+                            <p>Unidade de Logística Integrada - SÃO PAULO/SP</p>
+                            <p class="first-letter:uppercase"
+                              ><b>Destino: </b>Unidade de Tratamento -
+                              BRASILIA/DF</p
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="flex">
+                      <div class="flex">
+                        <div
+                          class="w-14 text-right mr-3 text-neutral-clear text-xs"
+                          ><span class="block font-bold">3 nov</span
+                          ><span class="block">01:11</span></div
+                        >
+                        <div class="flex flex-col relative w-7">
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="mt-2 bg-white absolute top-0 z-10"
+                          >
+                            <g id="movement_svg__ICON____truck">
+                              <path
+                                id="movement_svg__Vector"
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M13.3479 16.0106C13.5935 16.0106 13.7915 16.2117 13.7915 16.4583C13.7921 16.5763 13.7458 16.6897 13.6628 16.7736C13.5798 16.8575 13.4669 16.9051 13.3489 16.9059H11.5473C11.4293 16.9051 11.3164 16.8575 11.2335 16.7736C11.1505 16.6897 11.1042 16.5763 11.1047 16.4583C11.1047 16.2117 11.3038 16.0106 11.5473 16.0106H13.3489H13.3479ZM13.5126 4.36833C13.7652 4.36833 13.9704 4.56941 13.9704 4.81596C13.9688 4.93593 13.9197 5.05039 13.8339 5.13428C13.7481 5.21817 13.6326 5.26466 13.5126 5.26358H2.96464C2.84483 5.26439 2.72956 5.21778 2.644 5.13392C2.55843 5.05006 2.50951 4.93576 2.50792 4.81596C2.50792 4.56941 2.71304 4.36833 2.96464 4.36833H13.5136H13.5126ZM18.6275 17.6223C18.7248 17.6171 18.8221 17.6318 18.9135 17.6655C19.0049 17.6992 19.0885 17.7511 19.1592 17.8181C19.2299 17.8852 19.2862 17.9659 19.3246 18.0554C19.3631 18.1449 19.383 18.2413 19.383 18.3387C19.383 18.4361 19.3631 18.5325 19.3246 18.622C19.2862 18.7115 19.2299 18.7922 19.1592 18.8593C19.0885 18.9263 19.0049 18.9782 18.9135 19.0119C18.8221 19.0456 18.7248 19.0603 18.6275 19.0551C18.4441 19.0453 18.2714 18.9656 18.145 18.8323C18.0186 18.6991 17.9481 18.5224 17.9481 18.3387C17.9481 18.155 18.0186 17.9783 18.145 17.845C18.2714 17.7118 18.4441 17.632 18.6275 17.6223ZM5.37353 17.6223C5.47081 17.6171 5.56812 17.6318 5.65953 17.6655C5.75095 17.6992 5.83455 17.7511 5.90524 17.8181C5.97592 17.8852 6.03222 17.9659 6.07069 18.0554C6.10916 18.1449 6.129 18.2413 6.129 18.3387C6.129 18.4361 6.10916 18.5325 6.07069 18.622C6.03222 18.7115 5.97592 18.7922 5.90524 18.8593C5.83455 18.9263 5.75095 18.9782 5.65953 19.0119C5.56812 19.0456 5.47081 19.0603 5.37353 19.0551C5.1901 19.0453 5.01741 18.9656 4.89102 18.8323C4.76463 18.6991 4.69418 18.5224 4.69418 18.3387C4.69418 18.155 4.76463 17.9783 4.89102 17.845C5.01741 17.7118 5.1901 17.632 5.37353 17.6223ZM23.029 13.0632H22.1095V13.5735C22.1095 13.7856 22.2812 13.9594 22.4944 13.9594H23.03V13.0632H23.029ZM21.483 17.8496H23.037V14.9234H22.1095C21.8538 14.9234 21.6086 14.8218 21.4278 14.6411C21.2471 14.4603 21.1455 14.2151 21.1455 13.9594V12.8227C21.1455 12.4226 21.4688 12.0992 21.868 12.0992H23.034C23.0212 11.9168 22.9398 11.7461 22.8061 11.6214C22.6724 11.4967 22.4964 11.4273 22.3136 11.4273H16.2802V12.3912C16.2802 12.5191 16.2295 12.6417 16.1391 12.732C16.0487 12.8224 15.9261 12.8732 15.7982 12.8732C15.6704 12.8732 15.5478 12.8224 15.4574 12.732C15.367 12.6417 15.3163 12.5191 15.3163 12.3912V10.4623H15.3011V3.36395H0.962951V17.8496H2.51802C2.63366 17.1824 2.98059 16.5771 3.49795 16.1402C4.01532 15.7032 4.67005 15.4623 5.34726 15.4599C6.70327 15.4599 7.88548 16.4239 8.15931 17.7526L8.17649 17.8496H15.3011L15.3163 17.8648V14.7223C15.3163 14.5945 15.367 14.4719 15.4574 14.3815C15.5478 14.2911 15.6704 14.2403 15.7982 14.2403C15.9261 14.2403 16.0487 14.2911 16.1391 14.3815C16.2295 14.4719 16.2802 14.5945 16.2802 14.7223V16.72C16.5437 16.3329 16.8975 16.0158 17.3111 15.7962C17.7246 15.5767 18.1855 15.4613 18.6538 15.4599C20.0098 15.4599 21.192 16.4239 21.4658 17.7526L21.483 17.8496ZM20.521 18.7166C20.5728 18.4626 20.5728 18.2007 20.521 17.9466C20.4314 17.5173 20.197 17.1317 19.8571 16.8545C19.5172 16.5773 19.0924 16.4253 18.6538 16.4239C18.3709 16.4251 18.0919 16.4891 17.8367 16.6111C17.5815 16.733 17.3566 16.9101 17.178 17.1294C16.9994 17.3488 16.8717 17.605 16.804 17.8796C16.7363 18.1542 16.7303 18.4404 16.7865 18.7176C16.9673 19.5997 17.7524 20.2403 18.6538 20.2403C19.5541 20.2403 20.3402 19.5997 20.521 18.7166ZM7.21455 18.7166C7.26627 18.4625 7.26627 18.2007 7.21455 17.9466C7.12493 17.5173 6.89054 17.1317 6.55062 16.8545C6.2107 16.5773 5.78587 16.4253 5.34726 16.4239C5.06442 16.4251 4.78538 16.4891 4.5302 16.6111C4.27502 16.733 4.05006 16.9101 3.87149 17.1294C3.69293 17.3488 3.5652 17.605 3.4975 17.8796C3.4298 18.1542 3.42381 18.4404 3.47996 18.7176C3.66184 19.5997 4.44594 20.2403 5.34726 20.2403C6.24756 20.2403 7.03368 19.5997 7.21455 18.7166ZM20.3766 8.17264H16.2651V10.4623H20.9485L20.3766 8.17264ZM16.3257 5.68494V7.20767H20.6201V6.40942C20.6202 6.31433 20.6016 6.22014 20.5653 6.13225C20.529 6.04436 20.4757 5.96448 20.4085 5.8972C20.3413 5.82991 20.2615 5.77653 20.1737 5.74011C20.0859 5.70368 19.9917 5.68494 19.8966 5.68494H16.3257ZM22.5551 10.4623C23.3533 10.4623 24 11.11 24 11.9093V18.0911C24 18.4903 23.6767 18.8146 23.2775 18.8146H21.483C21.4769 18.8459 21.4729 18.8783 21.4658 18.9106C21.331 19.5573 20.9781 20.1381 20.4662 20.5557C19.9542 20.9732 19.3144 21.2022 18.6538 21.2043C17.9931 21.2022 17.3533 20.9732 16.8414 20.5557C16.3294 20.1381 15.9765 19.5573 15.8417 18.9106L15.8245 18.8146H8.17447C8.17043 18.8459 8.16437 18.8783 8.1583 18.9106C8.02349 19.5573 7.67057 20.1381 7.15865 20.5557C6.64672 20.9732 6.00687 21.2022 5.34624 21.2043C4.68562 21.2022 4.04577 20.9732 3.53384 20.5557C3.02191 20.1381 2.669 19.5573 2.53419 18.9106L2.51701 18.8146H0.722466C0.627458 18.8145 0.533406 18.7956 0.445681 18.7592C0.357955 18.7227 0.278274 18.6693 0.211187 18.602C0.1441 18.5347 0.0909206 18.4549 0.0546852 18.3671C0.0184497 18.2792 -0.000132079 18.1851 7.06664e-07 18.0901V3.12347C7.06664e-07 2.72334 0.323342 2.39999 0.722466 2.39999H15.5426C15.9417 2.39999 16.2651 2.72334 16.2651 3.12347V4.71997H20.1371C20.9353 4.71997 21.583 5.36867 21.583 6.16793V7.44917C21.5831 7.55419 21.5603 7.65798 21.5162 7.75327C21.472 7.84856 21.4076 7.93306 21.3274 8.00087L21.9427 10.4623H22.5551Z"
+                                fill="#258FD7"
+                              ></path>
+                            </g>
+                          </svg>
+                          <div
+                            class="h-full border-r-2 border-dashed border-neutral-light self-center absolute"
+                          ></div>
+                        </div>
+                      </div>
+                      <div class="ml-3 mb-6">
+                        <h3 class="font-bold text-neutral-dark"
+                          >Seu pacote está em movimentação</h3
+                        >
+                        <p class="text-neutral-medium text-xs"
+                          >O pacote está transitando entre a agência e o centro
+                          de distribuição de destino</p
+                        >
+                        <div class="flex mt-3">
+                          <span
+                            class="flex justify-center items-center mr-[6px] text-primary"
+                          >
+                            <svg
+                              viewBox="0 0 512 512"
+                              fill="currentColor"
+                              width="1em"
+                              height="1em"
+                            >
+                              <path
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="32"
+                                d="M256 48c-79.5 0-144 61.39-144 137c0 87 96 224.87 131.25 272.49a15.77 15.77 0 0 0 25.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137Z"
+                              ></path>
+                              <circle
+                                cx="256"
+                                cy="192"
+                                r="48"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="32"
+                              ></circle>
+                            </svg>
+                          </span>
+                          <div
+                            class="flex flex-col text-neutral-medium text-xs"
+                          >
+                            <p>Unidade de Logística Integrada - SÃO PAULO/SP</p>
+                            <p class="first-letter:uppercase"
+                              ><b>Destino: </b>Unidade de Tratamento -
+                              BRASILIA/DF</p
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="flex">
+                      <div class="flex">
+                        <div
+                          class="w-14 text-right mr-3 text-neutral-clear text-xs"
+                          ><span class="block font-bold">3 nov</span
+                          ><span class="block">01:11</span></div
+                        >
+                        <div class="flex flex-col relative w-7">
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="mt-2 bg-white absolute top-0 z-10"
+                          >
+                            <g id="info_svg__ICON____box-add">
+                              <g
+                                id="info_svg__Frame"
+                                clip-path="url(#info_svg__clip0_908_8667)"
+                              >
+                                <g id="info_svg__caixatxt">
+                                  <path
+                                    id="info_svg__Caminho_26"
+                                    d="M10.7481 21.0367V11.2335L19.7293 7.48181V13.2279H19.7341C20.0201 13.2288 20.3053 13.2532 20.5873 13.3011V6.62563L10.3317 2.39993L0 6.62563V17.8975L10.3197 22.1232L15.8438 19.8499C15.7177 19.5985 15.6148 19.336 15.5366 19.0657L10.7481 21.0367ZM10.3323 3.31071L18.9871 6.87762L15.1526 8.48078L6.43303 4.90547L10.3323 3.31071ZM9.89074 21.0367L0.857974 17.3396V7.507L9.89016 11.2335V21.0367H9.89074ZM10.3155 10.4991L1.57496 6.89442L5.31947 5.36266L14.0517 8.94217L10.3155 10.4991Z"
+                                    fill="#258FD7"
+                                  ></path>
+                                  <path
+                                    id="info_svg__Caminho_27"
+                                    d="M20.1396 13.9947C18.0316 13.974 16.3047 15.6636 16.2793 17.7716C16.3047 19.8795 18.0316 21.5691 20.1396 21.5485C22.2476 21.5691 23.9745 19.8795 23.9999 17.7716C23.9742 15.6638 22.2475 13.9743 20.1396 13.9947ZM20.1396 20.7091C18.5003 20.7234 17.1584 19.4084 17.1397 17.7692C17.1584 16.1299 18.5003 14.8149 20.1396 14.8292C21.7789 14.8149 23.1207 16.1299 23.1395 17.7692C23.1207 19.4084 21.7789 20.7234 20.1396 20.7091Z"
+                                    fill="#258FD7"
+                                  ></path>
+                                  <path
+                                    id="info_svg__Caminho_28"
+                                    d="M21.8548 17.405H20.5144V16.0934C20.5121 15.8885 20.3443 15.7242 20.1394 15.7262C19.9343 15.7239 19.7662 15.8883 19.7638 16.0934V16.0934V17.405H18.4234C18.2184 17.4026 18.0502 17.567 18.0479 17.7721V17.7722C18.0501 17.9773 18.2183 18.1416 18.4234 18.1394H18.4234H19.7638V19.4509C19.7661 19.6561 19.9343 19.8204 20.1393 19.8181H20.1394C20.3443 19.8202 20.5121 19.6558 20.5144 19.4509V18.1394H21.8548C22.0597 18.1414 22.2275 17.9771 22.2297 17.7722C22.2274 17.5673 22.0597 17.4029 21.8548 17.405Z"
+                                    fill="#258FD7"
+                                  ></path>
+                                </g>
+                              </g>
+                            </g>
+                            <defs>
+                              <clipPath id="info_svg__clip0_908_8667">
+                                <rect
+                                  width="24"
+                                  height="19.7233"
+                                  fill="white"
+                                  transform="translate(0 2.39993)"
+                                ></rect>
+                              </clipPath>
+                            </defs>
+                          </svg>
+                          <div
+                            class="h-full border-r-2 border-dashed border-neutral-light self-center absolute"
+                          ></div>
+                        </div>
+                      </div>
+                      <div class="ml-3 mb-6">
+                        <h3 class="font-bold text-neutral-dark"
+                          >Saída do Centro De Distribuição</h3
+                        >
+                        <p class="text-neutral-medium text-xs"
+                          >Você está lendo a mensagem original fornecida pela
+                          transportadora. Em caso de dúvidas, entre em contato
+                          com o responsável pelo envio.</p
+                        >
+                        <div class="flex mt-3">
+                          <span
+                            class="flex justify-center items-center mr-[6px] text-primary"
+                          >
+                            <svg
+                              viewBox="0 0 512 512"
+                              fill="currentColor"
+                              width="1em"
+                              height="1em"
+                            >
+                              <path
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="32"
+                                d="M256 48c-79.5 0-144 61.39-144 137c0 87 96 224.87 131.25 272.49a15.77 15.77 0 0 0 25.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137Z"
+                              ></path>
+                              <circle
+                                cx="256"
+                                cy="192"
+                                r="48"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="32"
+                              ></circle>
+                            </svg>
+                          </span>
+                          <div
+                            class="flex flex-col text-neutral-medium text-xs"
+                          >
+                            <p>Unidade de Logística Integrada - SÃO PAULO/SP</p>
+                          </div>
+                        </div>
+                        <div
+                          class="lg:max-w-[528px] px-4 py-4 mt-3 border-[1px] rounded-[20px] gap-1 border-neutral-light"
+                        >
+                          <div class="flex flex-row">
+                            <svg
+                              viewBox="0 0 512 512"
+                              fill="currentColor"
+                              width="1em"
+                              height="1em"
+                              class="text-info w-[24px] h-[24px]"
+                            >
+                              <path
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-miterlimit="10"
+                                stroke-width="32"
+                                d="M248 64C146.39 64 64 146.39 64 248s82.39 184 184 184s184-82.39 184-184S349.61 64 248 64Z"
+                              ></path>
+                              <path
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="32"
+                                d="M220 220h32v116"
+                              ></path>
+                              <path
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-miterlimit="10"
+                                stroke-width="32"
+                                d="M208 340h88"
+                              ></path>
+                              <path
+                                fill="currentColor"
+                                d="M248 130a26 26 0 1 0 26 26a26 26 0 0 0-26-26Z"
+                              ></path>
+                            </svg>
+                            <h2 class="text-small ml-1 mt-1 font-bold">
+                              Informações adicionais
+                            </h2>
+                          </div>
+                          <div class="leading-normal">
+                            <p
+                              class="my-0 inline whitespace-no-wrap text-minute text-neutral-medium ml-1"
+                              >Objeto sem pendências de pagamentos e outras
+                              obrigações.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="flex">
+                      <!-- <div class="flex">
+                        <div
+                          class="w-14 text-right mr-3 text-neutral-clear text-xs"
+                          ><span class="block font-bold">31 out</span
+                          ><span class="block">16:14</span></div
+                        >
+                        <div class="flex flex-col relative w-7">
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="mt-2 bg-white absolute top-0 z-10"
+                          >
+                            <g id="movement_svg__ICON____truck">
+                              <path
+                                id="movement_svg__Vector"
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M13.3479 16.0106C13.5935 16.0106 13.7915 16.2117 13.7915 16.4583C13.7921 16.5763 13.7458 16.6897 13.6628 16.7736C13.5798 16.8575 13.4669 16.9051 13.3489 16.9059H11.5473C11.4293 16.9051 11.3164 16.8575 11.2335 16.7736C11.1505 16.6897 11.1042 16.5763 11.1047 16.4583C11.1047 16.2117 11.3038 16.0106 11.5473 16.0106H13.3489H13.3479ZM13.5126 4.36833C13.7652 4.36833 13.9704 4.56941 13.9704 4.81596C13.9688 4.93593 13.9197 5.05039 13.8339 5.13428C13.7481 5.21817 13.6326 5.26466 13.5126 5.26358H2.96464C2.84483 5.26439 2.72956 5.21778 2.644 5.13392C2.55843 5.05006 2.50951 4.93576 2.50792 4.81596C2.50792 4.56941 2.71304 4.36833 2.96464 4.36833H13.5136H13.5126ZM18.6275 17.6223C18.7248 17.6171 18.8221 17.6318 18.9135 17.6655C19.0049 17.6992 19.0885 17.7511 19.1592 17.8181C19.2299 17.8852 19.2862 17.9659 19.3246 18.0554C19.3631 18.1449 19.383 18.2413 19.383 18.3387C19.383 18.4361 19.3631 18.5325 19.3246 18.622C19.2862 18.7115 19.2299 18.7922 19.1592 18.8593C19.0885 18.9263 19.0049 18.9782 18.9135 19.0119C18.8221 19.0456 18.7248 19.0603 18.6275 19.0551C18.4441 19.0453 18.2714 18.9656 18.145 18.8323C18.0186 18.6991 17.9481 18.5224 17.9481 18.3387C17.9481 18.155 18.0186 17.9783 18.145 17.845C18.2714 17.7118 18.4441 17.632 18.6275 17.6223ZM5.37353 17.6223C5.47081 17.6171 5.56812 17.6318 5.65953 17.6655C5.75095 17.6992 5.83455 17.7511 5.90524 17.8181C5.97592 17.8852 6.03222 17.9659 6.07069 18.0554C6.10916 18.1449 6.129 18.2413 6.129 18.3387C6.129 18.4361 6.10916 18.5325 6.07069 18.622C6.03222 18.7115 5.97592 18.7922 5.90524 18.8593C5.83455 18.9263 5.75095 18.9782 5.65953 19.0119C5.56812 19.0456 5.47081 19.0603 5.37353 19.0551C5.1901 19.0453 5.01741 18.9656 4.89102 18.8323C4.76463 18.6991 4.69418 18.5224 4.69418 18.3387C4.69418 18.155 4.76463 17.9783 4.89102 17.845C5.01741 17.7118 5.1901 17.632 5.37353 17.6223ZM23.029 13.0632H22.1095V13.5735C22.1095 13.7856 22.2812 13.9594 22.4944 13.9594H23.03V13.0632H23.029ZM21.483 17.8496H23.037V14.9234H22.1095C21.8538 14.9234 21.6086 14.8218 21.4278 14.6411C21.2471 14.4603 21.1455 14.2151 21.1455 13.9594V12.8227C21.1455 12.4226 21.4688 12.0992 21.868 12.0992H23.034C23.0212 11.9168 22.9398 11.7461 22.8061 11.6214C22.6724 11.4967 22.4964 11.4273 22.3136 11.4273H16.2802V12.3912C16.2802 12.5191 16.2295 12.6417 16.1391 12.732C16.0487 12.8224 15.9261 12.8732 15.7982 12.8732C15.6704 12.8732 15.5478 12.8224 15.4574 12.732C15.367 12.6417 15.3163 12.5191 15.3163 12.3912V10.4623H15.3011V3.36395H0.962951V17.8496H2.51802C2.63366 17.1824 2.98059 16.5771 3.49795 16.1402C4.01532 15.7032 4.67005 15.4623 5.34726 15.4599C6.70327 15.4599 7.88548 16.4239 8.15931 17.7526L8.17649 17.8496H15.3011L15.3163 17.8648V14.7223C15.3163 14.5945 15.367 14.4719 15.4574 14.3815C15.5478 14.2911 15.6704 14.2403 15.7982 14.2403C15.9261 14.2403 16.0487 14.2911 16.1391 14.3815C16.2295 14.4719 16.2802 14.5945 16.2802 14.7223V16.72C16.5437 16.3329 16.8975 16.0158 17.3111 15.7962C17.7246 15.5767 18.1855 15.4613 18.6538 15.4599C20.0098 15.4599 21.192 16.4239 21.4658 17.7526L21.483 17.8496ZM20.521 18.7166C20.5728 18.4626 20.5728 18.2007 20.521 17.9466C20.4314 17.5173 20.197 17.1317 19.8571 16.8545C19.5172 16.5773 19.0924 16.4253 18.6538 16.4239C18.3709 16.4251 18.0919 16.4891 17.8367 16.6111C17.5815 16.733 17.3566 16.9101 17.178 17.1294C16.9994 17.3488 16.8717 17.605 16.804 17.8796C16.7363 18.1542 16.7303 18.4404 16.7865 18.7176C16.9673 19.5997 17.7524 20.2403 18.6538 20.2403C19.5541 20.2403 20.3402 19.5997 20.521 18.7166ZM7.21455 18.7166C7.26627 18.4625 7.26627 18.2007 7.21455 17.9466C7.12493 17.5173 6.89054 17.1317 6.55062 16.8545C6.2107 16.5773 5.78587 16.4253 5.34726 16.4239C5.06442 16.4251 4.78538 16.4891 4.5302 16.6111C4.27502 16.733 4.05006 16.9101 3.87149 17.1294C3.69293 17.3488 3.5652 17.605 3.4975 17.8796C3.4298 18.1542 3.42381 18.4404 3.47996 18.7176C3.66184 19.5997 4.44594 20.2403 5.34726 20.2403C6.24756 20.2403 7.03368 19.5997 7.21455 18.7166ZM20.3766 8.17264H16.2651V10.4623H20.9485L20.3766 8.17264ZM16.3257 5.68494V7.20767H20.6201V6.40942C20.6202 6.31433 20.6016 6.22014 20.5653 6.13225C20.529 6.04436 20.4757 5.96448 20.4085 5.8972C20.3413 5.82991 20.2615 5.77653 20.1737 5.74011C20.0859 5.70368 19.9917 5.68494 19.8966 5.68494H16.3257ZM22.5551 10.4623C23.3533 10.4623 24 11.11 24 11.9093V18.0911C24 18.4903 23.6767 18.8146 23.2775 18.8146H21.483C21.4769 18.8459 21.4729 18.8783 21.4658 18.9106C21.331 19.5573 20.9781 20.1381 20.4662 20.5557C19.9542 20.9732 19.3144 21.2022 18.6538 21.2043C17.9931 21.2022 17.3533 20.9732 16.8414 20.5557C16.3294 20.1381 15.9765 19.5573 15.8417 18.9106L15.8245 18.8146H8.17447C8.17043 18.8459 8.16437 18.8783 8.1583 18.9106C8.02349 19.5573 7.67057 20.1381 7.15865 20.5557C6.64672 20.9732 6.00687 21.2022 5.34624 21.2043C4.68562 21.2022 4.04577 20.9732 3.53384 20.5557C3.02191 20.1381 2.669 19.5573 2.53419 18.9106L2.51701 18.8146H0.722466C0.627458 18.8145 0.533406 18.7956 0.445681 18.7592C0.357955 18.7227 0.278274 18.6693 0.211187 18.602C0.1441 18.5347 0.0909206 18.4549 0.0546852 18.3671C0.0184497 18.2792 -0.000132079 18.1851 7.06664e-07 18.0901V3.12347C7.06664e-07 2.72334 0.323342 2.39999 0.722466 2.39999H15.5426C15.9417 2.39999 16.2651 2.72334 16.2651 3.12347V4.71997H20.1371C20.9353 4.71997 21.583 5.36867 21.583 6.16793V7.44917C21.5831 7.55419 21.5603 7.65798 21.5162 7.75327C21.472 7.84856 21.4076 7.93306 21.3274 8.00087L21.9427 10.4623H22.5551Z"
+                                fill="#258FD7"
+                              ></path>
+                            </g>
+                          </svg>
+                          <div
+                            class="h-full border-r-2 border-dashed border-neutral-light self-center absolute"
+                          ></div>
+                        </div>
+                      </div>
+                      <div class="ml-3 mb-6">
+                        <h3 class="font-bold text-neutral-dark"
+                          >Seu pacote entrou no Brasil</h3
+                        >
+                        <p class="text-neutral-medium text-xs"
+                          >O pacote está transitando entre a agência e o centro
+                          de distribuição mais próximo</p
+                        >
+                        <div class="flex mt-3">
+                          <span
+                            class="flex justify-center items-center mr-[6px] text-primary"
+                          >
+                            <svg
+                              viewBox="0 0 512 512"
+                              fill="currentColor"
+                              width="1em"
+                              height="1em"
+                            >
+                              <path
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="32"
+                                d="M256 48c-79.5 0-144 61.39-144 137c0 87 96 224.87 131.25 272.49a15.77 15.77 0 0 0 25.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137Z"
+                              ></path>
+                              <circle
+                                cx="256"
+                                cy="192"
+                                r="48"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="32"
+                              ></circle>
+                            </svg>
+                          </span>
+                          <div
+                            class="flex flex-col text-neutral-medium text-xs"
+                          >
+                            <p>Unidade de Logística Integrada - CURITIBA/PR</p>
+                          </div>
+                        </div>
+                      </div> -->
+                    </li>
+                    <li class="flex">
+                      <div class="flex">
+                        <div
+                          class="w-14 text-right mr-3 text-neutral-clear text-xs"
+                          ><span class="block font-bold">22 out</span
+                          ><span class="block">22:00</span></div
+                        >
+                        <div class="flex flex-col relative w-7">
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="mt-2 bg-white absolute top-0 z-10"
+                          >
+                            <g id="posted_svg__ICON____box">
+                              <path
+                                id="posted_svg__Vector"
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M19.4575 9.48267C19.6955 9.48267 19.9135 9.67067 19.9135 9.93668V15.0528C19.9135 15.1695 19.8834 15.2843 19.8261 15.3861C19.7688 15.4879 19.6863 15.5732 19.5865 15.6338L13.8084 19.1498C13.7395 19.1919 13.6606 19.2149 13.5798 19.2164C13.499 19.2178 13.4193 19.1978 13.3489 19.1583C13.2784 19.1188 13.2198 19.0613 13.1789 18.9916C13.138 18.9219 13.1165 18.8426 13.1164 18.7618V13.6457C13.1164 13.529 13.1465 13.4142 13.2038 13.3124C13.2611 13.2106 13.3436 13.1253 13.4434 13.0647L19.2225 9.54967C19.2932 9.50613 19.3745 9.48295 19.4575 9.48267ZM18.9515 10.8377L14.0784 13.8027V17.8608L18.9515 14.8958V10.8377ZM7.71331 20.6009L11.3474 22.8139L11.3594 12.4597L7.71331 10.3647V14.4148C7.71331 14.7698 7.3233 14.9878 7.01929 14.8038L4.35525 13.1897C4.25493 13.1293 4.17192 13.0439 4.11428 12.942C4.05664 12.84 4.02631 12.7249 4.02624 12.6077V8.24765L2.11221 7.14763V17.1898L4.02624 18.3548V16.9508C4.02624 16.5968 4.41625 16.3788 4.71925 16.5628L7.3843 18.1768C7.48462 18.2373 7.56763 18.3226 7.62527 18.4246C7.68291 18.5266 7.71324 18.6417 7.71331 18.7588V20.5999V20.6009ZM6.80029 20.0458V18.8868L4.94026 17.7598V18.9118L6.80029 20.0458ZM11.8154 0.907524L2.56022 6.35662L4.60025 7.52664L13.9434 2.15955L11.8154 0.907524ZM4.94026 8.77166V12.4807L6.80029 13.6077V9.84067L4.94026 8.77066V8.77166ZM8.36032 9.68767L11.8164 11.6737L21.0715 6.35662L17.6575 4.34658L16.7775 4.85159C16.6764 4.90952 16.5571 4.92677 16.4438 4.89984C16.3304 4.8729 16.2316 4.8038 16.1674 4.70659C16.1335 4.65488 16.1105 4.59677 16.0999 4.53583C16.0892 4.4749 16.0912 4.41243 16.1056 4.35228C16.12 4.29213 16.1466 4.23557 16.1838 4.18609C16.2209 4.13661 16.2677 4.09526 16.3215 4.06458L16.7555 3.81457L14.8444 2.68955L5.51027 8.05164L7.4453 9.16366L14.3404 5.2016C14.4413 5.14333 14.5606 5.12578 14.674 5.15255C14.7874 5.17931 14.8863 5.24837 14.9504 5.3456C14.9844 5.39724 15.0075 5.4553 15.0182 5.5162C15.0289 5.57709 15.027 5.63953 15.0127 5.69968C14.9984 5.75982 14.9719 5.81639 14.9348 5.86591C14.8978 5.91543 14.8511 5.95685 14.7974 5.98761L8.35732 9.68767H8.36032ZM21.9755 8.50965C21.9157 8.50992 21.8564 8.49837 21.801 8.47569C21.7457 8.453 21.6953 8.41962 21.6529 8.37745C21.6104 8.33527 21.5767 8.28514 21.5537 8.22992C21.5306 8.1747 21.5187 8.11548 21.5185 8.05564V7.14763L12.2714 12.4607L12.2604 22.8139L21.5185 17.1908V10.3257C21.5185 10.0757 21.7235 9.87167 21.9755 9.87167C22.2266 9.87167 22.4316 10.0747 22.4316 10.3257V17.1908C22.4316 17.5068 22.2656 17.8008 21.9945 17.9658L12.2784 23.8669C12.1351 23.954 11.9706 24 11.8029 24C11.6352 24 11.4707 23.954 11.3274 23.8669L1.6372 17.9658C1.50377 17.885 1.39345 17.7711 1.3169 17.6351C1.24034 17.4992 1.20015 17.3458 1.2002 17.1898V6.62062C1.2002 6.29861 1.3702 6.00161 1.6482 5.83861L11.3504 0.126511C11.4912 0.043679 11.6515 0 11.8149 0C11.9782 0 12.1386 0.043679 12.2794 0.126511L21.9825 5.83861C22.2596 6.00161 22.4306 6.29861 22.4306 6.61962V8.05564C22.4306 8.30565 22.2256 8.50965 21.9745 8.50965H21.9755Z"
+                                fill="#258FD7"
+                              ></path>
+                            </g>
+                          </svg>
+                          <div
+                            class="h-full border-r-2 border-dashed border-neutral-light self-center absolute"
+                          ></div>
+                        </div>
+                      </div>
+                      <div class="ml-3 mb-6">
+                        <h3 class="font-bold text-neutral-dark"
+                          >Seu pacote foi postado</h3
+                        >
+                        <p class="text-neutral-medium text-xs"
+                          >Seu pacote foi entregue ao centro de distribuição</p
+                        >
+                        <div class="flex mt-3">
+                          <span
+                            class="flex justify-center items-center mr-[6px] text-primary"
+                          >
+                            <svg
+                              viewBox="0 0 512 512"
+                              fill="currentColor"
+                              width="1em"
+                              height="1em"
+                            >
+                              <path
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="32"
+                                d="M256 48c-79.5 0-144 61.39-144 137c0 87 96 224.87 131.25 272.49a15.77 15.77 0 0 0 25.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137Z"
+                              ></path>
+                              <circle
+                                cx="256"
+                                cy="192"
+                                r="48"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="32"
+                              ></circle>
+                            </svg>
+                          </span>
+                          <div
+                            class="flex flex-col text-neutral-medium text-xs"
+                          >
+                            <p>SÃO PAULO/SP</p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="flex">
+                      <div class="flex">
+                        <div
+                          class="w-14 text-right mr-3 text-neutral-clear text-xs"
+                          ><span class="block font-bold">22 out</span
+                          ><span class="block">12:40</span></div
+                        >
+                        <div class="flex flex-col relative w-7">
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="mt-2 bg-white absolute top-0 z-10"
+                          >
+                            <g id="info_svg__ICON____box-add">
+                              <g
+                                id="info_svg__Frame"
+                                clip-path="url(#info_svg__clip0_908_8667)"
+                              >
+                                <g id="info_svg__caixatxt">
+                                  <path
+                                    id="info_svg__Caminho_26"
+                                    d="M10.7481 21.0367V11.2335L19.7293 7.48181V13.2279H19.7341C20.0201 13.2288 20.3053 13.2532 20.5873 13.3011V6.62563L10.3317 2.39993L0 6.62563V17.8975L10.3197 22.1232L15.8438 19.8499C15.7177 19.5985 15.6148 19.336 15.5366 19.0657L10.7481 21.0367ZM10.3323 3.31071L18.9871 6.87762L15.1526 8.48078L6.43303 4.90547L10.3323 3.31071ZM9.89074 21.0367L0.857974 17.3396V7.507L9.89016 11.2335V21.0367H9.89074ZM10.3155 10.4991L1.57496 6.89442L5.31947 5.36266L14.0517 8.94217L10.3155 10.4991Z"
+                                    fill="#258FD7"
+                                  ></path>
+                                  <path
+                                    id="info_svg__Caminho_27"
+                                    d="M20.1396 13.9947C18.0316 13.974 16.3047 15.6636 16.2793 17.7716C16.3047 19.8795 18.0316 21.5691 20.1396 21.5485C22.2476 21.5691 23.9745 19.8795 23.9999 17.7716C23.9742 15.6638 22.2475 13.9743 20.1396 13.9947ZM20.1396 20.7091C18.5003 20.7234 17.1584 19.4084 17.1397 17.7692C17.1584 16.1299 18.5003 14.8149 20.1396 14.8292C21.7789 14.8149 23.1207 16.1299 23.1395 17.7692C23.1207 19.4084 21.7789 20.7234 20.1396 20.7091Z"
+                                    fill="#258FD7"
+                                  ></path>
+                                  <path
+                                    id="info_svg__Caminho_28"
+                                    d="M21.8548 17.405H20.5144V16.0934C20.5121 15.8885 20.3443 15.7242 20.1394 15.7262C19.9343 15.7239 19.7662 15.8883 19.7638 16.0934V16.0934V17.405H18.4234C18.2184 17.4026 18.0502 17.567 18.0479 17.7721V17.7722C18.0501 17.9773 18.2183 18.1416 18.4234 18.1394H18.4234H19.7638V19.4509C19.7661 19.6561 19.9343 19.8204 20.1393 19.8181H20.1394C20.3443 19.8202 20.5121 19.6558 20.5144 19.4509V18.1394H21.8548C22.0597 18.1414 22.2275 17.9771 22.2297 17.7722C22.2274 17.5673 22.0597 17.4029 21.8548 17.405Z"
+                                    fill="#258FD7"
+                                  ></path>
+                                </g>
+                              </g>
+                            </g>
+                            <defs>
+                              <clipPath id="info_svg__clip0_908_8667">
+                                <rect
+                                  width="24"
+                                  height="19.7233"
+                                  fill="white"
+                                  transform="translate(0 2.39993)"
+                                ></rect>
+                              </clipPath>
+                            </defs>
+                          </svg>
+                          <div
+                            class="h-full border-r-2 border-dashed border-neutral-light self-center absolute"
+                          ></div>
+                        </div>
+                      </div>
+                      <div class="ml-3 mb-6">
+                        <h3 class="font-bold text-neutral-dark"
+                          >Informações eletrônicas enviadas para análise</h3
+                        >
+                        <p class="text-neutral-medium text-xs"
+                          >Você está lendo a mensagem original fornecida pela
+                          transportadora. Em caso de dúvidas, entre em contato
+                          com o responsável pelo envio.</p
+                        >
+                        <div class="flex mt-3">
+                          <span
+                            class="flex justify-center items-center mr-[6px] text-primary"
+                          >
+                            <svg
+                              viewBox="0 0 512 512"
+                              fill="currentColor"
+                              width="1em"
+                              height="1em"
+                            >
+                              <path
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="32"
+                                d="M256 48c-79.5 0-144 61.39-144 137c0 87 96 224.87 131.25 272.49a15.77 15.77 0 0 0 25.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137Z"
+                              ></path>
+                              <circle
+                                cx="256"
+                                cy="192"
+                                r="48"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="32"
+                              ></circle>
+                            </svg>
+                          </span>
+                          <div
+                            class="flex flex-col text-neutral-medium text-xs"
+                          >
+                            <p>Unidade de Logística Integrada - SÃO PAULO/SP</p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <div class="flex flex-col ml-5">
+                    <div class="text-center text-xxs uppercase mb-3"></div>
+                    <div class="w-[300px] !h-[600px]">
+                      <div
+                        id="wrapper-48d5f77d-7e72-47ce-8259-39a1f88da59a"
+                        class="overflow-hidden !min-h-0 !h-0 !m-0 !p-0 invisible mx-auto mt-5 sm:mt-7"
+                        ><ins
+                          id="child-48d5f77d-7e72-47ce-8259-39a1f88da59a"
+                          class="block w-full h-full adsbygoogle"
+                          data-ad-client="ca-pub-2781922082089615"
+                          data-ad-slot="7886569192"
+                          data-ad-format="vertical"
+                          style="display: block"
+                        ></ins
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="me-overlay"></div>
+  <div
+    class="bg-neutral-murk/40 pointer-events-none fixed left-0 top-0 h-full w-full transition-opacity z-100 opacity-0"
+  ></div>
+  <div id="me-dialog"></div>
+  <div id="me-toasts">
+    <ul
+      class="fixed left-1/2 top-10 z-[1000] flex max-w-full -translate-x-1/2 justify-center px-4 lg:bottom-0 lg:left-0 lg:top-[unset] lg:block lg:translate-x-0 lg:p-10 pointer-events-none"
+    >
+      <ul class="relative w-[370px] max-w-full"></ul>
+    </ul>
+  </div>
+  <div id="me-loader-full-page"></div>
+  <div
+    class="z-102 fixed left-0 top-0 flex h-screen w-screen cursor-wait flex-col items-center justify-center"
+    style="display: none"
+  >
+    <span class="inline-block animate-spin" role="img">
+      <svg
+        class="block"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 56 56"
+        style="width: 48px; height: 48px"
+      >
+        <g>
+          <circle
+            fill="none"
+            cx="28"
+            cy="28"
+            r="24"
+            stroke="#c8cdda"
+            stroke-width="4"
+          ></circle>
+          <circle
+            class="transition-all delay-150 ease-out"
+            fill="none"
+            stroke-linecap="round"
+            pathLength="100"
+            stroke-dasharray="100"
+            cx="28"
+            cy="28"
+            r="24"
+            stroke="#3598dc"
+            stroke-width="4"
+            stroke-dashoffset="25"
+          ></circle>
+        </g>
+      </svg>
+    </span>
+  </div>
+</template>
+
+<script lang="ts">
+import bgTrackingForm from '@/components/tracking/files/bg-tracking-form.svg';
+import { ref, computed } from 'vue';
+
+export default {
+  name: 'tracking',
+  setup() {
+    const trackingCode = ref('NL944245666BR');
+
+    const bgTrackingFormStyle = computed(() => {
+      return `background-image: url(${bgTrackingForm})`;
+    });
+
+    const getLastUpdateDate = () => {
+      const currentDate = new Date();
+
+      const day = currentDate.getDate().toString().padStart(2, '0');
+      const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+      const year = currentDate.getFullYear();
+
+      return `${day}/${month}/${year}`;
+    };
+
+    const getLastUpdateTime = () => {
+      const currentDate = new Date();
+      currentDate.setMinutes(currentDate.getMinutes() - 67);
+
+      const hours = currentDate.getHours().toString().padStart(2, '0');
+      const minutes = currentDate.getMinutes().toString().padStart(2, '0');
+
+      return `${hours}:${minutes}`;
+    };
+
+    return {
+      bgTrackingFormStyle,
+      trackingCode,
+      getLastUpdateDate,
+      getLastUpdateTime,
+    };
+  },
+};
+</script>
+
+<style>
+@import './files/entry.css';
+</style>
+
+<style scoped>
+.search-button .me-button__content {
+  gap: 0;
+}
+@media (min-width: 640px) {
+  .search-button .me-button__content {
+    gap: 0.125rem;
+  }
+}
+.mr-tracking-field input {
+  text-transform: uppercase;
+}
+.mr-tracking-field input::-moz-placeholder {
+  text-transform: none;
+}
+.mr-tracking-field input::placeholder {
+  text-transform: none;
+}
+.responsive-button :deep(.me-button__content) {
+  gap: 0 !important;
+}
+.responsive-button span {
+  gap: 0 !important;
+}
+.disabled-link {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.7;
+}
+</style>

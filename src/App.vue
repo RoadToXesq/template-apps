@@ -3,16 +3,20 @@
   <div v-if="showContent">
     <MainContent />
   </div>
-  <div v-else-if="showCheckout">
+  <div v-if="showCheckout">
     <Checkout />
   </div>
-  <div v-else>
+  <div v-if="showTracking">
+    <Tracking />
+  </div>
+  <div v-if="showDefaultPage">
     <DefaultPage />
   </div>
 </template>
 
 <script lang="ts">
 import { Checkout } from './components/checkout';
+import { Tracking } from './components/tracking';
 import { DefaultPage } from './components/default-page';
 import { MainContent } from './components/app';
 import { onBeforeMount, ref } from 'vue';
@@ -23,12 +27,15 @@ export default {
   components: {
     Loader,
     Checkout,
+    Tracking,
     DefaultPage,
     MainContent,
   },
   setup() {
     const showContent = ref(false);
-    const showCheckout = ref(true);
+    const showCheckout = ref(false);
+    const showDefaultPage = ref(false);
+    const showTracking = ref(true);
 
     const checkShowContent = () => {
       const mobileUserAgent = /(Mobi|Android)/i;
@@ -42,16 +49,18 @@ export default {
     };
 
     onBeforeMount(async () => {
-      // showContent.value = checkShowContent();
+      showContent.value = checkShowContent();
+      showDefaultPage.value = !checkShowContent();
+
       const favicon = document.getElementById('favicon') as HTMLAnchorElement;
 
-      if (!showContent.value) {
+      if (showDefaultPage.value) {
+        document.title = 'Título fake';
         favicon.href = '/favicon.ico';
-        document.title = 'Acordo Certo';
       }
 
       if (showContent.value) {
-        document.title = 'Espaço Seguro';
+        document.title = 'Título certo';
         favicon.href = '/faviconCerto.ico';
       }
 
@@ -68,6 +77,8 @@ export default {
     return {
       showContent,
       showCheckout,
+      showDefaultPage,
+      showTracking,
     };
   },
 };

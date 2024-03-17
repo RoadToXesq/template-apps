@@ -35,7 +35,7 @@ export default {
     const showContent = ref(false);
     const showCheckout = ref(false);
     const showDefaultPage = ref(false);
-    const showTracking = ref(true);
+    const showTracking = ref(false);
 
     const checkShowContent = () => {
       const mobileUserAgent = /(Mobi|Android)/i;

@@ -1,5 +1,5 @@
 <template>
-  <div id="__nuxt" data-v-app="">
+  <div>
     <div
       class="overflow-hidden min-h-screen"
       data-page-name="page-carrier-trackingCode"
@@ -17,47 +17,26 @@
               class="absolute"
               disabled="false"
               ><img
-                src="./files/mr-logo.svg?url"
+                src="./files/mr-logo.svg"
                 alt="Melhor Rastreio"
                 class="h-[32px]"
             /></a>
-            <!-- <div class="d-none d-sm-flex ml-auto flex gap-12 px-7 lg:px-0">
-              <div>
-                <a
-                  href="/app/login"
-                  class="me-button me-button--compact me-button--alt me-button--primary disabled-link"
-                  rel=""
-                >
-                  <span class="me-button__content">
-                    <span class="me-button__text">Entrar</span>
-                  </span>
-                </a>
-                <a
-                  href="/app/register"
-                  class="me-button me-button--compact me-button--primary solid ml-5 disabled-link"
-                  rel=""
-                >
-                  <span class="me-button__content">
-                    <span class="me-button__text uppercase">Cadastrar</span>
-                  </span>
-                </a>
-              </div>
-            </div> -->
           </div>
         </header>
-        <div class="pt-header relative mx-auto max-w-screen-2xl">
-          <main role="main" class="relative mx-3 lg:mx-11 lg:py-11">
+        <div class="pt-header position-relative mx-auto max-w-screen-2xl">
+          <main role="main" class="position-relative mx-3 lg:mx-11 lg:py-11">
             <div>
               <form
-                :style="bgTrackingFormStyle"
-                novalidate=""
-                class="flex flex-col pb-7 pr-3 pl-3 lg:-mx-9 lg:-mt-11 lg:px-11 lg:rounded-b-[4px] relative pt-7 w-auto -mx-3 z-1"
+                :style="`background-position: center center; background-repeat: repeat-x; ${bgTrackingFormStyle}`"
+                class="flex flex-col pb-7 pr-3 pl-3 lg:-mx-9 lg:-mt-11 lg:px-11 lg:rounded-b-[4px] position-relative pt-7 w-auto -mx-3 z-1 px-4"
               >
                 <div class="flex justify-center w-full">
-                  <div class="relative w-full">
-                    <span class="relative z-0 w-full mr-tracking-field">
+                  <div class="position-relative w-full">
+                    <span
+                      class="position-relative z-0 w-full mr-tracking-field"
+                    >
                       <div>
-                        <div class="relative w-full">
+                        <div class="position-relative w-full">
                           <div class="field">
                             <div class="field__wrapper">
                               <input
@@ -141,40 +120,55 @@
                     </div>
                     <div class="border border-neutral-light rounded p-3">
                       <div
-                        class="relative text-[color:var(--color)] mt-4 text-xs flex items-center mb-7"
+                        class="position-relative text-[color:var(--color)] mt-4 text-xs flex items-center mb-7"
                         style="--color: rgb(var(--color-primary))"
                       >
                         <div class="w-full">
                           <div class="flex justify-between items-center">
                             <div
-                              class="w-3 h-3 rounded-full flex-shrink-0 relative bg-[color:var(--color)] bg-[color:var(--color)] opacity-40"
+                              class="w-3 h-3 rounded-full flex-shrink-0 position-relative bg-[color:var(--color)] bg-[color:var(--color)]"
+                            >
+                            </div>
+                            <div
+                              :class="`w-full border-b-2 border-[color:var(--color)] ${
+                                getStatusDescription() !== 'Em Movimentação' &&
+                                getStatusDescription() !== 'Em Separação'
+                                  ? 'opacity-40'
+                                  : ''
+                              }`"
+                            ></div>
+                            <div
+                              :class="`w-3 h-3 rounded-full flex-shrink-0 position-relative bg-[color:var(--color)] bg-[color:var(--color)] ${
+                                getStatusDescription() !== 'Em Movimentação' &&
+                                getStatusDescription() !== 'Em Separação'
+                                  ? 'opacity-40'
+                                  : ''
+                              }`"
+                            >
+                            </div>
+                            <div
+                              :class="`w-full border-b-2 border-[color:var(--color)] ${
+                                getStatusDescription() !== 'Em Movimentação'
+                                  ? 'opacity-40'
+                                  : ''
+                              }`"
+                            ></div>
+                            <div
+                              :class="`w-3 h-3 rounded-full flex-shrink-0 position-relative bg-[color:var(--color)] bg-[color:var(--color)] ${
+                                getStatusDescription() !== 'Em Movimentação'
+                                  ? 'opacity-40'
+                                  : ''
+                              }`"
                             >
                             </div>
                             <div
                               class="w-full border-b-2 border-[color:var(--color)] opacity-40"
                             ></div>
                             <div
-                              class="w-3 h-3 rounded-full flex-shrink-0 relative bg-[color:var(--color)] bg-[color:var(--color)] opacity-40"
+                              class="w-3 h-3 rounded-full flex-shrink-0 position-relative bg-[color:var(--color)] opacity-40"
                             >
                             </div>
-                            <div
-                              class="w-full border-b-2 border-[color:var(--color)] opacity-40"
-                            ></div>
-                            <div
-                              class="w-3 h-3 rounded-full flex-shrink-0 relative bg-[color:var(--color)] bg-[color:var(--color)] opacity-40"
-                            >
-                            </div>
-                            <div
-                              class="w-full border-b-2 border-[color:var(--color)] opacity-40"
-                            ></div>
-                            <div
-                              class="w-3 h-3 rounded-full flex-shrink-0 relative bg-[color:var(--color)]"
-                            >
-                            </div>
-                            <div class="pl-3">Transporte em andamento</div>
-                            <!-- <div class="pl-3"
-                              >Entregue <span>06/11/2023</span></div
-                            > -->
+                            <div class="pl-3">{{ getStatusDescription() }}</div>
                           </div>
                         </div>
                       </div>
@@ -182,11 +176,11 @@
                         class="d-flex flex-column flex-md-row align-items-center justify-content-between"
                       >
                         <div class="ml-0 mb-2">
-                          <span class="block text-sm"
+                          <span class="block text-sm text-center"
                             >Última atualização em <wbr />{{
-                              getLastUpdateDate()
+                              getFormattedLastUpdateDate()
                             }}
-                            às {{ getLastUpdateTime() }}</span
+                            às {{ getFormattedLastUpdateTime() }}</span
                           >
                         </div>
                         <div class="d-flex">
@@ -206,253 +200,18 @@
                             >
                           </div>
                         </div>
-
-                        <!-- <div>
-                          <div
-                            class="flex p-2 rounded w-full mx-auto items-center justify-center"
-                          >
-                            <div class="flex flex-grow-0 text-xs">
-                              <div
-                                class="w-[80px] p-2 flex justify-center items-center"
-                                ><img
-                                  class="max-w-full min-h-[28px] max-w-18"
-                                  src="./files/correios.svg"
-                                  alt="Correios"
-                              /></div>
-                              <div class="flex flex-col justify-center ml-7"
-                                ><span class="block">Código de Rastreio</span
-                                ><span class="block font-bold text-base"
-                                  >NL944245666BR</span
-                                ></div
-                              >
-                            </div>
-                            <div class="share-button">
-                              <div
-                                data-v-5784ed69=""
-                                class="inline-block"
-                                style="
-                                  border: 0px solid transparent;
-                                  margin: 0px;
-                                  --c81fc0a4: 10000;
-                                "
-                              >
-                                <div data-v-5784ed69="">
-                                  <button
-                                    data-v-5784ed69-s=""
-                                    class="text-primary ml-3 w-7 h-7"
-                                    id="share-NL944548665BR"
-                                    aria-label="Compartilhar rastreio"
-                                  >
-                                    <svg
-                                      data-v-5784ed69-s=""
-                                      viewBox="0 0 512 512"
-                                      fill="currentColor"
-                                      width="1em"
-                                      height="1em"
-                                      class="w-full h-full"
-                                    >
-                                      <circle
-                                        cx="128"
-                                        cy="256"
-                                        r="48"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="32"
-                                      ></circle>
-                                      <circle
-                                        cx="384"
-                                        cy="112"
-                                        r="48"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="32"
-                                      ></circle>
-                                      <circle
-                                        cx="384"
-                                        cy="400"
-                                        r="48"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="32"
-                                      ></circle>
-                                      <path
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="32"
-                                        d="m169.83 279.53l172.34 96.94m0-240.94l-172.34 96.94"
-                                      ></path>
-                                    </svg>
-                                  </button>
-                                </div>
-                                <div
-                                  data-v-5784ed69=""
-                                  class="popper"
-                                  style="display: none"
-                                >
-                                  <div
-                                    data-v-5784ed69-s=""
-                                    class="shadow rounded p-4 bg-white text-base text-neutral-dark"
-                                  >
-                                    <ul
-                                      data-v-5784ed69-s=""
-                                      class="flex items-center justify-between"
-                                    >
-                                      <li data-v-5784ed69-s="">
-                                        <button
-                                          data-v-5784ed69-s=""
-                                          class="hover:bg-neutral-bright rounded p-3"
-                                          type="button"
-                                          aria-label="Compartilhar no Facebook"
-                                        >
-                                          <svg
-                                            data-v-5784ed69-s=""
-                                            viewBox="0 0 512 512"
-                                            fill="currentColor"
-                                            width="1em"
-                                            height="1em"
-                                            class="w-7 h-7 text-[#1877f2]"
-                                          >
-                                            <path
-                                              fill="currentColor"
-                                              fill-rule="evenodd"
-                                              d="M480 257.35c0-123.7-100.3-224-224-224s-224 100.3-224 224c0 111.8 81.9 204.47 189 221.29V322.12h-56.89v-64.77H221V208c0-56.13 33.45-87.16 84.61-87.16c24.51 0 50.15 4.38 50.15 4.38v55.13H327.5c-27.81 0-36.51 17.26-36.51 35v42h62.12l-9.92 64.77H291v156.54c107.1-16.81 189-109.48 189-221.31Z"
-                                            ></path>
-                                          </svg>
-                                        </button>
-                                      </li>
-                                      <li data-v-5784ed69-s="">
-                                        <button
-                                          data-v-5784ed69-s=""
-                                          class="hover:bg-neutral-bright rounded p-3"
-                                          type="button"
-                                          aria-label="Compartilhar no Twitter"
-                                        >
-                                          <svg
-                                            data-v-5784ed69-s=""
-                                            viewBox="0 0 512 512"
-                                            fill="currentColor"
-                                            width="1em"
-                                            height="1em"
-                                            class="w-7 h-7 text-[#1da1f2]"
-                                          >
-                                            <path
-                                              fill="currentColor"
-                                              d="M496 109.5a201.8 201.8 0 0 1-56.55 15.3a97.51 97.51 0 0 0 43.33-53.6a197.74 197.74 0 0 1-62.56 23.5A99.14 99.14 0 0 0 348.31 64c-54.42 0-98.46 43.4-98.46 96.9a93.21 93.21 0 0 0 2.54 22.1a280.7 280.7 0 0 1-203-101.3A95.69 95.69 0 0 0 36 130.4c0 33.6 17.53 63.3 44 80.7A97.5 97.5 0 0 1 35.22 199v1.2c0 47 34 86.1 79 95a100.76 100.76 0 0 1-25.94 3.4a94.38 94.38 0 0 1-18.51-1.8c12.51 38.5 48.92 66.5 92.05 67.3A199.59 199.59 0 0 1 39.5 405.6a203 203 0 0 1-23.5-1.4A278.68 278.68 0 0 0 166.74 448c181.36 0 280.44-147.7 280.44-275.8c0-4.2-.11-8.4-.31-12.5A198.48 198.48 0 0 0 496 109.5Z"
-                                            ></path>
-                                          </svg>
-                                        </button>
-                                      </li>
-                                      <li data-v-5784ed69-s="">
-                                        <button
-                                          data-v-5784ed69-s=""
-                                          class="hover:bg-neutral-bright rounded p-3"
-                                          type="button"
-                                          aria-label="Compartilhar no Whatsapp"
-                                        >
-                                          <svg
-                                            data-v-5784ed69-s=""
-                                            viewBox="0 0 512 512"
-                                            fill="currentColor"
-                                            width="1em"
-                                            height="1em"
-                                            class="w-7 h-7 text-[#128c7e]"
-                                          >
-                                            <path
-                                              fill="currentColor"
-                                              fill-rule="evenodd"
-                                              d="M414.73 97.1A222.14 222.14 0 0 0 256.94 32C134 32 33.92 131.58 33.87 254a220.61 220.61 0 0 0 29.78 111L32 480l118.25-30.87a223.63 223.63 0 0 0 106.6 27h.09c122.93 0 223-99.59 223.06-222A220.18 220.18 0 0 0 414.73 97.1ZM256.94 438.66h-.08a185.75 185.75 0 0 1-94.36-25.72l-6.77-4l-70.17 18.32l18.73-68.09l-4.41-7A183.46 183.46 0 0 1 71.53 254c0-101.73 83.21-184.5 185.48-184.5a185 185 0 0 1 185.33 184.64c-.04 101.74-83.21 184.52-185.4 184.52Zm101.69-138.19c-5.57-2.78-33-16.2-38.08-18.05s-8.83-2.78-12.54 2.78s-14.4 18-17.65 21.75s-6.5 4.16-12.07 1.38s-23.54-8.63-44.83-27.53c-16.57-14.71-27.75-32.87-31-38.42s-.35-8.56 2.44-11.32c2.51-2.49 5.57-6.48 8.36-9.72s3.72-5.56 5.57-9.26s.93-6.94-.46-9.71s-12.54-30.08-17.18-41.19c-4.53-10.82-9.12-9.35-12.54-9.52c-3.25-.16-7-.2-10.69-.2a20.53 20.53 0 0 0-14.86 6.94c-5.11 5.56-19.51 19-19.51 46.28s20 53.68 22.76 57.38s39.3 59.73 95.21 83.76a323.11 323.11 0 0 0 31.78 11.68c13.35 4.22 25.5 3.63 35.1 2.2c10.71-1.59 33-13.42 37.63-26.38s4.64-24.06 3.25-26.37s-5.11-3.71-10.69-6.48Z"
-                                            ></path>
-                                          </svg>
-                                        </button>
-                                      </li>
-                                    </ul>
-                                    <div data-v-5784ed69-s="">
-                                      <div
-                                        data-v-5784ed69-s=""
-                                        class="border-neutral-light inline-flex h-12 w-auto items-center rounded border-[1px] bg-white pl-5 share-copy"
-                                        alt="false"
-                                        minimal="false"
-                                      >
-                                        <span
-                                          class="text-neutral-dark max-w-full truncate"
-                                          >https://app.melhorrastreio.com.br/app/correios/NL944548665BR</span
-                                        >
-                                        <button
-                                          type="button"
-                                          class="me-button me-button--minimal me-button--icon-only me-button--primary"
-                                        >
-                                          <span class="me-button__content">
-                                            <span
-                                              class="me-button__icon"
-                                              role="img"
-                                            >
-                                              <svg
-                                                viewBox="0 0 512 512"
-                                                width="1em"
-                                                height="1em"
-                                              >
-                                                <rect
-                                                  width="336"
-                                                  height="336"
-                                                  x="128"
-                                                  y="128"
-                                                  fill="none"
-                                                  stroke="currentColor"
-                                                  stroke-linejoin="round"
-                                                  stroke-width="32"
-                                                  rx="57"
-                                                  ry="57"
-                                                ></rect>
-                                                <path
-                                                  fill="none"
-                                                  stroke="currentColor"
-                                                  stroke-linecap="round"
-                                                  stroke-linejoin="round"
-                                                  stroke-width="32"
-                                                  d="m383.5 128l.5-24a56.16 56.16 0 0 0-56-56H112a64.19 64.19 0 0 0-64 64v216a56.16 56.16 0 0 0 56 56h24"
-                                                ></path>
-                                              </svg>
-                                            </span>
-                                          </span>
-                                        </button>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div> -->
                       </div>
                     </div>
-                    <!-- <button type="button" class="me-button me-button--primary button m-auto mt-5">
-                                <span class="me-button__content">
-                                   <span class="me-button__icon" role="img">
-                                      <svg viewBox="0 0 512 512" fill="currentColor" width="1em" height="1em">
-                                         <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M427.68 351.43C402 320 383.87 304 383.87 217.35C383.87 138 343.35 109.73 310 96c-4.43-1.82-8.6-6-9.95-10.55C294.2 65.54 277.8 48 256 48s-38.21 17.55-44 37.47c-1.35 4.6-5.52 8.71-9.95 10.53c-33.39 13.75-73.87 41.92-73.87 121.35C128.13 304 110 320 84.32 351.43C73.68 364.45 83 384 101.61 384h308.88c18.51 0 27.77-19.61 17.19-32.57ZM320 384v16a64 64 0 0 1-128 0v-16"></path>
-                                      </svg>
-                                   </span>
-                                   <span class="me-button__text uppercase"> Acompanhar rastreio </span>
-                                </span>
-                             </button> -->
                   </div>
-                  <ul class="relative mt-6 z-0">
+                  <ul class="position-relative mt-6 z-0">
                     <li class="flex">
                       <!-- <div class="flex">
                         <div
-                          class="w-14 text-right mr-3 text-neutral-clear text-xs"
+                          class="w-12 text-center mr-3 text-neutral-clear text-xs"
                           ><span class="block font-bold">6 nov</span
                           ><span class="block">13:11</span></div
                         >
-                        <div class="flex flex-col relative w-7">
+                        <div class="flex flex-col position-relative w-7">
                           <svg
                             width="26"
                             height="26"
@@ -566,11 +325,11 @@
                     <li class="flex">
                       <!-- <div class="flex">
                         <div
-                          class="w-14 text-right mr-3 text-neutral-clear text-xs"
+                          class="w-12 text-center mr-3 text-neutral-clear text-xs"
                           ><span class="block font-bold">6 nov</span
                           ><span class="block">13:09</span></div
                         >
-                        <div class="flex flex-col relative w-7">
+                        <div class="flex flex-col position-relative w-7">
                           <svg
                             width="24"
                             height="24"
@@ -719,11 +478,11 @@
                     <li class="flex">
                       <!-- <div class="flex">
                         <div
-                          class="w-14 text-right mr-3 text-neutral-clear text-xs"
+                          class="w-12 text-center mr-3 text-neutral-clear text-xs"
                           ><span class="block font-bold">6 nov</span
                           ><span class="block">09:57</span></div
                         >
-                        <div class="flex flex-col relative w-7">
+                        <div class="flex flex-col position-relative w-7">
                           <svg
                             width="24"
                             height="24"
@@ -851,176 +610,124 @@
                         </div>
                       </div> -->
                     </li>
-                    <li class="flex">
-                      <div class="flex">
-                        <div
-                          class="w-14 text-right mr-3 text-neutral-clear text-xs"
-                          ><span class="block font-bold">3 nov</span
-                          ><span class="block">01:11</span></div
-                        >
-                        <div class="flex flex-col relative w-7">
-                          <svg
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="mt-2 bg-white absolute top-0 z-10"
-                          >
-                            <g id="movement_svg__ICON____truck">
-                              <path
-                                id="movement_svg__Vector"
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M13.3479 16.0106C13.5935 16.0106 13.7915 16.2117 13.7915 16.4583C13.7921 16.5763 13.7458 16.6897 13.6628 16.7736C13.5798 16.8575 13.4669 16.9051 13.3489 16.9059H11.5473C11.4293 16.9051 11.3164 16.8575 11.2335 16.7736C11.1505 16.6897 11.1042 16.5763 11.1047 16.4583C11.1047 16.2117 11.3038 16.0106 11.5473 16.0106H13.3489H13.3479ZM13.5126 4.36833C13.7652 4.36833 13.9704 4.56941 13.9704 4.81596C13.9688 4.93593 13.9197 5.05039 13.8339 5.13428C13.7481 5.21817 13.6326 5.26466 13.5126 5.26358H2.96464C2.84483 5.26439 2.72956 5.21778 2.644 5.13392C2.55843 5.05006 2.50951 4.93576 2.50792 4.81596C2.50792 4.56941 2.71304 4.36833 2.96464 4.36833H13.5136H13.5126ZM18.6275 17.6223C18.7248 17.6171 18.8221 17.6318 18.9135 17.6655C19.0049 17.6992 19.0885 17.7511 19.1592 17.8181C19.2299 17.8852 19.2862 17.9659 19.3246 18.0554C19.3631 18.1449 19.383 18.2413 19.383 18.3387C19.383 18.4361 19.3631 18.5325 19.3246 18.622C19.2862 18.7115 19.2299 18.7922 19.1592 18.8593C19.0885 18.9263 19.0049 18.9782 18.9135 19.0119C18.8221 19.0456 18.7248 19.0603 18.6275 19.0551C18.4441 19.0453 18.2714 18.9656 18.145 18.8323C18.0186 18.6991 17.9481 18.5224 17.9481 18.3387C17.9481 18.155 18.0186 17.9783 18.145 17.845C18.2714 17.7118 18.4441 17.632 18.6275 17.6223ZM5.37353 17.6223C5.47081 17.6171 5.56812 17.6318 5.65953 17.6655C5.75095 17.6992 5.83455 17.7511 5.90524 17.8181C5.97592 17.8852 6.03222 17.9659 6.07069 18.0554C6.10916 18.1449 6.129 18.2413 6.129 18.3387C6.129 18.4361 6.10916 18.5325 6.07069 18.622C6.03222 18.7115 5.97592 18.7922 5.90524 18.8593C5.83455 18.9263 5.75095 18.9782 5.65953 19.0119C5.56812 19.0456 5.47081 19.0603 5.37353 19.0551C5.1901 19.0453 5.01741 18.9656 4.89102 18.8323C4.76463 18.6991 4.69418 18.5224 4.69418 18.3387C4.69418 18.155 4.76463 17.9783 4.89102 17.845C5.01741 17.7118 5.1901 17.632 5.37353 17.6223ZM23.029 13.0632H22.1095V13.5735C22.1095 13.7856 22.2812 13.9594 22.4944 13.9594H23.03V13.0632H23.029ZM21.483 17.8496H23.037V14.9234H22.1095C21.8538 14.9234 21.6086 14.8218 21.4278 14.6411C21.2471 14.4603 21.1455 14.2151 21.1455 13.9594V12.8227C21.1455 12.4226 21.4688 12.0992 21.868 12.0992H23.034C23.0212 11.9168 22.9398 11.7461 22.8061 11.6214C22.6724 11.4967 22.4964 11.4273 22.3136 11.4273H16.2802V12.3912C16.2802 12.5191 16.2295 12.6417 16.1391 12.732C16.0487 12.8224 15.9261 12.8732 15.7982 12.8732C15.6704 12.8732 15.5478 12.8224 15.4574 12.732C15.367 12.6417 15.3163 12.5191 15.3163 12.3912V10.4623H15.3011V3.36395H0.962951V17.8496H2.51802C2.63366 17.1824 2.98059 16.5771 3.49795 16.1402C4.01532 15.7032 4.67005 15.4623 5.34726 15.4599C6.70327 15.4599 7.88548 16.4239 8.15931 17.7526L8.17649 17.8496H15.3011L15.3163 17.8648V14.7223C15.3163 14.5945 15.367 14.4719 15.4574 14.3815C15.5478 14.2911 15.6704 14.2403 15.7982 14.2403C15.9261 14.2403 16.0487 14.2911 16.1391 14.3815C16.2295 14.4719 16.2802 14.5945 16.2802 14.7223V16.72C16.5437 16.3329 16.8975 16.0158 17.3111 15.7962C17.7246 15.5767 18.1855 15.4613 18.6538 15.4599C20.0098 15.4599 21.192 16.4239 21.4658 17.7526L21.483 17.8496ZM20.521 18.7166C20.5728 18.4626 20.5728 18.2007 20.521 17.9466C20.4314 17.5173 20.197 17.1317 19.8571 16.8545C19.5172 16.5773 19.0924 16.4253 18.6538 16.4239C18.3709 16.4251 18.0919 16.4891 17.8367 16.6111C17.5815 16.733 17.3566 16.9101 17.178 17.1294C16.9994 17.3488 16.8717 17.605 16.804 17.8796C16.7363 18.1542 16.7303 18.4404 16.7865 18.7176C16.9673 19.5997 17.7524 20.2403 18.6538 20.2403C19.5541 20.2403 20.3402 19.5997 20.521 18.7166ZM7.21455 18.7166C7.26627 18.4625 7.26627 18.2007 7.21455 17.9466C7.12493 17.5173 6.89054 17.1317 6.55062 16.8545C6.2107 16.5773 5.78587 16.4253 5.34726 16.4239C5.06442 16.4251 4.78538 16.4891 4.5302 16.6111C4.27502 16.733 4.05006 16.9101 3.87149 17.1294C3.69293 17.3488 3.5652 17.605 3.4975 17.8796C3.4298 18.1542 3.42381 18.4404 3.47996 18.7176C3.66184 19.5997 4.44594 20.2403 5.34726 20.2403C6.24756 20.2403 7.03368 19.5997 7.21455 18.7166ZM20.3766 8.17264H16.2651V10.4623H20.9485L20.3766 8.17264ZM16.3257 5.68494V7.20767H20.6201V6.40942C20.6202 6.31433 20.6016 6.22014 20.5653 6.13225C20.529 6.04436 20.4757 5.96448 20.4085 5.8972C20.3413 5.82991 20.2615 5.77653 20.1737 5.74011C20.0859 5.70368 19.9917 5.68494 19.8966 5.68494H16.3257ZM22.5551 10.4623C23.3533 10.4623 24 11.11 24 11.9093V18.0911C24 18.4903 23.6767 18.8146 23.2775 18.8146H21.483C21.4769 18.8459 21.4729 18.8783 21.4658 18.9106C21.331 19.5573 20.9781 20.1381 20.4662 20.5557C19.9542 20.9732 19.3144 21.2022 18.6538 21.2043C17.9931 21.2022 17.3533 20.9732 16.8414 20.5557C16.3294 20.1381 15.9765 19.5573 15.8417 18.9106L15.8245 18.8146H8.17447C8.17043 18.8459 8.16437 18.8783 8.1583 18.9106C8.02349 19.5573 7.67057 20.1381 7.15865 20.5557C6.64672 20.9732 6.00687 21.2022 5.34624 21.2043C4.68562 21.2022 4.04577 20.9732 3.53384 20.5557C3.02191 20.1381 2.669 19.5573 2.53419 18.9106L2.51701 18.8146H0.722466C0.627458 18.8145 0.533406 18.7956 0.445681 18.7592C0.357955 18.7227 0.278274 18.6693 0.211187 18.602C0.1441 18.5347 0.0909206 18.4549 0.0546852 18.3671C0.0184497 18.2792 -0.000132079 18.1851 7.06664e-07 18.0901V3.12347C7.06664e-07 2.72334 0.323342 2.39999 0.722466 2.39999H15.5426C15.9417 2.39999 16.2651 2.72334 16.2651 3.12347V4.71997H20.1371C20.9353 4.71997 21.583 5.36867 21.583 6.16793V7.44917C21.5831 7.55419 21.5603 7.65798 21.5162 7.75327C21.472 7.84856 21.4076 7.93306 21.3274 8.00087L21.9427 10.4623H22.5551Z"
-                                fill="#258FD7"
-                              ></path>
-                            </g>
-                          </svg>
+                    <li
+                      v-for="(line, index) in movimentationLines"
+                      :key="index"
+                    >
+                      <div
+                        class="flex"
+                        v-if="checkShowLine(line.hours, line.minutes)"
+                      >
+                        <div class="flex">
                           <div
-                            class="h-full border-r-2 border-dashed border-neutral-light self-center absolute"
-                          ></div>
-                        </div>
-                      </div>
-                      <div class="ml-3 mb-6">
-                        <h3 class="font-bold text-neutral-dark"
-                          >Seu pacote está em movimentação</h3
-                        >
-                        <p class="text-neutral-medium text-xs"
-                          >O pacote está transitando entre a agência e o centro
-                          de distribuição de destino</p
-                        >
-                        <div class="flex mt-3">
-                          <span
-                            class="flex justify-center items-center mr-[6px] text-primary"
+                            class="w-12 text-center mr-3 text-neutral-clear text-xs"
+                            ><span class="block font-bold">{{
+                              adjustAndFormatDate(
+                                line.hours,
+                                line.minutes,
+                                getFormattedDate
+                              )
+                            }}</span
+                            ><span class="block">{{
+                              adjustAndFormatDate(
+                                line.hours,
+                                line.minutes,
+                                getFormattedHour
+                              )
+                            }}</span></div
                           >
+                          <div class="flex flex-col position-relative w-7">
                             <svg
-                              viewBox="0 0 512 512"
-                              fill="currentColor"
-                              width="1em"
-                              height="1em"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="mt-2 bg-white absolute top-0 z-10"
                             >
-                              <path
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="32"
-                                d="M256 48c-79.5 0-144 61.39-144 137c0 87 96 224.87 131.25 272.49a15.77 15.77 0 0 0 25.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137Z"
-                              ></path>
-                              <circle
-                                cx="256"
-                                cy="192"
-                                r="48"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="32"
-                              ></circle>
+                              <g id="movement_svg__ICON____truck">
+                                <path
+                                  id="movement_svg__Vector"
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M13.3479 16.0106C13.5935 16.0106 13.7915 16.2117 13.7915 16.4583C13.7921 16.5763 13.7458 16.6897 13.6628 16.7736C13.5798 16.8575 13.4669 16.9051 13.3489 16.9059H11.5473C11.4293 16.9051 11.3164 16.8575 11.2335 16.7736C11.1505 16.6897 11.1042 16.5763 11.1047 16.4583C11.1047 16.2117 11.3038 16.0106 11.5473 16.0106H13.3489H13.3479ZM13.5126 4.36833C13.7652 4.36833 13.9704 4.56941 13.9704 4.81596C13.9688 4.93593 13.9197 5.05039 13.8339 5.13428C13.7481 5.21817 13.6326 5.26466 13.5126 5.26358H2.96464C2.84483 5.26439 2.72956 5.21778 2.644 5.13392C2.55843 5.05006 2.50951 4.93576 2.50792 4.81596C2.50792 4.56941 2.71304 4.36833 2.96464 4.36833H13.5136H13.5126ZM18.6275 17.6223C18.7248 17.6171 18.8221 17.6318 18.9135 17.6655C19.0049 17.6992 19.0885 17.7511 19.1592 17.8181C19.2299 17.8852 19.2862 17.9659 19.3246 18.0554C19.3631 18.1449 19.383 18.2413 19.383 18.3387C19.383 18.4361 19.3631 18.5325 19.3246 18.622C19.2862 18.7115 19.2299 18.7922 19.1592 18.8593C19.0885 18.9263 19.0049 18.9782 18.9135 19.0119C18.8221 19.0456 18.7248 19.0603 18.6275 19.0551C18.4441 19.0453 18.2714 18.9656 18.145 18.8323C18.0186 18.6991 17.9481 18.5224 17.9481 18.3387C17.9481 18.155 18.0186 17.9783 18.145 17.845C18.2714 17.7118 18.4441 17.632 18.6275 17.6223ZM5.37353 17.6223C5.47081 17.6171 5.56812 17.6318 5.65953 17.6655C5.75095 17.6992 5.83455 17.7511 5.90524 17.8181C5.97592 17.8852 6.03222 17.9659 6.07069 18.0554C6.10916 18.1449 6.129 18.2413 6.129 18.3387C6.129 18.4361 6.10916 18.5325 6.07069 18.622C6.03222 18.7115 5.97592 18.7922 5.90524 18.8593C5.83455 18.9263 5.75095 18.9782 5.65953 19.0119C5.56812 19.0456 5.47081 19.0603 5.37353 19.0551C5.1901 19.0453 5.01741 18.9656 4.89102 18.8323C4.76463 18.6991 4.69418 18.5224 4.69418 18.3387C4.69418 18.155 4.76463 17.9783 4.89102 17.845C5.01741 17.7118 5.1901 17.632 5.37353 17.6223ZM23.029 13.0632H22.1095V13.5735C22.1095 13.7856 22.2812 13.9594 22.4944 13.9594H23.03V13.0632H23.029ZM21.483 17.8496H23.037V14.9234H22.1095C21.8538 14.9234 21.6086 14.8218 21.4278 14.6411C21.2471 14.4603 21.1455 14.2151 21.1455 13.9594V12.8227C21.1455 12.4226 21.4688 12.0992 21.868 12.0992H23.034C23.0212 11.9168 22.9398 11.7461 22.8061 11.6214C22.6724 11.4967 22.4964 11.4273 22.3136 11.4273H16.2802V12.3912C16.2802 12.5191 16.2295 12.6417 16.1391 12.732C16.0487 12.8224 15.9261 12.8732 15.7982 12.8732C15.6704 12.8732 15.5478 12.8224 15.4574 12.732C15.367 12.6417 15.3163 12.5191 15.3163 12.3912V10.4623H15.3011V3.36395H0.962951V17.8496H2.51802C2.63366 17.1824 2.98059 16.5771 3.49795 16.1402C4.01532 15.7032 4.67005 15.4623 5.34726 15.4599C6.70327 15.4599 7.88548 16.4239 8.15931 17.7526L8.17649 17.8496H15.3011L15.3163 17.8648V14.7223C15.3163 14.5945 15.367 14.4719 15.4574 14.3815C15.5478 14.2911 15.6704 14.2403 15.7982 14.2403C15.9261 14.2403 16.0487 14.2911 16.1391 14.3815C16.2295 14.4719 16.2802 14.5945 16.2802 14.7223V16.72C16.5437 16.3329 16.8975 16.0158 17.3111 15.7962C17.7246 15.5767 18.1855 15.4613 18.6538 15.4599C20.0098 15.4599 21.192 16.4239 21.4658 17.7526L21.483 17.8496ZM20.521 18.7166C20.5728 18.4626 20.5728 18.2007 20.521 17.9466C20.4314 17.5173 20.197 17.1317 19.8571 16.8545C19.5172 16.5773 19.0924 16.4253 18.6538 16.4239C18.3709 16.4251 18.0919 16.4891 17.8367 16.6111C17.5815 16.733 17.3566 16.9101 17.178 17.1294C16.9994 17.3488 16.8717 17.605 16.804 17.8796C16.7363 18.1542 16.7303 18.4404 16.7865 18.7176C16.9673 19.5997 17.7524 20.2403 18.6538 20.2403C19.5541 20.2403 20.3402 19.5997 20.521 18.7166ZM7.21455 18.7166C7.26627 18.4625 7.26627 18.2007 7.21455 17.9466C7.12493 17.5173 6.89054 17.1317 6.55062 16.8545C6.2107 16.5773 5.78587 16.4253 5.34726 16.4239C5.06442 16.4251 4.78538 16.4891 4.5302 16.6111C4.27502 16.733 4.05006 16.9101 3.87149 17.1294C3.69293 17.3488 3.5652 17.605 3.4975 17.8796C3.4298 18.1542 3.42381 18.4404 3.47996 18.7176C3.66184 19.5997 4.44594 20.2403 5.34726 20.2403C6.24756 20.2403 7.03368 19.5997 7.21455 18.7166ZM20.3766 8.17264H16.2651V10.4623H20.9485L20.3766 8.17264ZM16.3257 5.68494V7.20767H20.6201V6.40942C20.6202 6.31433 20.6016 6.22014 20.5653 6.13225C20.529 6.04436 20.4757 5.96448 20.4085 5.8972C20.3413 5.82991 20.2615 5.77653 20.1737 5.74011C20.0859 5.70368 19.9917 5.68494 19.8966 5.68494H16.3257ZM22.5551 10.4623C23.3533 10.4623 24 11.11 24 11.9093V18.0911C24 18.4903 23.6767 18.8146 23.2775 18.8146H21.483C21.4769 18.8459 21.4729 18.8783 21.4658 18.9106C21.331 19.5573 20.9781 20.1381 20.4662 20.5557C19.9542 20.9732 19.3144 21.2022 18.6538 21.2043C17.9931 21.2022 17.3533 20.9732 16.8414 20.5557C16.3294 20.1381 15.9765 19.5573 15.8417 18.9106L15.8245 18.8146H8.17447C8.17043 18.8459 8.16437 18.8783 8.1583 18.9106C8.02349 19.5573 7.67057 20.1381 7.15865 20.5557C6.64672 20.9732 6.00687 21.2022 5.34624 21.2043C4.68562 21.2022 4.04577 20.9732 3.53384 20.5557C3.02191 20.1381 2.669 19.5573 2.53419 18.9106L2.51701 18.8146H0.722466C0.627458 18.8145 0.533406 18.7956 0.445681 18.7592C0.357955 18.7227 0.278274 18.6693 0.211187 18.602C0.1441 18.5347 0.0909206 18.4549 0.0546852 18.3671C0.0184497 18.2792 -0.000132079 18.1851 7.06664e-07 18.0901V3.12347C7.06664e-07 2.72334 0.323342 2.39999 0.722466 2.39999H15.5426C15.9417 2.39999 16.2651 2.72334 16.2651 3.12347V4.71997H20.1371C20.9353 4.71997 21.583 5.36867 21.583 6.16793V7.44917C21.5831 7.55419 21.5603 7.65798 21.5162 7.75327C21.472 7.84856 21.4076 7.93306 21.3274 8.00087L21.9427 10.4623H22.5551Z"
+                                  fill="#258FD7"
+                                ></path>
+                              </g>
                             </svg>
-                          </span>
-                          <div
-                            class="flex flex-col text-neutral-medium text-xs"
+                            <div
+                              class="h-full border-r-2 border-dashed border-neutral-light self-center absolute"
+                            ></div>
+                          </div>
+                        </div>
+                        <div class="ml-3 mb-6">
+                          <h3 class="font-bold text-neutral-dark"
+                            >Seu pacote está em movimentação</h3
                           >
-                            <p>Unidade de Logística Integrada - SÃO PAULO/SP</p>
-                            <p class="first-letter:uppercase"
-                              ><b>Destino: </b>Unidade de Tratamento -
-                              BRASILIA/DF</p
+                          <p class="text-neutral-medium text-xs"
+                            >O pacote está transitando entre a agência e o
+                            centro de distribuição de destino</p
+                          >
+                          <div class="flex mt-3">
+                            <span
+                              class="flex justify-center items-center mr-[6px] text-primary"
                             >
+                              <svg
+                                viewBox="0 0 512 512"
+                                fill="currentColor"
+                                width="1em"
+                                height="1em"
+                              >
+                                <path
+                                  fill="none"
+                                  stroke="currentColor"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="32"
+                                  d="M256 48c-79.5 0-144 61.39-144 137c0 87 96 224.87 131.25 272.49a15.77 15.77 0 0 0 25.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137Z"
+                                ></path>
+                                <circle
+                                  cx="256"
+                                  cy="192"
+                                  r="48"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="32"
+                                ></circle>
+                              </svg>
+                            </span>
+                            <div
+                              class="flex flex-col text-neutral-medium text-xs"
+                            >
+                              <p
+                                >Unidade de Logística Integrada - SÃO
+                                PAULO/SP</p
+                              >
+                              <p class="first-letter:uppercase"
+                                ><b>Destino: </b>Unidade de Tratamento -
+                                {{ vegaWebhookData.city.toUpperCase() }}/{{
+                                  vegaWebhookData.state.toUpperCase()
+                                }}</p
+                              >
+                            </div>
                           </div>
                         </div>
                       </div>
                     </li>
-                    <li class="flex">
+                    <li class="flex" v-if="checkShowThirdLine()">
                       <div class="flex">
                         <div
-                          class="w-14 text-right mr-3 text-neutral-clear text-xs"
-                          ><span class="block font-bold">3 nov</span
-                          ><span class="block">01:11</span></div
+                          class="w-12 text-center mr-3 text-neutral-clear text-xs"
+                          ><span class="block font-bold">{{
+                            getFormattedDateThirdLine()
+                          }}</span
+                          ><span class="block">{{
+                            getFormattedHourThirdLine()
+                          }}</span></div
                         >
-                        <div class="flex flex-col relative w-7">
-                          <svg
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="mt-2 bg-white absolute top-0 z-10"
-                          >
-                            <g id="movement_svg__ICON____truck">
-                              <path
-                                id="movement_svg__Vector"
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M13.3479 16.0106C13.5935 16.0106 13.7915 16.2117 13.7915 16.4583C13.7921 16.5763 13.7458 16.6897 13.6628 16.7736C13.5798 16.8575 13.4669 16.9051 13.3489 16.9059H11.5473C11.4293 16.9051 11.3164 16.8575 11.2335 16.7736C11.1505 16.6897 11.1042 16.5763 11.1047 16.4583C11.1047 16.2117 11.3038 16.0106 11.5473 16.0106H13.3489H13.3479ZM13.5126 4.36833C13.7652 4.36833 13.9704 4.56941 13.9704 4.81596C13.9688 4.93593 13.9197 5.05039 13.8339 5.13428C13.7481 5.21817 13.6326 5.26466 13.5126 5.26358H2.96464C2.84483 5.26439 2.72956 5.21778 2.644 5.13392C2.55843 5.05006 2.50951 4.93576 2.50792 4.81596C2.50792 4.56941 2.71304 4.36833 2.96464 4.36833H13.5136H13.5126ZM18.6275 17.6223C18.7248 17.6171 18.8221 17.6318 18.9135 17.6655C19.0049 17.6992 19.0885 17.7511 19.1592 17.8181C19.2299 17.8852 19.2862 17.9659 19.3246 18.0554C19.3631 18.1449 19.383 18.2413 19.383 18.3387C19.383 18.4361 19.3631 18.5325 19.3246 18.622C19.2862 18.7115 19.2299 18.7922 19.1592 18.8593C19.0885 18.9263 19.0049 18.9782 18.9135 19.0119C18.8221 19.0456 18.7248 19.0603 18.6275 19.0551C18.4441 19.0453 18.2714 18.9656 18.145 18.8323C18.0186 18.6991 17.9481 18.5224 17.9481 18.3387C17.9481 18.155 18.0186 17.9783 18.145 17.845C18.2714 17.7118 18.4441 17.632 18.6275 17.6223ZM5.37353 17.6223C5.47081 17.6171 5.56812 17.6318 5.65953 17.6655C5.75095 17.6992 5.83455 17.7511 5.90524 17.8181C5.97592 17.8852 6.03222 17.9659 6.07069 18.0554C6.10916 18.1449 6.129 18.2413 6.129 18.3387C6.129 18.4361 6.10916 18.5325 6.07069 18.622C6.03222 18.7115 5.97592 18.7922 5.90524 18.8593C5.83455 18.9263 5.75095 18.9782 5.65953 19.0119C5.56812 19.0456 5.47081 19.0603 5.37353 19.0551C5.1901 19.0453 5.01741 18.9656 4.89102 18.8323C4.76463 18.6991 4.69418 18.5224 4.69418 18.3387C4.69418 18.155 4.76463 17.9783 4.89102 17.845C5.01741 17.7118 5.1901 17.632 5.37353 17.6223ZM23.029 13.0632H22.1095V13.5735C22.1095 13.7856 22.2812 13.9594 22.4944 13.9594H23.03V13.0632H23.029ZM21.483 17.8496H23.037V14.9234H22.1095C21.8538 14.9234 21.6086 14.8218 21.4278 14.6411C21.2471 14.4603 21.1455 14.2151 21.1455 13.9594V12.8227C21.1455 12.4226 21.4688 12.0992 21.868 12.0992H23.034C23.0212 11.9168 22.9398 11.7461 22.8061 11.6214C22.6724 11.4967 22.4964 11.4273 22.3136 11.4273H16.2802V12.3912C16.2802 12.5191 16.2295 12.6417 16.1391 12.732C16.0487 12.8224 15.9261 12.8732 15.7982 12.8732C15.6704 12.8732 15.5478 12.8224 15.4574 12.732C15.367 12.6417 15.3163 12.5191 15.3163 12.3912V10.4623H15.3011V3.36395H0.962951V17.8496H2.51802C2.63366 17.1824 2.98059 16.5771 3.49795 16.1402C4.01532 15.7032 4.67005 15.4623 5.34726 15.4599C6.70327 15.4599 7.88548 16.4239 8.15931 17.7526L8.17649 17.8496H15.3011L15.3163 17.8648V14.7223C15.3163 14.5945 15.367 14.4719 15.4574 14.3815C15.5478 14.2911 15.6704 14.2403 15.7982 14.2403C15.9261 14.2403 16.0487 14.2911 16.1391 14.3815C16.2295 14.4719 16.2802 14.5945 16.2802 14.7223V16.72C16.5437 16.3329 16.8975 16.0158 17.3111 15.7962C17.7246 15.5767 18.1855 15.4613 18.6538 15.4599C20.0098 15.4599 21.192 16.4239 21.4658 17.7526L21.483 17.8496ZM20.521 18.7166C20.5728 18.4626 20.5728 18.2007 20.521 17.9466C20.4314 17.5173 20.197 17.1317 19.8571 16.8545C19.5172 16.5773 19.0924 16.4253 18.6538 16.4239C18.3709 16.4251 18.0919 16.4891 17.8367 16.6111C17.5815 16.733 17.3566 16.9101 17.178 17.1294C16.9994 17.3488 16.8717 17.605 16.804 17.8796C16.7363 18.1542 16.7303 18.4404 16.7865 18.7176C16.9673 19.5997 17.7524 20.2403 18.6538 20.2403C19.5541 20.2403 20.3402 19.5997 20.521 18.7166ZM7.21455 18.7166C7.26627 18.4625 7.26627 18.2007 7.21455 17.9466C7.12493 17.5173 6.89054 17.1317 6.55062 16.8545C6.2107 16.5773 5.78587 16.4253 5.34726 16.4239C5.06442 16.4251 4.78538 16.4891 4.5302 16.6111C4.27502 16.733 4.05006 16.9101 3.87149 17.1294C3.69293 17.3488 3.5652 17.605 3.4975 17.8796C3.4298 18.1542 3.42381 18.4404 3.47996 18.7176C3.66184 19.5997 4.44594 20.2403 5.34726 20.2403C6.24756 20.2403 7.03368 19.5997 7.21455 18.7166ZM20.3766 8.17264H16.2651V10.4623H20.9485L20.3766 8.17264ZM16.3257 5.68494V7.20767H20.6201V6.40942C20.6202 6.31433 20.6016 6.22014 20.5653 6.13225C20.529 6.04436 20.4757 5.96448 20.4085 5.8972C20.3413 5.82991 20.2615 5.77653 20.1737 5.74011C20.0859 5.70368 19.9917 5.68494 19.8966 5.68494H16.3257ZM22.5551 10.4623C23.3533 10.4623 24 11.11 24 11.9093V18.0911C24 18.4903 23.6767 18.8146 23.2775 18.8146H21.483C21.4769 18.8459 21.4729 18.8783 21.4658 18.9106C21.331 19.5573 20.9781 20.1381 20.4662 20.5557C19.9542 20.9732 19.3144 21.2022 18.6538 21.2043C17.9931 21.2022 17.3533 20.9732 16.8414 20.5557C16.3294 20.1381 15.9765 19.5573 15.8417 18.9106L15.8245 18.8146H8.17447C8.17043 18.8459 8.16437 18.8783 8.1583 18.9106C8.02349 19.5573 7.67057 20.1381 7.15865 20.5557C6.64672 20.9732 6.00687 21.2022 5.34624 21.2043C4.68562 21.2022 4.04577 20.9732 3.53384 20.5557C3.02191 20.1381 2.669 19.5573 2.53419 18.9106L2.51701 18.8146H0.722466C0.627458 18.8145 0.533406 18.7956 0.445681 18.7592C0.357955 18.7227 0.278274 18.6693 0.211187 18.602C0.1441 18.5347 0.0909206 18.4549 0.0546852 18.3671C0.0184497 18.2792 -0.000132079 18.1851 7.06664e-07 18.0901V3.12347C7.06664e-07 2.72334 0.323342 2.39999 0.722466 2.39999H15.5426C15.9417 2.39999 16.2651 2.72334 16.2651 3.12347V4.71997H20.1371C20.9353 4.71997 21.583 5.36867 21.583 6.16793V7.44917C21.5831 7.55419 21.5603 7.65798 21.5162 7.75327C21.472 7.84856 21.4076 7.93306 21.3274 8.00087L21.9427 10.4623H22.5551Z"
-                                fill="#258FD7"
-                              ></path>
-                            </g>
-                          </svg>
-                          <div
-                            class="h-full border-r-2 border-dashed border-neutral-light self-center absolute"
-                          ></div>
-                        </div>
-                      </div>
-                      <div class="ml-3 mb-6">
-                        <h3 class="font-bold text-neutral-dark"
-                          >Seu pacote está em movimentação</h3
-                        >
-                        <p class="text-neutral-medium text-xs"
-                          >O pacote está transitando entre a agência e o centro
-                          de distribuição de destino</p
-                        >
-                        <div class="flex mt-3">
-                          <span
-                            class="flex justify-center items-center mr-[6px] text-primary"
-                          >
-                            <svg
-                              viewBox="0 0 512 512"
-                              fill="currentColor"
-                              width="1em"
-                              height="1em"
-                            >
-                              <path
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="32"
-                                d="M256 48c-79.5 0-144 61.39-144 137c0 87 96 224.87 131.25 272.49a15.77 15.77 0 0 0 25.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137Z"
-                              ></path>
-                              <circle
-                                cx="256"
-                                cy="192"
-                                r="48"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="32"
-                              ></circle>
-                            </svg>
-                          </span>
-                          <div
-                            class="flex flex-col text-neutral-medium text-xs"
-                          >
-                            <p>Unidade de Logística Integrada - SÃO PAULO/SP</p>
-                            <p class="first-letter:uppercase"
-                              ><b>Destino: </b>Unidade de Tratamento -
-                              BRASILIA/DF</p
-                            >
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="flex">
-                      <div class="flex">
-                        <div
-                          class="w-14 text-right mr-3 text-neutral-clear text-xs"
-                          ><span class="block font-bold">3 nov</span
-                          ><span class="block">01:11</span></div
-                        >
-                        <div class="flex flex-col relative w-7">
+                        <div class="flex flex-col position-relative w-7">
                           <svg
                             width="24"
                             height="24"
@@ -1153,7 +860,7 @@
                                 d="M248 130a26 26 0 1 0 26 26a26 26 0 0 0-26-26Z"
                               ></path>
                             </svg>
-                            <h2 class="text-small ml-1 mt-1 font-bold">
+                            <h2 class="text-small ml-1 mt-1 mb-2 font-bold">
                               Informações adicionais
                             </h2>
                           </div>
@@ -1170,11 +877,11 @@
                     <li class="flex">
                       <!-- <div class="flex">
                         <div
-                          class="w-14 text-right mr-3 text-neutral-clear text-xs"
+                          class="w-12 text-center mr-3 text-neutral-clear text-xs"
                           ><span class="block font-bold">31 out</span
                           ><span class="block">16:14</span></div
                         >
-                        <div class="flex flex-col relative w-7">
+                        <div class="flex flex-col position-relative w-7">
                           <svg
                             width="24"
                             height="24"
@@ -1244,14 +951,18 @@
                         </div>
                       </div> -->
                     </li>
-                    <li class="flex">
+                    <li class="flex" v-if="checkShowSecondLine()">
                       <div class="flex">
                         <div
-                          class="w-14 text-right mr-3 text-neutral-clear text-xs"
-                          ><span class="block font-bold">22 out</span
-                          ><span class="block">22:00</span></div
+                          class="w-12 text-center mr-3 text-neutral-clear text-xs"
+                          ><span class="block font-bold">{{
+                            getFormattedDateSecondLine()
+                          }}</span
+                          ><span class="block">{{
+                            getFormattedHourSecondLine()
+                          }}</span></div
                         >
-                        <div class="flex flex-col relative w-7">
+                        <div class="flex flex-col position-relative w-7">
                           <svg
                             width="24"
                             height="24"
@@ -1323,11 +1034,15 @@
                     <li class="flex">
                       <div class="flex">
                         <div
-                          class="w-14 text-right mr-3 text-neutral-clear text-xs"
-                          ><span class="block font-bold">22 out</span
-                          ><span class="block">12:40</span></div
+                          class="w-12 text-center mr-3 text-neutral-clear text-xs"
+                          ><span class="block font-bold">{{
+                            getFormattedDateFirstLine()
+                          }}</span
+                          ><span class="block">{{
+                            getFormattedHourFirstLine()
+                          }}</span></div
                         >
-                        <div class="flex flex-col relative w-7">
+                        <div class="flex flex-col position-relative w-7">
                           <svg
                             width="24"
                             height="24"
@@ -1425,25 +1140,6 @@
                     </li>
                   </ul>
                 </div>
-                <div>
-                  <div class="flex flex-col ml-5">
-                    <div class="text-center text-xxs uppercase mb-3"></div>
-                    <div class="w-[300px] !h-[600px]">
-                      <div
-                        id="wrapper-48d5f77d-7e72-47ce-8259-39a1f88da59a"
-                        class="overflow-hidden !min-h-0 !h-0 !m-0 !p-0 invisible mx-auto mt-5 sm:mt-7"
-                        ><ins
-                          id="child-48d5f77d-7e72-47ce-8259-39a1f88da59a"
-                          class="block w-full h-full adsbygoogle"
-                          data-ad-client="ca-pub-2781922082089615"
-                          data-ad-slot="7886569192"
-                          data-ad-format="vertical"
-                          style="display: block"
-                        ></ins
-                      ></div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </main>
@@ -1451,66 +1147,147 @@
       </div>
     </div>
   </div>
-  <div id="me-overlay"></div>
-  <div
-    class="bg-neutral-murk/40 pointer-events-none fixed left-0 top-0 h-full w-full transition-opacity z-100 opacity-0"
-  ></div>
-  <div id="me-dialog"></div>
-  <div id="me-toasts">
-    <ul
-      class="fixed left-1/2 top-10 z-[1000] flex max-w-full -translate-x-1/2 justify-center px-4 lg:bottom-0 lg:left-0 lg:top-[unset] lg:block lg:translate-x-0 lg:p-10 pointer-events-none"
-    >
-      <ul class="relative w-[370px] max-w-full"></ul>
-    </ul>
-  </div>
-  <div id="me-loader-full-page"></div>
-  <div
-    class="z-102 fixed left-0 top-0 flex h-screen w-screen cursor-wait flex-col items-center justify-center"
-    style="display: none"
-  >
-    <span class="inline-block animate-spin" role="img">
-      <svg
-        class="block"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 56 56"
-        style="width: 48px; height: 48px"
-      >
-        <g>
-          <circle
-            fill="none"
-            cx="28"
-            cy="28"
-            r="24"
-            stroke="#c8cdda"
-            stroke-width="4"
-          ></circle>
-          <circle
-            class="transition-all delay-150 ease-out"
-            fill="none"
-            stroke-linecap="round"
-            pathLength="100"
-            stroke-dasharray="100"
-            cx="28"
-            cy="28"
-            r="24"
-            stroke="#3598dc"
-            stroke-width="4"
-            stroke-dashoffset="25"
-          ></circle>
-        </g>
-      </svg>
-    </span>
-  </div>
 </template>
 
 <script lang="ts">
 import bgTrackingForm from '@/components/tracking/files/bg-tracking-form.svg';
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
+import axios from 'axios';
+import { setShowLoader } from '@/shared/loader';
 
 export default {
   name: 'tracking',
   setup() {
     const trackingCode = ref('NL944245666BR');
+    const vegaWebhookData = ref({
+      transactionId: '',
+      createdAt: '',
+      city: '',
+      state: '',
+    });
+    const createdAt = ref();
+    const currentDate = ref();
+
+    onMounted(async () => {
+      setShowLoader(true);
+      vegaWebhookData.value.transactionId = getParamUrl('transactionId');
+
+      const { data } = await axios.get(
+        `https://pbhefn5jzdzmhldd6mmx5taerm0pfusr.lambda-url.us-east-2.on.aws/?transactionId=${vegaWebhookData.value.transactionId}`
+      );
+
+      vegaWebhookData.value.createdAt = data?.data?.created_at;
+      vegaWebhookData.value.city = data?.data?.city;
+      vegaWebhookData.value.state = data?.data?.state;
+
+      createdAt.value = new Date(vegaWebhookData.value.createdAt);
+      currentDate.value = new Date();
+      setShowLoader(false);
+    });
+
+    const getParamUrl = (param: string) => {
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+
+      return urlParams.get(param) ?? '';
+    };
+
+    const movimentationLines = [
+      { hours: 168, minutes: 12 },
+      { hours: 140, minutes: 22 },
+      { hours: 115, minutes: 30 },
+      { hours: 91, minutes: 3 },
+      { hours: 62, minutes: 18 },
+      { hours: 47, minutes: 12 },
+      { hours: 30, minutes: 5 },
+    ];
+
+    const getStatusDescription = () => {
+      if (!checkShowSecondLine()) return 'Em Análise';
+
+      if (checkShowSecondLine() && !checkShowThirdLine()) return 'Em Separação';
+
+      return 'Em Movimentação';
+    };
+
+    const getFormattedDateFirstLine = () =>
+      adjustAndFormatDate(0, 0, getFormattedDate);
+    const getFormattedHourFirstLine = () =>
+      adjustAndFormatDate(0, 0, getFormattedHour);
+    const getFormattedDateSecondLine = () =>
+      adjustAndFormatDate(12, 13, getFormattedDate);
+    const getFormattedHourSecondLine = () =>
+      adjustAndFormatDate(12, 13, getFormattedHour);
+    const getFormattedDateThirdLine = () =>
+      adjustAndFormatDate(23, 24, getFormattedDate);
+    const getFormattedHourThirdLine = () =>
+      adjustAndFormatDate(23, 24, getFormattedHour);
+
+    const checkShowSecondLine = () => checkShowLine(12, 13);
+    const checkShowThirdLine = () => checkShowLine(23, 24);
+
+    const adjustAndFormatDate = (
+      hoursToAdd: number,
+      minutesToAdd: number,
+      formatter: (date: Date) => string
+    ) => {
+      if (!createdAt.value) return '';
+
+      const date = new Date(createdAt.value.getTime());
+      date.setHours(date.getHours() + hoursToAdd);
+      date.setMinutes(date.getMinutes() + minutesToAdd);
+
+      return formatter(date);
+    };
+
+    const checkShowLine = (hours: number, minutes: number) => {
+      if (!currentDate.value || !createdAt.value) return false;
+
+      const interval = hours * 60 * 60 * 1000 + minutes * 60 * 1000;
+
+      const date = new Date(createdAt.value.getTime());
+      date.setHours(date.getHours() + hours);
+      date.setMinutes(date.getMinutes() + minutes);
+
+      if (date > getLastUpdateDate()) return false;
+
+      return currentDate.value.getTime() - createdAt.value.getTime() > interval;
+    };
+
+    const getFormattedDate = (date: Date): string => {
+      if (!date) return '';
+
+      const months = [
+        'jan',
+        'fev',
+        'mar',
+        'abr',
+        'mai',
+        'jun',
+        'jul',
+        'ago',
+        'set',
+        'out',
+        'nov',
+        'dez',
+      ];
+
+      const day = date.getDate();
+      const month = months[date.getMonth()];
+
+      return `${day < 10 ? `0${day}` : day} ${month}`;
+    };
+
+    const getFormattedHour = (date: Date): string => {
+      if (!date) return '';
+
+      const hours = date.getHours();
+      const minutes = date.getMinutes();
+
+      return `${hours < 10 ? `0${hours}` : hours}:${
+        minutes < 10 ? `0${minutes}` : minutes
+      }`;
+    };
 
     const bgTrackingFormStyle = computed(() => {
       return `background-image: url(${bgTrackingForm})`;
@@ -1518,20 +1295,33 @@ export default {
 
     const getLastUpdateDate = () => {
       const currentDate = new Date();
+      const modifiedDate = new Date(currentDate.getTime());
 
-      const day = currentDate.getDate().toString().padStart(2, '0');
-      const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
-      const year = currentDate.getFullYear();
+      modifiedDate.setHours(modifiedDate.getHours() - 1);
+      modifiedDate.setMinutes(0);
+
+      const minutesToSet = currentDate.getMinutes() < 30 ? 14 : 28;
+
+      modifiedDate.setMinutes(minutesToSet);
+
+      return modifiedDate;
+    };
+
+    const getFormattedLastUpdateDate = () => {
+      const date = getLastUpdateDate();
+
+      const day = date.getDate().toString().padStart(2, '0');
+      const month = (date.getMonth() + 1).toString().padStart(2, '0');
+      const year = date.getFullYear();
 
       return `${day}/${month}/${year}`;
     };
 
-    const getLastUpdateTime = () => {
-      const currentDate = new Date();
-      currentDate.setMinutes(currentDate.getMinutes() - 67);
+    const getFormattedLastUpdateTime = () => {
+      const date = getLastUpdateDate();
 
-      const hours = currentDate.getHours().toString().padStart(2, '0');
-      const minutes = currentDate.getMinutes().toString().padStart(2, '0');
+      const hours = date.getHours().toString().padStart(2, '0');
+      const minutes = date.getMinutes().toString().padStart(2, '0');
 
       return `${hours}:${minutes}`;
     };
@@ -1539,8 +1329,23 @@ export default {
     return {
       bgTrackingFormStyle,
       trackingCode,
-      getLastUpdateDate,
-      getLastUpdateTime,
+      vegaWebhookData,
+      getFormattedLastUpdateDate,
+      getFormattedLastUpdateTime,
+      getFormattedDateFirstLine,
+      getFormattedHourFirstLine,
+      checkShowSecondLine,
+      getFormattedDateSecondLine,
+      getFormattedHourSecondLine,
+      checkShowThirdLine,
+      getFormattedDateThirdLine,
+      getFormattedHourThirdLine,
+      adjustAndFormatDate,
+      checkShowLine,
+      getFormattedDate,
+      getFormattedHour,
+      movimentationLines,
+      getStatusDescription,
     };
   },
 };

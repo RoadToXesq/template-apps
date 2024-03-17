@@ -9,7 +9,7 @@ import { computed } from 'vue';
 import { getShowLoader } from '@/shared/loader';
 
 export default {
-  name: 'ZLoader',
+  name: 'Loader',
   props: {
     loading: { type: Boolean, default: undefined },
     overlay: { type: Boolean, default: true },

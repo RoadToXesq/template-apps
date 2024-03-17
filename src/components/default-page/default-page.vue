@@ -64,7 +64,7 @@
               </button>
 
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul id="nav" class="navbar-nav ml-auto">
+                <ul id="nav" class="navbar-nav">
                   <li class="nav-item active">
                     <a class="page-scroll" href="#home">Home</a>
                   </li>
